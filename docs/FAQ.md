@@ -47,8 +47,10 @@ nav_order: 7
     dropped storage mount. Try to identify the node where the job was
     scheduled using either one of the following commands:
 
-`$ squeue -j `<jobID>
-`$ sacct -j `<jobID>` --format=jobid,elapsed,ncpus,ntasks,state,NodeList`
+```
+$ squeue -j <jobID>
+$ sacct -j <jobID> --format=jobid,elapsed,ncpus,ntasks,state,NodeList
+```
 
 ### setfacl: permission not supported
 
@@ -59,33 +61,35 @@ nav_order: 7
 
 ### How can I get information about CPU/memory of the cluster
 
-`$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"`
-`HOSTNAMES                PARTITI       STATE CPUS   MEMORY CPUS(A/I/O/T)  FREE_MEM`
-`trendscn001.rs.gsu.edu   qTRD          mixed   32   768697 2/30/0/32      716707`
-`trendscn004.rs.gsu.edu   qTRD          mixed   32   768697 15/17/0/32     409574`
-`trendscn007.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     653037`
-`trendscn008.rs.gsu.edu   qTRD          mixed   32   768697 1/31/0/32      562276`
-`trendscn011.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     461971`
-`trendscn016.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     275150`
-`trendscn009.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      484949`
-`trendscn010.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      436889`
-`trendscn012.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      407470`
-`trendscn002.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      691967`
-`trendscn003.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      535892`
-`trendscn005.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      629969`
-`trendscn006.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      661117`
-`trendscn013.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      702867`
-`trendscn014.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      625527`
-`trendscn015.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      708471`
-`trendscn019.rs.gsu.edu   qTRDEV         idle   32   769700 0/32/0/32      514230`
-`trendscn020.rs.gsu.edu   qTRDEV         idle   32   769700 0/32/0/32      710871`
-`trendsmn001.rs.gsu.edu   qTRDHM        mixed   96  1541404 22/74/0/96     971640`
-`trendsmn002.rs.gsu.edu   qTRDHM        mixed   96  1541404 15/81/0/96     1122162`
-`trendsmn003.rs.gsu.edu   qTRDHM         idle   96  1541404 0/96/0/96      1296288`
-`trendsgn001.rs.gsu.edu   qTRDGPU       mixed   40   190669 30/10/0/40     9514`
-`trendsgn002.rs.gsu.edu   qTRDGPU   allocated   40   190669 40/0/0/40      1287`
-`trendsgn001.rs.gsu.edu   qTRDGPU       mixed   40   190669 30/10/0/40     9514`
-`trendsgn002.rs.gsu.edu   qTRDGPU   allocated   40   190669 40/0/0/40      1287`
+```
+$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"
+HOSTNAMES                PARTITI       STATE CPUS   MEMORY CPUS(A/I/O/T)  FREE_MEM
+trendscn001.rs.gsu.edu   qTRD          mixed   32   768697 2/30/0/32      716707
+trendscn004.rs.gsu.edu   qTRD          mixed   32   768697 15/17/0/32     409574
+trendscn007.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     653037
+trendscn008.rs.gsu.edu   qTRD          mixed   32   768697 1/31/0/32      562276
+trendscn011.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     461971
+trendscn016.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     275150
+trendscn009.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      484949
+trendscn010.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      436889
+trendscn012.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      407470
+trendscn002.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      691967
+trendscn003.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      535892
+trendscn005.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      629969
+trendscn006.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      661117
+trendscn013.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      702867
+trendscn014.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      625527
+trendscn015.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      708471
+trendscn019.rs.gsu.edu   qTRDEV         idle   32   769700 0/32/0/32      514230
+trendscn020.rs.gsu.edu   qTRDEV         idle   32   769700 0/32/0/32      710871
+trendsmn001.rs.gsu.edu   qTRDHM        mixed   96  1541404 22/74/0/96     971640
+trendsmn002.rs.gsu.edu   qTRDHM        mixed   96  1541404 15/81/0/96     1122162
+trendsmn003.rs.gsu.edu   qTRDHM         idle   96  1541404 0/96/0/96      1296288
+trendsgn001.rs.gsu.edu   qTRDGPU       mixed   40   190669 30/10/0/40     9514
+trendsgn002.rs.gsu.edu   qTRDGPU   allocated   40   190669 40/0/0/40      1287
+trendsgn001.rs.gsu.edu   qTRDGPU       mixed   40   190669 30/10/0/40     9514
+trendsgn002.rs.gsu.edu   qTRDGPU   allocated   40   190669 40/0/0/40      1287
+```
 
 Above example shows the nodes, which partition each of them belongs to,
 their state (state of the CPUs, idle/allocated/mixed), total CPUSs and
@@ -156,10 +160,12 @@ written to the disk, very slow response to any kind of command etc.
 You may have specified invalid project code. Please take a note of the
 following project codes:
 
-`Dr. Vince Calhoun's group   PSYC0002`
-`BrainForge group            PSYC0003`
-`Dr. Jessica Turner's group  PSYC0004`
-`Dr. Jingyu Liu's group      PSYC0005`
+```
+Dr. Vince Calhoun's group   PSYC0002
+BrainForge group            PSYC0003
+Dr. Jessica Turner's group  PSYC0004
+Dr. Jingyu Liu's group      PSYC0005
+```
 
 ### My job completed without any error, but there is nothing in the output!
 

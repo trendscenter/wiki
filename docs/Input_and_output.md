@@ -12,13 +12,17 @@ ID. The files are written respective to the directory where the job is
 submitted from, unless absolute path is specified in the `SBATCH`
 directive.
 
-`#SBATCH -e error%A.err`
-`#SBATCH -o out%A.out`
+```
+#SBATCH -e error%A.err
+#SBATCH -o out%A.out
+```
 
 In case of a job array, `%a` is replaced with the array ID.
 
-`#SBATCH -e error%A-%a.err`
-`#SBATCH -o out%A-%a.out`
+```
+#SBATCH -e error%A-%a.err
+#SBATCH -o out%A-%a.out
+```
 
 ### `/runjobs`
 

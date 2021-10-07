@@ -1,3 +1,9 @@
+---
+layout: default
+title: Singularity & docker
+nav_order: 2
+parent: List of software
+---
 This page is written by Eric Verner.
 
 <h1>

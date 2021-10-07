@@ -25,7 +25,7 @@ parent: List of software
 
 ## Job array with multiple tasks on each GPU
 
-'''The `JobSubmit.sh` file
+### The `JobSubmit.sh` file
 
 `#!/bin/bash`
 `#SBATCH -N 1`
@@ -57,13 +57,13 @@ parent: List of software
 
 `sleep 10s`
 
-'''Submitting the job
+### Submitting the job
 
 ` sbatch --array=1-8%2 JobSubmit.sh`
 
 ## Start interactive mode/terminal/bash on GPU worker/compute nodes
 
-''can be run on the login node
+*can be run on the login node*
 
 `# Start interactive mode on a GPU worker node`
 `$ srun -p qTRDGPUH -A PSYC0002 -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash`

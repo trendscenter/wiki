@@ -1,3 +1,9 @@
+---
+layout: default
+title: SPM
+nav_order: 2
+parent: List of software
+---
 Statistical Parametric Mapping refers to the construction and assessment
 of spatially extended statistical processes used to test hypotheses
 about functional imaging data. These ideas have been instantiated in a

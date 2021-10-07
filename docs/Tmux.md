@@ -1,3 +1,9 @@
+---
+layout: default
+title: tmux
+nav_order: 2
+parent: List of software
+---
 tmux is a terminal multiplexer for Unix-like operating systems. It
 allows multiple terminal sessions to be accessed simultaneously in a
 single window. It is useful for running more than one command-line

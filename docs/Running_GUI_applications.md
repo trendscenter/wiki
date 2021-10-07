@@ -2,7 +2,7 @@
 layout: default
 title: Running GUI applications
 nav_order: 5
-parent: New User Guide
+parent: Getting Started
 ---
 ## Install an X-window server
 

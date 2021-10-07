@@ -1,4 +1,10 @@
-Visual Studio Code (https://code.visualstudio.com/) is a free coding
+---
+layout: default
+title: Visual Studio Code
+nav_order: 2
+parent: List of software
+---
+[Visual Studio Code](https://code.visualstudio.com/) is a free coding
 editor that helps you start coding quickly. Use it to code in any
 programming language, without switching editors.
 
@@ -22,11 +28,11 @@ container, on a remote machine, or in the Windows Subsystem for Linux
 -   Select an SSH configuration file, e.g. <user>/.ssh/config
 -   Add the following configuration in the file that opens, then save
     it.
-
-`host trends017`
-`   HostName trendscn017.rs.gsu.edu`
-`   user `<campusID>
-
+```
+host trends017
+   HostName trendscn017.rs.gsu.edu
+   user <campusID>
+```
 -   `trends017` should now be available under SSH targets. You can right
     click and connect to it.
 

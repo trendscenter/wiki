@@ -2,7 +2,7 @@
 layout: default
 title: Cluster & queue information
 nav_order: 7
-parent: New User Guide
+parent: Getting Started
 ---
 
 ## Cluster configuration

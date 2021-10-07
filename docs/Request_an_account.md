@@ -2,7 +2,7 @@
 layout: default
 title: Request an account
 nav_order: 1
-parent: New User Guide
+parent: Getting Started
 ---
 You must have a GSU campus ID to access the cluster. If you already have
 a GSU campus ID, please contact Sergey Plis `splis@gsu.edu` to request

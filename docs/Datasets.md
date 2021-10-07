@@ -123,12 +123,14 @@ Follow the steps below to download data from
     -   Then extract the s3 locations from the downloaded image03.txt
         file, e.g. remain.txt
 
-`$ head remain.txt`
-`s3://**************/submission_13124/NDARINVRP3R4YCP_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz`
-`s3://**************/submission_13124/NDARINVTAX3MN8C_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz`
-`s3://**************/submission_13124/NDARINVJ2ENP1ZK_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz`
-`s3://**************/submission_13124/NDARINVUKPZU1JW_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz`
-`s3://**************/submission_13124/NDARINV5VGKMHCR_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz`
+```
+$ head remain.txt
+s3://**************/submission_13124/NDARINVRP3R4YCP_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz
+s3://**************/submission_13124/NDARINVTAX3MN8C_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz
+s3://**************/submission_13124/NDARINVJ2ENP1ZK_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz
+s3://**************/submission_13124/NDARINVUKPZU1JW_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz
+s3://**************/submission_13124/NDARINV5VGKMHCR_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz
+```
 
 -   Finally, download through the list remain.txt, e.g.
     `downloadcmd -t remain.txt -d image_files/`

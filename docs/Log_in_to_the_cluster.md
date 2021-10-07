@@ -2,7 +2,7 @@
 layout: default
 title: Log in to the cluster
 nav_order: 2
-parent: New User Guide
+parent: Getting Started
 ---
 ### Head/login node vs compute/worker nodes
 

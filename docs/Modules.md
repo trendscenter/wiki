@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Modules
-nav_order: 1
+nav_order: 2
 parent: List of software
 ---
 ### Available modules (software)

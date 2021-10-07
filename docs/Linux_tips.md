@@ -2,7 +2,7 @@
 layout: default
 title: Linux tips
 nav_order: 8
-parent: New User Guide
+parent: Getting Started
 ---
 ### Learn bash in 15 minutes
 

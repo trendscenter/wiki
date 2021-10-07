@@ -24,14 +24,9 @@ Things to consider:
 -   If the required memory is about 100-600GB, consider allocating
     multiple corresponding CPUs in addition to memory. Otherwise, up to
     31 tasks could be allocated to the same node and it may run out of
-    memory. ~~When allocating multiple CPUs for a single task, you must
-    also tell Matlab how many threads to use, like so:~~
+    memory.
 
 `>> maxNumCompThreads(10);`
-
-~~Specifying multiple threads for a single task is not the same as
-parallel pools, but there are many Matlab functions, such as `eig()`,
-which will run 10 times faster if you do the above.~~
 
 -   On the other hand, if using parallel pool, first increase the amount
     of resource available using the following command in the Linux
@@ -39,25 +34,29 @@ which will run 10 times faster if you do the above.~~
 
 `ulimit -u 63536`
 
-Then start Matlab ~~with `-singleCompThread` option~~, then start
+Then start Matlab, then start
 parallel pool in the command window or script with the number of CPUs
 allocated.
 
-`# tell Matlab to run 10 parallel processes in the command window or your script`
-`>> parpool(10);`
+```
+# tell Matlab to run 10 parallel processes in the command window or your script
+>> parpool(10);
+```
 
 -   If the required memory *for a single task* is over 700GB, consider
     using the high-memory nodes/queue. But you still must allocate CPUs
     and memory properly, like so:
 
-`# allocate 80 CPUs and 1TB of memory in the high memory queue in SLURM`
-`$ srun -p qTRDHM -A PSYC0002 -v -n1 -c80 --mem=1t --pty --x11 /bin/bash `
-`$ module load Framework/Matlab2019b`
-`$ matlab &`
+```
+# allocate 80 CPUs and 1TB of memory in the high memory queue in SLURM
+$ srun -p qTRDHM -A PSYC0002 -v -n1 -c80 --mem=1t --pty --x11 /bin/bash 
+$ module load Framework/Matlab2019b
+$ matlab &
+```
 
 And then specify the proper number of threads/parallel processes.
 
-'''Estimating memory requirement
+### Estimating memory requirement
 
 -   It depends on your job.
 -   It is important to understand how your program handles memory in

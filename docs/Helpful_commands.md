@@ -2,7 +2,7 @@
 layout: default
 title: Helpful commands
 nav_order: 6
-parent: New User Guide
+parent: Getting Started
 ---
 ### VPN address
 
@@ -15,7 +15,7 @@ parent: New User Guide
 
 ### Start interactive mode/terminal/bash on worker/compute nodes
 
-''can be run on the login node
+*can be run on the login node*
 
 `# Start interactive mode on a general-purpose compute node`
 `$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty /bin/bash    `
@@ -31,7 +31,7 @@ parent: New User Guide
 
 ### Available modules (software)
 
-''can be run on any node
+*can be run on any node*
 
 `$ module avail`
 
@@ -51,7 +51,7 @@ parent: New User Guide
 
 **Online:** <http://hpcstats.rs.gsu.edu/ganglia/?c=Trends>
 
-'''From terminal on the login node:
+### From terminal on the login node:
 
 `$ sinfo`
 `$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"`
@@ -59,8 +59,7 @@ parent: New User Guide
 
 ### Find path to Matlab
 
-''can be run on any node, but do not actually run `matlab` on the login
-node, please.
+*can be run on any node, but do not actually run `matlab` on the login node, please.*
 
 `$ module load Framework/Matlab2019b`
 `$ which matlab`
@@ -80,7 +79,7 @@ Method 2 (via interactive mode):
 
 ### Edit files
 
-''can be run on any node
+*can be run on any node*
 
 `$ nano `<filename>
 `$ vi `<filename>
@@ -95,7 +94,7 @@ Method 2 (via interactive mode):
 
 ### Submit a job to the scheduler
 
-''can be run on the login node
+*can be run on the login node*
 
 `# Submit a job script `
 `$ sbatch JobSubmit.sh`
@@ -105,7 +104,7 @@ Method 2 (via interactive mode):
 
 ### Sample SBATCH script
 
-''For submitting jobs to the cluster
+*For submitting jobs to the cluster*
 
 <https://slurm.schedmd.com/sbatch.html>
 
@@ -136,7 +135,7 @@ Method 2 (via interactive mode):
 
 ### Sample SBATCH (array) script
 
-''For creating job arrays
+*For creating job arrays*
 
 <https://slurm.schedmd.com/job_array.html>
 
@@ -184,14 +183,14 @@ Method 2 (via interactive mode):
 
 ### Login to a DEV node
 
-''can be run on the login node, for lightweight experiments only
+*can be run on the login node, for lightweight experiments only*
 
 `$ ssh -X trendscn019.rs.gsu.edu`
 `$ ssh -X trendscn020.rs.gsu.edu`
 
 ### Start GUI application on DEV node
 
-''can be run on a DEV node or in interactive mode only
+*can be run on a DEV node or in interactive mode only*
 
 `$ module load Framework/Matlab2019b`
 `$ matlab &`

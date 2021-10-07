@@ -2,7 +2,7 @@
 layout: default
 title: Configure SSH for easy access to DEV machines
 nav_order: 4
-parent: New User Guide
+parent: Getting Started
 ---
 -   Please follow this guide:
     <https://docs.google.com/document/d/1C3IK38d5XiEIafktjJ6LxXVFMrj77unXm_9VAjGe3Ww/edit?usp=sharing>

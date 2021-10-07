@@ -2,7 +2,7 @@
 layout: default
 title: Cluster do's & don'ts
 nav_order: 9
-parent: New User Guide
+parent: Getting Started
 ---
 ### Do limit the number of simultaneously running tasks
 
@@ -39,19 +39,10 @@ jobs terminating without any error, jobs terminating with segmentation
 faults and out-of-memory errors, corrupted files being written to the
 disk, very slow response to any kind of command etc.
 
-### Do limit number of threads in Matlab
+### Do limit number of threads
 
-~~By default, many Matlab functions such as `fft`, `svd`, `eig`, `sort`
-etc. use multi-threading. It means, no matter how many cores you
-allocate in SLURM, Matlab applications will try to use all the cores on
-the node, without considering other users' allocations. So if you are
-allocating just one CPU core (by default) in SLURM, start Matlab using
-the `-singleCompThread` flag, e.g. `matlab -singleCompThread &`. If you
-are allocating `N` cores to use in Matlab, then execute
-`maxNumCompThreads(N)` at the beginning of your script or in Matlab
-command window to ensure fair usage of the allocation.~~ With some
-modifications, jobs only have access to the number of CPUs actually
-requested now. Hence limiting threading seems no longer necessary.
+Jobs should only have access to the number of CPUs actually
+requested. But still take care to specify the number of parallel threads in our code less than or equal to the allocation.
 
 Note that SLURM is not meant to *limit* resources, but is the way to
 communicate what resource you need/use to the other users.

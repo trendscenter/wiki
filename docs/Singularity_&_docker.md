@@ -30,7 +30,7 @@ Caveats
 
 -   Docker is only allowed on development nodes (currently
     `trendscn017.rs.gsu.edu` and `trendsgndev101.rs.gsu.edu`, but check
-    [Cluster_queue_information](Cluster_queue_information "wikilink")
+    [Cluster_queue_information](Cluster_queue_information)
     for updates). Because operations are run as root inside of a
     container, Docker is seen as a security vulnerability and is often
     not allowed on high-performance computing (HPC) systems. To run a

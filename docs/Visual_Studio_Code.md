@@ -42,12 +42,12 @@ container, on a remote machine, or in the Windows Subsystem for Linux
 -   `trends017` is an alias, it can be anything.
     `trendscn017.rs.gsu.edu` must be a valid host name. Use one of the
     development nodes from the [Cluster queue
-    information](Cluster_queue_information "wikilink") page. Do not use
+    information](Cluster_queue_information) page. Do not use
     `trendslogin01.rs.gsu.edu` or `trendslogin.gsu.edu`
 -   You may have to enter your password multiple times. To avoid this,
     set up SSH key authentication by following [Configure SSH for easy
     access to DEV
-    machines](Configure_SSH_for_easy_access_to_DEV_machines "wikilink")
+    machines](Configure_SSH_for_easy_access_to_DEV_machines)
     or [this
     guide](https://docs.google.com/document/d/1C3IK38d5XiEIafktjJ6LxXVFMrj77unXm_9VAjGe3Ww/edit)
 

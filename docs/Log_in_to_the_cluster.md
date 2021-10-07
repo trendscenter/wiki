@@ -1,6 +1,6 @@
 ### Head/login node vs compute/worker nodes
 
-You must be connected to the [GSU VPN](Configure_VPN "wikilink"), or in
+You must be connected to the [GSU VPN](Configure_VPN), or in
 the GSU network to log in to the cluster. Use the following command to
 connect to the head/login node:
 
@@ -41,7 +41,7 @@ the head/login node:
 The above command will allocate 1 CPU on one of the nodes under `qTRD`
 queue and 10GB of RAM on the said node (`trendscn013` in this case) for
 60 minutes and start a `bash` session. See [this
-page](Cluster_queue_information "wikilink") for more information about
+page](Cluster_queue_information) for more information about
 the available queues.
 
 For running GUI applications, depending on which SSH client or X-window

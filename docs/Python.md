@@ -40,7 +40,7 @@ Add the following to the SLURM job submission script:
 `$ source `<path to conda installation>`/bin/activate `<name/path of conda environment>
 `$ python script.py`
 
-See more examples [here](List_of_SLURM_scripts "wikilink").
+See more examples [here](List_of_SLURM_scripts).
 
 ## IPython: running Python scripts and commands interactively
 

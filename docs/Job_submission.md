@@ -25,4 +25,4 @@ The following commands can be run on the login node:
 
 ## Sample SBATCH scripts
 
-Please see [List_of_SLURM_scripts](List_of_SLURM_scripts "wikilink")
+Please see [List_of_SLURM_scripts](List_of_SLURM_scripts)

@@ -9,7 +9,7 @@ magnetic resonance imaging data.
 ### Run Matlab GUI
 
 First, [prepare to run GUI
-application](Running_GUI_applications "wikilink"). Then run the Matlab
+application](Running_GUI_applications). Then run the Matlab
 GUI using one of the following:
 
 Method 1 (via SLURM X11):
@@ -106,6 +106,6 @@ e.g.
 ## Memory considerations
 
 Note that GIFT tells you the amount of memory you need to run the
-analysis. Please see [this section](Choosing_job_resources "wikilink")
+analysis. Please see [this section](Choosing_job_resources)
 for how to properly configure SLURM and Matlab for running the analysis
 successfully.

@@ -48,7 +48,7 @@
 ### setfacl: permission not supported
 
 -   It might be an NFS4 volume, use `nfs4_setfacl` instead: [Permissions
-    on NFS volumes](Storage_guide#Permissions_on_NFS_volumes "wikilink")
+    on NFS volumes](Storage_guide#Permissions_on_NFS_volumes)
 
 ## Other questions
 

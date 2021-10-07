@@ -11,47 +11,47 @@ documentation](https://docs.pace.gatech.edu/).
 
 ## Getting started
 
--   [New User Guide](New_User_Guide "wikilink")
--   [Request an account](Request_an_account "wikilink")
--   [Log in to the cluster](Log_in_to_the_cluster "wikilink")
--   [Configure VPN](Configure_VPN "wikilink")
+-   [New User Guide](New_User_Guide)
+-   [Request an account](Request_an_account)
+-   [Log in to the cluster](Log_in_to_the_cluster)
+-   [Configure VPN](Configure_VPN)
 -   [Configure SSH for easy access to DEV
-    machines](Configure_SSH_for_easy_access_to_DEV_machines "wikilink")
--   [Running GUI applications](Running_GUI_applications "wikilink")
--   [Helpful commands](Helpful_commands "wikilink")
--   [Cluster & queue information](Cluster_queue_information "wikilink")
--   [Linux tips](Linux_tips "wikilink")
--   [Cluster do's & don'ts](Cluster_do's_&_don'ts "wikilink")
+    machines](Configure_SSH_for_easy_access_to_DEV_machines)
+-   [Running GUI applications](Running_GUI_applications)
+-   [Helpful commands](Helpful_commands)
+-   [Cluster & queue information](Cluster_queue_information)
+-   [Linux tips](Linux_tips)
+-   [Cluster do's & don'ts](Cluster_do's_&_don'ts)
 
 ## Storage & file transfer
 
--   [Storage guide](Storage_guide "wikilink")
--   [Permissions](Permissions "wikilink")
--   [Datasets](Datasets "wikilink")
--   [File transfer with SCP](File_transfer_with_SCP "wikilink")
--   [File transfer with WinSCP](File_transfer_with_WinSCP "wikilink")
+-   [Storage guide](Storage_guide)
+-   [Permissions](Permissions)
+-   [Datasets](Datasets)
+-   [File transfer with SCP](File_transfer_with_SCP)
+-   [File transfer with WinSCP](File_transfer_with_WinSCP)
 -   [File transfer with
-    FileZilla](File_transfer_with_FileZilla "wikilink")
--   [File transfer with Globus](File_transfer_with_Globus "wikilink")
+    FileZilla](File_transfer_with_FileZilla)
+-   [File transfer with Globus](File_transfer_with_Globus)
 -   [Using job-specific scratch
-    storage](Using_job-specific_scratch_storage "wikilink")
--   [Git](Git "wikilink")
+    storage](Using_job-specific_scratch_storage)
+-   [Git](Git)
 
 ## Workload manager
 
--   [Overview](Workload_manager_overview "wikilink")
--   [Job submission](Job_submission "wikilink")
--   [Choosing job resources](Choosing_job_resources "wikilink")
--   [Input and output](Input_and_output "wikilink")
--   [Monitor CPU and memory](Monitor_CPU_and_memory "wikilink")
+-   [Overview](Workload_manager_overview)
+-   [Job submission](Job_submission)
+-   [Choosing job resources](Choosing_job_resources)
+-   [Input and output](Input_and_output)
+-   [Monitor CPU and memory](Monitor_CPU_and_memory)
 
 ## Software guide
 
--   [List of software](List_of_software "wikilink")
+-   [List of software](List_of_software)
 
 ## Example job submission script
 
--   [List of SLURM scripts](List_of_SLURM_scripts "wikilink")
+-   [List of SLURM scripts](List_of_SLURM_scripts)
 
 ## Annotated videos
 
@@ -63,9 +63,9 @@ documentation](https://docs.pace.gatech.edu/).
 ## FAQ
 
 -   [List of frequently asked
-    questions](List_of_frequently_asked_questions "wikilink")
+    questions](List_of_frequently_asked_questions)
 
 ## More information
 
--   [Resources](Resources "wikilink")
+-   [Resources](Resources)
 

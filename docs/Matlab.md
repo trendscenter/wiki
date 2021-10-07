@@ -1,9 +1,9 @@
 ### Running Matlab GUI
 
 First, run an [X-window
-server](Running_GUI_applications#Install_an_X-window_server "wikilink"),
+server](Running_GUI_applications#Install_an_X-window_server),
 and [connect to the login node with
-SSH](Log_in_to_the_cluster "wikilink"). Then do one of the following:
+SSH](Log_in_to_the_cluster). Then do one of the following:
 
 Method 1 (via SLURM X11):
 
@@ -115,7 +115,7 @@ Please see
 
 ### Parallel pools, multi-threading and memory considerations
 
-Please see [this](Choosing_job_resources "wikilink").
+Please see [this](Choosing_job_resources).
 
 ### More on memory optimization
 

@@ -1,3 +1,8 @@
+---
+layout: home
+title: Home
+nav_order: 1
+---
 Welcome to the TReNDS cluster documentation. It provides example job
 submission scripts and guide to running various applications
 interactively on the GSU/TReNDS cluster. This is heavily influenced by
@@ -64,15 +69,3 @@ documentation](https://docs.pace.gatech.edu/).
 
 -   [Resources](Resources "wikilink")
 
-## Information about MediaWiki
-
--   [Configuration settings
-    list](https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Configuration_settings)
--   [MediaWiki
-    FAQ](https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:FAQ)
--   [MediaWiki release mailing
-    list](https://lists.wikimedia.org/mailman/listinfo/mediawiki-announce)
--   [Localise MediaWiki for your
-    language](https://www.mediawiki.org/wiki/Special:MyLanguage/Localisation#Translation_resources)
--   [Learn how to combat spam on your
-    wiki](https://www.mediawiki.org/wiki/Special:MyLanguage/Manual:Combating_spam)

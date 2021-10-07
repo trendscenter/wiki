@@ -32,8 +32,18 @@ github_username:  esalman
 # Build settings
 # theme: minima
 remote_theme: pmarsceill/just-the-docs
-plugins:
-  - jekyll-feed
+# plugins:
+#   - jekyll-feed
+
+logo: "/assets/images/TReNDS_logo_2.png"
+
+# Aux links for the upper right navigation
+aux_links:
+  "TReNDS":
+    - "//trendscenter.org"
+  "GitHub":
+    - "//github.com/trendscenter/wiki"
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

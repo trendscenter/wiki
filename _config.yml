@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   Welcome to the TReNDS cluster documentation. It provides example job
   submission scripts and guide to running various applications
   interactively on the GSU/TReNDS cluster.
-baseurl: "/trendswiki" # the subpath of your site, e.g. /blog
-url: "http://esalman.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/wiki" # the subpath of your site, e.g. /blog
+url: "https://trendscenter.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: esalman
 github_username:  esalman
 
@@ -34,8 +34,6 @@ github_username:  esalman
 remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
-
-logo: "/assets/images/TReNDS_logo_2.png"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -4,6 +4,15 @@ title: Configure SSH for easy access to DEV machines
 nav_order: 4
 parent: Getting Started
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 -   Please follow this guide:
     <https://docs.google.com/document/d/1C3IK38d5XiEIafktjJ6LxXVFMrj77unXm_9VAjGe3Ww/edit?usp=sharing>
 -   Annotated video:

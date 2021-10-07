@@ -4,6 +4,15 @@ title: SLURM Overview
 nav_order: 4
 has_children: true
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## Overview
 
 The TReNDS cluster uses SLURM workload manager. From

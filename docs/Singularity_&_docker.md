@@ -4,13 +4,18 @@ title: Singularity & docker
 nav_order: 2
 parent: List of software
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 This page is written by Eric Verner.
 
-<h1>
-
-Docker
-
-</h1>
+## Docker
 
 [Docker](https://www.docker.com) is the most popular containerization
 technology in use today. Docker offers OS-level virtualization, allowing
@@ -28,11 +33,7 @@ with container orchestration technologies such as
 [docker-compose](https://docs.docker.com/compose/) and
 [Kubernetes](https://kubernetes.io).
 
-<h2>
-
-Caveats
-
-</h2>
+### Caveats
 
 -   Docker is only allowed on development nodes (currently
     `trendscn017.rs.gsu.edu` and `trendsgndev101.rs.gsu.edu`, but check
@@ -49,11 +50,7 @@ Caveats
 -   Docker runs on Linux, Mac, and Windows Professional but requires
     additional work to install on Windows.
 
-<h2>
-
-How to run a Docker image on the cluster?
-
-</h2>
+### How to run a Docker image on the cluster?
 
 Docker images must be either pulled from another source, such as
 [DockerHub](https://hub.docker.com), or built locally (see next
@@ -75,11 +72,7 @@ server, then it can be accessed using a [docker
 exec](https://docs.docker.com/engine/reference/commandline/exec/)
 command.
 
-<h2>
-
-How to build a Docker image on the cluster
-
-</h2>
+### How to build a Docker image on the cluster
 
 Docker images are built using Dockerfiles, which can be thought of as
 recipes. Please see this
@@ -93,11 +86,7 @@ This builds a Docker image using the code in the current working
 directory containing a Dockerfile and tagging it with the name
 `myimage:latest`.
 
-<h2>
-
-How to share data with a Docker container
-
-</h2>
+### How to share data with a Docker container
 
 Docker uses volumes to share data between the host system and the
 container. To share a folder with a container, use a command like this:
@@ -111,11 +100,7 @@ To share multiple folders, use multiple `-v` flags.
     -v /second/folder/on/host:/second/folder/in/container \
     myimage -it bash
 
-<h2>
-
-GPU usage
-
-</h2>
+### GPU usage
 
 It is possible to use a host system's GPU inside a Docker container. The
 Docker image must be built using an
@@ -134,22 +119,14 @@ container, and `--gpus all` allows the container to use all the GPUs on
 the host system. For more information, see the official [NVIDIA Docker
 GitHub page](https://github.com/NVIDIA/nvidia-docker).
 
-<h1>
-
-Singularity
-
-</h1>
+## Singularity
 
 [Singularity](https://sylabs.io/singularity/) is a containerization
 technology that is friendly for HPC systems. Commands can be run inside
 Singularity as a non-root user. This has made it a popular choice at
 universities and within the neuroimaging community.
 
-<h2>
-
-How to run a Singularity container on the cluster
-
-</h2>
+### How to run a Singularity container on the cluster
 
 You can interact with a Singularity image using the `exec`, `run`, or
 `shell` commands.
@@ -165,11 +142,7 @@ To run any other command inside a Singularity container, use
 See this [page](https://sylabs.io/guides/3.5/user-guide/cli.html) for
 more details.
 
-<h2>
-
-How to build a Singularity image on the cluster
-
-</h2>
+### How to build a Singularity image on the cluster
 
 Singularity images can be built from scratch using a [definition
 file](https://sylabs.io/guides/3.5/user-guide/definition_files.html) or
@@ -199,11 +172,7 @@ To build from a locally cached Docker image, use this command:
 Note that Docker and Singularity must be available on the same system
 for this to work.
 
-<h2>
-
-Caveats
-
-</h2>
+### Caveats
 
 -   Several users have had problems building Singularity images on the
     cluster. The current recommended approach is to build the image on
@@ -228,11 +197,7 @@ Caveats
     though (see
     [here](https://sylabs.io/guides/3.2/user-guide/installation.html#install-on-windows-or-mac)).
 
-<h2>
-
-How to share data with a Singularity container
-
-</h2>
+### How to share data with a Singularity container
 
 Singularity lets you share folders from the host system with the
 container using the `--bind` flag. In the example below, the `/opt`
@@ -256,11 +221,7 @@ See this
 [page](https://sylabs.io/guides/3.5/user-guide/bind_paths_and_mounts.html)
 for more details.
 
-<h2>
-
-GPU usage
-
-</h2>
+### GPU usage
 
 Singularity containers can utilize GPUs on the host system. The `--nv`
 flag must be used with a container that has the Nvidia runtime

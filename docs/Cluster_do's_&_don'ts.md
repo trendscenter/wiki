@@ -4,6 +4,15 @@ title: Cluster do's & don'ts
 nav_order: 9
 parent: Getting Started
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ### Do limit the number of simultaneously running tasks
 
 If you want to run `N` tasks but not use the whole cluster and leave

@@ -4,6 +4,15 @@ title: Datasets
 nav_order: 2
 parent: Storage Guide
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## Neuromark
 
 Clinical similarities among brain disorders have been recognized for

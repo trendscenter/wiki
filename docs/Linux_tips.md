@@ -4,6 +4,15 @@ title: Linux tips
 nav_order: 8
 parent: Getting Started
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ### Learn bash in 15 minutes
 
 <https://learnxinyminutes.com/docs/bash/>

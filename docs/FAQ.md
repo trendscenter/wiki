@@ -3,6 +3,15 @@ layout: default
 title: FAQ
 nav_order: 7
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## Common cluster errors and remedies
 
 ### matlab: command not found
@@ -69,26 +78,6 @@ trendscn004.rs.gsu.edu   qTRD          mixed   32   768697 1
 trendscn007.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     653037
 trendscn008.rs.gsu.edu   qTRD          mixed   32   768697 1/31/0/32      562276
 trendscn011.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     461971
-trendscn016.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     275150
-trendscn009.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      484949
-trendscn010.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      436889
-trendscn012.rs.gsu.edu   qTRD      allocated   32   768697 32/0/0/32      407470
-trendscn002.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      691967
-trendscn003.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      535892
-trendscn005.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      629969
-trendscn006.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      661117
-trendscn013.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      702867
-trendscn014.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      625527
-trendscn015.rs.gsu.edu   qTRD           idle   32   768697 0/32/0/32      708471
-trendscn019.rs.gsu.edu   qTRDEV         idle   32   769700 0/32/0/32      514230
-trendscn020.rs.gsu.edu   qTRDEV         idle   32   769700 0/32/0/32      710871
-trendsmn001.rs.gsu.edu   qTRDHM        mixed   96  1541404 22/74/0/96     971640
-trendsmn002.rs.gsu.edu   qTRDHM        mixed   96  1541404 15/81/0/96     1122162
-trendsmn003.rs.gsu.edu   qTRDHM         idle   96  1541404 0/96/0/96      1296288
-trendsgn001.rs.gsu.edu   qTRDGPU       mixed   40   190669 30/10/0/40     9514
-trendsgn002.rs.gsu.edu   qTRDGPU   allocated   40   190669 40/0/0/40      1287
-trendsgn001.rs.gsu.edu   qTRDGPU       mixed   40   190669 30/10/0/40     9514
-trendsgn002.rs.gsu.edu   qTRDGPU   allocated   40   190669 40/0/0/40      1287
 ```
 
 Above example shows the nodes, which partition each of them belongs to,
@@ -108,10 +97,10 @@ Using a command-separated list of hostnames in the `--nodelist` or
 
 ### How can I limit the number of simultaneously running tasks?
 
-If you want to run `N` tasks but not use the whole cluster and leave
+If you want to run 1000 tasks but not use the whole cluster and leave
 some resources for others to use, you can use
-`sbatch --array=1-N%m `<job submission script> to limit the number of
-simultaneously running jobs to `m`.
+`sbatch --array=1-1000%100 JobSubmit.sh` to limit the number of
+simultaneously running jobs to 100.
 
 ### What is the max time-limit for jobs?
 
@@ -122,17 +111,17 @@ different queues.
 
 The following command does it:
 
-`$ scontrol update jobid=`<job_id>` TimeLimit=`<new_timelimit>
+`$ scontrol update jobid=<job_id> TimeLimit=<new_timelimit>`
 
 ### How can I update task limit of a running job array?
 
 The following command does it:
 
-`$ scontrol update ArrayTaskThrottle=`<count>` JobId=`<jobID>
+`$ scontrol update ArrayTaskThrottle=<count> JobId=<jobID>`
 
 ### Who are the users with administrative privilege?
 
-Vince <vcalhoun>, Sergey <splis>, Suranga <neranjan>.
+Vince `<vcalhoun>`, Sergey `<splis>`, Suranga `<neranjan>`.
 
 ### Why should I not run any CPU/memory intensive task on the login node?
 
@@ -182,27 +171,14 @@ find what the reason means, [see
 this](https://slurm.schedmd.com/squeue.html#SECTION_JOB-REASON-CODES).
 Some common states:
 
-CG COMPLETING
-Job is in the process of completing. Some processes on some nodes may
+- CG COMPLETING: Job is in the process of completing. Some processes on some nodes may
 still be active.
-
-F FAILED
-Job terminated with non-zero exit code or other failure condition.
-
-OOM OUT_OF_MEMORY
-Job experienced out of memory error.
-
-PD PENDING
-Job is awaiting resource allocation.
-
-PR PREEMPTED
-Job terminated due to preemption.
-
-R RUNNING
-Job currently has an allocation.
-
-S SUSPENDED
-Job has an allocation, but execution has been suspended and CPUs have
+- F FAILED: Job terminated with non-zero exit code or other failure condition.
+- OOM OUT_OF_MEMORY: Job experienced out of memory error.
+- PD PENDING Job is awaiting resource allocation.
+- PR PREEMPTED: Job terminated due to preemption.
+- R RUNNING: Job currently has an allocation.
+- S SUSPENDED: Job has an allocation, but execution has been suspended and CPUs have
 been released for other jobs.
 
 ### Why is my job in PD (pending) state?
@@ -222,12 +198,6 @@ Try the following command before starting Matlab-
 You can also add the command to your .bashrc and sbatch scripts. The
 command makes the maximum number of processes available to a single
 user.
-
-### Can I download this wiki?
-
-There is a "printable version" link on the sidebar on every page. You
-can also add `?printable=yes` of a page URL and save a printable
-version; or directly print a page.
 
 ### I am getting "X Error of failed request: BadValue" error in XQuartz
 

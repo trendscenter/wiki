@@ -4,6 +4,15 @@ title: Log in to the cluster
 nav_order: 2
 parent: Getting Started
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ### Head/login node vs compute/worker nodes
 
 You must be connected to the [GSU VPN](Configure_VPN), or in

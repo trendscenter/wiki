@@ -4,6 +4,15 @@ title: Running GUI applications
 nav_order: 5
 parent: Getting Started
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## Install an X-window server
 
 To display graphical interface from the cluster, you have to use X11 or

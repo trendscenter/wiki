@@ -4,6 +4,15 @@ title: Visual Studio Code
 nav_order: 2
 parent: List of software
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 [Visual Studio Code](https://code.visualstudio.com/) is a free coding
 editor that helps you start coding quickly. Use it to code in any
 programming language, without switching editors.

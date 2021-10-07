@@ -4,6 +4,15 @@ title: Example SLURM scripts
 nav_order: 5
 parent: SLURM Overview
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## For submitting jobs to the cluster
 
 ### Sample SBATCH (`JobSubmit.sh`) script
@@ -135,12 +144,34 @@ jobs will be run simultaneously.
 The cluster has a limit of 5000 on the array size, meaning you cannot schedule more than 5000 job steps in an array. If you have more than 5000 tasks to run, you can run a smaller loop inside each job step. Following is an example in Matlab:
 
 ```
-_start = getenv('SLURM_ARRAY_TASK_ID');
-_things = 5000;
-for ii = _start:_things:44000
-    do_thing( ii );
+things_ = 5000;
+total_ = 44000;
+
+start_ = str2num( getenv('SLURM_ARRAY_TASK_ID') );
+for ii = start_:things_:total_
+    do_thing(ii);
+end
+
+function do_thing( num )
+    disp(num)
 end
 ```
+
+Following is an example in bash:
+
+```
+#!/bin/bash
+
+THINGS=5000
+TOTAL=44000
+
+START=$SLURM_ARRAY_TASK_ID
+for ii in $(seq $START $THINGS $TOTAL)
+do
+    echo $ii
+done
+```
+
 Submit the job using `sbatch --array=1-5000%100 JobSubmit.sh`.
 
 ## Job array with multiple tasks on each GPU

@@ -4,6 +4,15 @@ title: Input and output
 nav_order: 3
 parent: SLURM Overview
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ### SLURM output and error files
 
 SLURM job output and errors are written out to `out%A.out` and

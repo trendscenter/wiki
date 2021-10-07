@@ -4,6 +4,15 @@ title: Helpful commands
 nav_order: 6
 parent: Getting Started
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ### VPN address
 
 `secureaccess.gsu.edu`

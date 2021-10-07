@@ -4,6 +4,15 @@ title: Job Submission Overview
 nav_order: 1
 parent: SLURM Overview
 ---
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
 ## Job submission overview
 
 ## Controlling jobs

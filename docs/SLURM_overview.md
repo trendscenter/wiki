@@ -1,3 +1,9 @@
+---
+layout: default
+title: SLURM Overview
+nav_order: 4
+has_children: true
+---
 ## Overview
 
 The TReNDS cluster uses SLURM workload manager. From

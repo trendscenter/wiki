@@ -1,3 +1,9 @@
+---
+layout: default
+title: Input and output
+nav_order: 3
+parent: SLURM Overview
+---
 ### SLURM output and error files
 
 SLURM job output and errors are written out to `out%A.out` and

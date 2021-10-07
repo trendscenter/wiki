@@ -1,3 +1,9 @@
+---
+layout: default
+title: Example SLURM scripts
+nav_order: 5
+parent: SLURM Overview
+---
 ## For submitting jobs to the cluster
 
 '''Sample SBATCH (`JobSubmit.sh`) script

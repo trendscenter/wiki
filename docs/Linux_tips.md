@@ -1,3 +1,9 @@
+---
+layout: default
+title: Linux tips
+nav_order: 8
+parent: New User Guide
+---
 ### Learn bash in 15 minutes
 
 <https://learnxinyminutes.com/docs/bash/>

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Jupyter
+nav_order: 2
+parent: List of software
+---
 ## Jupyter as a SLURM job
 
 **Create an SBATCH `JobSubmit.sh` script**

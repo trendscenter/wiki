@@ -1,3 +1,9 @@
+---
+layout: default
+title: Helpful commands
+nav_order: 6
+parent: New User Guide
+---
 ### VPN address
 
 `secureaccess.gsu.edu`

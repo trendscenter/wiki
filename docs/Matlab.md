@@ -1,3 +1,9 @@
+---
+layout: default
+title: Matlab
+nav_order: 2
+parent: List of software
+---
 ### Running Matlab GUI
 
 First, run an [X-window

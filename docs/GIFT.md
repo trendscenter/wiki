@@ -1,3 +1,9 @@
+---
+layout: default
+title: GIFT
+nav_order: 2
+parent: List of software
+---
 GIFT is an application supported by the NIH under grant 1RO1EB000840 to
 Dr. Vince Calhoun and Dr. Tulay Adali. It is a MATLAB toolbox which
 implements multiple algorithms for independent component analysis and

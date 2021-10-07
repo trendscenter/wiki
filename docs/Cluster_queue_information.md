@@ -1,11 +1,20 @@
+---
+layout: default
+title: Cluster & queue information
+nav_order: 7
+parent: New User Guide
+---
+
 ## Cluster configuration
 
-`Number     Manufacturer    Cores       Memory  GPUs            Name`
-`20     Intel           32      768 GB              trendscn0{01-20}`
-`3      Intel           96      1.5 TB                  trendsmn00{1-3}`
-`20     AMD                 64      512 GB  1xNvidia 2080   trendsagn0{01-20}`
-`4      Nvidia DGX-1    40      512 GB  8xNvidia V100   trendsdgx00{1-4}`
-`2      Dell            40      192 GB  4xNvidia V100   trendsdgn00{1-2}`
+```
+Number     Manufacturer    Cores       Memory  GPUs            Name
+20     Intel           32      768 GB                  trendscn0{01-20}
+3      Intel           96      1.5 TB                  trendsmn00{1-3}
+20     AMD             64      512 GB  1xNvidia 2080   trendsagn0{01-20}
+4      Nvidia DGX-1    40      512 GB  8xNvidia V100   trendsdgx00{1-4}
+2      Dell            40      192 GB  4xNvidia V100   trendsdgn00{1-2}
+```
 
 ## CPU queue/partitions
 
@@ -40,11 +49,13 @@
 
 ## Using SLURM commands
 
-`# brief info and availability `
-`$ sinfo`
+```
+# brief info and availability 
+$ sinfo
 
-`# CPU and memory`
-`$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"`
+# CPU and memory
+$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"
 
-`# CPU, memory and GPU`
-`$ sinfo -O "nodehost:16,partition:.8,cpus:.8,memory:.8,cpusstate:.16,freemem:.8,gres:.16,gresused:.16,statelong:.8,time:.16"`
+# CPU, memory and GPU
+$ sinfo -O "nodehost:16,partition:.8,cpus:.8,memory:.8,cpusstate:.16,freemem:.8,gres:.16,gresused:.16,statelong:.8,time:.16"
+```

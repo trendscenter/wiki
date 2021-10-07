@@ -1,3 +1,8 @@
+---
+layout: default
+title: FAQ
+nav_order: 7
+---
 ## Common cluster errors and remedies
 
 ### matlab: command not found

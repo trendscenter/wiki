@@ -1,3 +1,9 @@
+---
+layout: default
+title: Datasets
+nav_order: 2
+parent: Storage Guide
+---
 ## Neuromark
 
 Clinical similarities among brain disorders have been recognized for

@@ -1,3 +1,9 @@
+---
+layout: default
+title: List of software
+nav_order: 5
+has_children: true
+---
 -   [Modules](Modules)
 -   [GIFT](GIFT)
 -   [Globus](File_transfer_with_Globus)

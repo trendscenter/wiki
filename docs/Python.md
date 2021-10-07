@@ -1,3 +1,9 @@
+---
+layout: default
+title: Python
+nav_order: 2
+parent: List of software
+---
 ## Using Python module
 
 `# Load Python module`

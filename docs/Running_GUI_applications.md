@@ -1,3 +1,9 @@
+---
+layout: default
+title: Running GUI applications
+nav_order: 5
+parent: New User Guide
+---
 ## Install an X-window server
 
 To display graphical interface from the cluster, you have to use X11 or
@@ -34,13 +40,13 @@ programs, e.g. AFNI the same way.
 
 Log in to the cluster using MobaXterm:
 
-![<File:Mobax3.png>](Mobax3.png "File:Mobax3.png")
+![Mobax3>](/assets/images/mobax3.png)
 
 ### Run Xming
 
 Download Xming from <https://sourceforge.net/projects/xming/>. Once run,
 the Xming icon will be visible on the system tray:
-![<File:Xming.png>](Xming.png "fig:File:Xming.png")
+![Xming>](/assets/images/xming.png)
 
 ### Run the application
 
@@ -49,40 +55,43 @@ the Xming icon will be visible on the system tray:
 Run the following commands on MobaXterm while connected to the login
 node:
 
-`$ module load Framework/Matlab2019b`
-`$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab`
+```
+$ module load Framework/Matlab2019b
+$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
+```
 
-![<File:Mobax> matlab.png](Mobax_matlab.png "File:Mobax matlab.png")
+![matlab](/assets/images/mobax_matlab.png)
 
 #### Method 2 (via interactive mode)
 
 Run the following commands on MobaXterm while connected to the login
 node:
 
-`$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty --x11 /bin/bash `
-`$ module load Framework/Matlab2019b`
-`$ matlab &`
+```
+$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty --x11 /bin/bash 
+$ module load Framework/Matlab2019b
+$ matlab &
+```
 
-![<File:Mobax> matlab2.png](Mobax_matlab2.png "File:Mobax matlab2.png")
+![matlab2](/assets/images/mobax_matlab2.png)
 
-<figure>
-<img src="Matlab_xming.png" title="Matlab_xming.png" width="800" alt="Matlab_xming.png" /><figcaption aria-hidden="true">Matlab_xming.png</figcaption>
-</figure>
+![Matlab_xming](/assets/images/matlab_xming.png)
 
 ## Using VNC viewer
 
+[TBD]
+
 ## Using Git Bash
 
-Git for Windows (https://git-scm.com/downloads) provides a BASH
+[Git for Windows](https://git-scm.com/downloads) provides a BASH
 emulation used to run Git from the command line. \*NIX users should feel
 right at home, as the BASH emulation behaves just like the "git" command
-in LINUX and UNIX environments. The Git for Windows SDK
-(https://github.com/git-for-windows/build-extra/releases) is a build
+in LINUX and UNIX environments. The [Git for Windows SDK](https://github.com/git-for-windows/build-extra/releases) is a build
 environment that includes all the tools necessary for developers who
 want to contribute by writing code for Git for Windows.
 
 Please set the following environment variable in Git Bash/SDK, and run
-Xming (https://sourceforge.net/projects/xming/) before connecting to the
+[Xming](https://sourceforge.net/projects/xming/) before connecting to the
 cluster:
 
 `export DISPLAY=localhost:0.0`

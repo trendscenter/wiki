@@ -1,3 +1,9 @@
+---
+layout: default
+title: Cluster do's & don'ts
+nav_order: 9
+parent: New User Guide
+---
 ### Do limit the number of simultaneously running tasks
 
 If you want to run `N` tasks but not use the whole cluster and leave

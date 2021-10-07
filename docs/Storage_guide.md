@@ -1,3 +1,9 @@
+---
+layout: default
+title: Storage Guide
+nav_order: 3
+has_children: true
+---
 ## Home
 
 -   Home directory is where you log in to.

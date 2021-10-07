@@ -1,3 +1,9 @@
+---
+layout: default
+title: File transfer with Globus
+nav_order: 1
+parent: Storage Guide
+---
 ​Globus is a non-profit service for secure, reliable research data
 management (https://www.globus.org/).
 

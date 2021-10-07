@@ -1,3 +1,9 @@
+---
+layout: default
+title: Log in to the cluster
+nav_order: 2
+parent: New User Guide
+---
 ### Head/login node vs compute/worker nodes
 
 You must be connected to the [GSU VPN](Configure_VPN), or in

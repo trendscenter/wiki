@@ -1,3 +1,9 @@
+---
+layout: default
+title: Permissions
+nav_order: 1
+parent: Storage Guide
+---
 -   In general, files in the cluster are owned by `vcalhoun` user and
     `trd` group.
 -   Data access is controlled by access control list (ACL). To view the

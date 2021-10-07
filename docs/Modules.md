@@ -1,3 +1,9 @@
+---
+layout: default
+title: Modules
+nav_order: 1
+parent: List of software
+---
 ### Available modules (software)
 
 `$ module avail`

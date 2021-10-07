@@ -1,3 +1,9 @@
+---
+layout: default
+title: Configure SSH for easy access to DEV machines
+nav_order: 4
+parent: New User Guide
+---
 -   Please follow this guide:
     <https://docs.google.com/document/d/1C3IK38d5XiEIafktjJ6LxXVFMrj77unXm_9VAjGe3Ww/edit?usp=sharing>
 -   Annotated video:
@@ -9,35 +15,41 @@ The following should be set up on a local machine.
 
 Create an SSH config file like below and save in `~/.ssh/config` file:
 
-`host trendslogin`
-`   HostName trendslogin.gsu.edu`
-`   user `<campusID>
+```
+host trendslogin
+   HostName trendslogin.gsu.edu
+   user <campusID>
 
-`host devtrends01`
-`   HostName trendscn017.rs.gsu.edu`
-`   user `<campusID>
-`   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore`
-`   # ProxyJump trendslogin # on Unix, not needed anymore`
+host devtrends01
+   HostName trendscn017.rs.gsu.edu
+   user <campusID>
+   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore
+   # ProxyJump trendslogin # on Unix, not needed anymore
 
-`host trendsgndev01`
-`   HostName trendsgndev101.rs.gsu.edu`
-`   user `<campusID>
-`   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore`
-`   # ProxyJump trendslogin # on Unix, not needed anymore`
+host trendsgndev01
+   HostName trendsgndev101.rs.gsu.edu
+   user <campusID>
+   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore
+   # ProxyJump trendslogin # on Unix, not needed anymore
 
-`host trendsgndev02`
-`   HostName trendsagn019.rs.gsu.edu`
-`   user `<campusID>
-`   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore`
-`   # ProxyJump trendslogin # on Unix, not needed anymore`
+host trendsgndev02
+   HostName trendsagn019.rs.gsu.edu
+   user <campusID>
+   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore
+   # ProxyJump trendslogin # on Unix, not needed anymore
+```
 
 Create SSH keys:
 
-`$ ssh-keygen -t rsa`
+```
+$ ssh-keygen -t rsa
+```
 
 Copy the key to the server:
 
-`$ ssh-copy-id trendslogin`
+```
+$ ssh-copy-id trendslogin
+```
 
 If `ssh-copy-id` is not available in your local machine, open the file
 `~/.ssh/authorized_keys` <i>on the cluster</i> manually, and append the
@@ -47,10 +59,12 @@ machine</i> to it.
 Test the configuration, you should now be able to login without having
 to type password:
 
-`$ ssh -XY trendslogin`
-`$ ssh -XY devtrends01`
-`$ ssh -XY trendsgndev01`
-`$ ssh -XY trendsgndev02`
+```
+$ ssh -XY trendslogin
+$ ssh -XY devtrends01
+$ ssh -XY trendsgndev01
+$ ssh -XY trendsgndev02
+```
 
 ## Remote coding in Visual Studio Code
 

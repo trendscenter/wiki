@@ -1,3 +1,9 @@
+---
+layout: default
+title: Choosing job resources
+nav_order: 2
+parent: SLURM Overview
+---
 Suppose we start an interactive session like so:
 
 `$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g -t60 --pty --x11 /bin/bash`

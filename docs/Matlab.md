@@ -39,17 +39,20 @@ $ matlab &
 
 ```
 # start an interactive session
-[msalman@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -c1 -t60 --pty --x11 /bin/bash                       
+[<campusID>@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -c1 -t60 --pty --x11 /bin/bash                       
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : PSYC0002
 ...
-[msalman@trendscn013 ~]$ cd /data/users2/salman/public/gsu_jobs_live/current/src/
-[msalman@trendscn013 src]$ ls
+[<campusID>@trendscn013 ~]$ cd /data/users1/salman/public/gsu_jobs_live/current/src/
+[<campusID>@trendscn013 src]$ ls
 array_aggregate_result_example.m  array_example.m  array_viz_example.m  parpool_example.m  simple_example.m
+```
 
-# execute the script
-[msalman@trendscn013 src]$ matlab -batch 'simple_example' -nodisplay
+Execute the script:
+
+```
+[<campusID>@trendscn013 src]$ matlab -batch 'simple_example' -nodisplay
 evaluating CalinskiHarabasz for K=2
 cvi = 3.8406
 ...
@@ -67,19 +70,23 @@ DONE!
 
 ### Use Matlab command prompt in bash
 
+Start an interactive session:
+
 ```
-# start an interactive session
-[msalman@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -t60 --pty --x11 /bin/bash                       
+[<campusID>@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -t60 --pty --x11 /bin/bash                       
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : PSYC0002
 ...
-[msalman@trendscn013 ~]$ cd /data/users2/salman/public/gsu_jobs_live/current/src/
-[msalman@trendscn013 src]$ ls
+[<campusID>@trendscn013 ~]$ cd /data/users2/salman/public/gsu_jobs_live/current/src/
+[<campusID>@trendscn013 src]$ ls
 array_aggregate_result_example.m  array_example.m  array_viz_example.m  parpool_example.m  simple_example.m
+```
 
-# start Matlab without display
-[msalman@trendscn013 src]$ matlab -nodisplay
+Start Matlab without display:
+
+```
+[<campusID>@trendscn013 src]$ matlab -nodisplay
 
                                                                                              < M A T L A B (R) >
                                                                                    Copyright 1984-2019 The MathWorks, Inc.
@@ -89,13 +96,19 @@ array_aggregate_result_example.m  array_example.m  array_viz_example.m  pa
 
 To get started, type doc.
 For product information, visit www.mathworks.com.
+```
 
-# use the command prompt like you normally would in a GUI
+Use the command prompt like you normally would in a GUI:
+
+```
 >> ls
 array_aggregate_result_example.m  array_viz_example.m  simple_example.m
 array_example.m                   parpool_example.m
+```
 
-# execute a script
+Execute a script:
+
+```
 >> simple_example
 evaluating CalinskiHarabasz for K=2
 cvi = 3.8406
@@ -110,8 +123,11 @@ Warning: MATLAB cannot use OpenGL for printing when started with the
   In export_fig (line 606)
   In simple_example (line 50)
 DONE!
+```
 
-# check variables in the workspace
+Check variables in the workspace:
+
+```
 >> whos
   Name               Size             Bytes  Class                                         Attributes
 

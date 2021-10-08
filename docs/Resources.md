@@ -2,7 +2,6 @@
 layout: default
 title: Resources
 nav_order: 8
-has_children: true
 ---
 -   Slack and support
     -   [TReNDS slack channel](http://trendscenter.slack.com/#hpc-tips)

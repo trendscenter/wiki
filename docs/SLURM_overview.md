@@ -36,17 +36,19 @@ The TReNDS cluster uses SLURM workload manager. From
 
 ### `sinfo`: What partitions exist on the system
 
-`[msalman@trendslogin01 ~]$ sinfo`
-`PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST`
-`qTRD         up 5-08:00:00      3    mix trendscn001.rs.gsu.edu,trendscn004.rs.gsu.edu,trendscn008.rs.gsu.edu`
-`qTRD         up 5-08:00:00      7  alloc trendscn010.rs.gsu.edu,trendscn011.rs.gsu.edu,trendscn012.rs.gsu.edu,trendscn013.rs.gsu.edu,trendscn014.rs.gsu.edu,trendscn015.rs.gsu.edu,trendscn016.rs.gsu.edu`
-`qTRD         up 5-08:00:00      6   idle trendscn002.rs.gsu.edu,trendscn003.rs.gsu.edu,trendscn005.rs.gsu.edu,trendscn006.rs.gsu.edu,trendscn007.rs.gsu.edu,trendscn009.rs.gsu.edu`
-`qTRDEV       up 5-02:00:00      2   idle trendscn019.rs.gsu.edu,trendscn020.rs.gsu.edu`
-`qTRDHM       up 5-08:00:00      3   idle trendsmn001.rs.gsu.edu,trendsmn002.rs.gsu.edu,trendsmn003.rs.gsu.edu`
-`qTRDGPUH     up 5-08:00:00      1  alloc trendsgn001.rs.gsu.edu`
-`qTRDGPUH     up 5-08:00:00      1   idle trendsgn002.rs.gsu.edu`
-`qTRDGPUL     up 1-00:00:00      1  alloc trendsgn001.rs.gsu.edu`
-`qTRDGPUL     up 1-00:00:00      1   idle trendsgn002.rs.gsu.edu`
+```
+[msalman@trendslogin01 ~]$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+qTRD         up 5-08:00:00      3    mix trendscn001.rs.gsu.edu,trendscn004.rs.gsu.edu,trendscn008.rs.gsu.edu
+qTRD         up 5-08:00:00      7  alloc trendscn010.rs.gsu.edu,trendscn011.rs.gsu.edu,trendscn012.rs.gsu.edu,trendscn013.rs.gsu.edu,trendscn014.rs.gsu.edu,trendscn015.rs.gsu.edu,trendscn016.rs.gsu.edu
+qTRD         up 5-08:00:00      6   idle trendscn002.rs.gsu.edu,trendscn003.rs.gsu.edu,trendscn005.rs.gsu.edu,trendscn006.rs.gsu.edu,trendscn007.rs.gsu.edu,trendscn009.rs.gsu.edu
+qTRDEV       up 5-02:00:00      2   idle trendscn019.rs.gsu.edu,trendscn020.rs.gsu.edu
+qTRDHM       up 5-08:00:00      3   idle trendsmn001.rs.gsu.edu,trendsmn002.rs.gsu.edu,trendsmn003.rs.gsu.edu
+qTRDGPUH     up 5-08:00:00      1  alloc trendsgn001.rs.gsu.edu
+qTRDGPUH     up 5-08:00:00      1   idle trendsgn002.rs.gsu.edu
+qTRDGPUL     up 1-00:00:00      1  alloc trendsgn001.rs.gsu.edu
+qTRDGPUL     up 1-00:00:00      1   idle trendsgn002.rs.gsu.edu
+```
 
 The example shows the following:
 
@@ -76,24 +78,26 @@ it is still pending. Typical reasons for pending jobs are Resources
 (waiting for resources to become available) and Priority (queued behind
 a higher priority job).
 
-`[msalman@trendslogin01 ~]$ squeue`
-`            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)`
-`376056_[401-3110%4     qTRD   airaji   airaji PD       0:00      1 (JobArrayTaskLimit)`
-`           374007      qTRD  jchen84  jchen84  R 1-13:54:30      1 trendscn008.rs.gsu.edu`
-`           374001      qTRD  jchen84  jchen84  R 1-13:55:00      1 trendscn008.rs.gsu.edu`
-`           341999      qTRD     bash    kduan  R 4-12:46:16      1 trendscn012.rs.gsu.edu`
-`           340583      qTRD     bash  jfries1  R 5-00:22:49      1 trendscn012.rs.gsu.edu`
-`           357922    qTRDHM     bash     lwu9  R 2-11:03:01      1 trendsmn001.rs.gsu.edu`
-`           376467      qTRD     bash  jfries1  R      35:11      1 trendscn013.rs.gsu.edu`
-`      370623_2896    qTRDHM   airaji   airaji  R 1-11:52:52      1 trendsmn002.rs.gsu.edu`
-`      370623_2890    qTRDHM   airaji   airaji  R 1-11:53:25      1 trendsmn002.rs.gsu.edu`
-`      370623_2845    qTRDHM   airaji   airaji  R 1-11:57:26      1 trendsmn002.rs.gsu.edu`
-`       376056_302      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu`
-`       376056_303      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu`
-`       376056_304      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu`
-`        370623_75    qTRDHM   airaji   airaji  R 1-16:38:16      1 trendsmn002.rs.gsu.edu`
-`        370623_78    qTRDHM   airaji   airaji  R 1-16:38:16      1 trendsmn002.rs.gsu.edu`
-`           356439    qTRDHM     bash     lwu9  R 2-13:29:43      1 trendsmn001.rs.gsu.edu`
+```
+[msalman@trendslogin01 ~]$ squeue
+            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+376056_[401-3110%4     qTRD   airaji   airaji PD       0:00      1 (JobArrayTaskLimit)
+           374007      qTRD  jchen84  jchen84  R 1-13:54:30      1 trendscn008.rs.gsu.edu
+           374001      qTRD  jchen84  jchen84  R 1-13:55:00      1 trendscn008.rs.gsu.edu
+           341999      qTRD     bash    kduan  R 4-12:46:16      1 trendscn012.rs.gsu.edu
+           340583      qTRD     bash  jfries1  R 5-00:22:49      1 trendscn012.rs.gsu.edu
+           357922    qTRDHM     bash     lwu9  R 2-11:03:01      1 trendsmn001.rs.gsu.edu
+           376467      qTRD     bash  jfries1  R      35:11      1 trendscn013.rs.gsu.edu
+      370623_2896    qTRDHM   airaji   airaji  R 1-11:52:52      1 trendsmn002.rs.gsu.edu
+      370623_2890    qTRDHM   airaji   airaji  R 1-11:53:25      1 trendsmn002.rs.gsu.edu
+      370623_2845    qTRDHM   airaji   airaji  R 1-11:57:26      1 trendsmn002.rs.gsu.edu
+       376056_302      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu
+       376056_303      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu
+       376056_304      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu
+        370623_75    qTRDHM   airaji   airaji  R 1-16:38:16      1 trendsmn002.rs.gsu.edu
+        370623_78    qTRDHM   airaji   airaji  R 1-16:38:16      1 trendsmn002.rs.gsu.edu
+           356439    qTRDHM     bash     lwu9  R 2-13:29:43      1 trendsmn001.rs.gsu.edu
+```
 
 `squeue` command has many options to view more detail information:
 <https://slurm.schedmd.com/squeue.html>

@@ -49,13 +49,13 @@ programs, e.g. AFNI the same way.
 
 Log in to the cluster using MobaXterm:
 
-![Mobax3>](/assets/images/mobax3.png)
+![Mobax3](/assets/images/mobax3.png)
 
 ### Run Xming
 
 Download Xming from <https://sourceforge.net/projects/xming/>. Once run,
 the Xming icon will be visible on the system tray:
-![Xming>](/assets/images/xming.png)
+![Xming](/assets/images/xming.png)
 
 ### Run the application
 

@@ -36,43 +36,46 @@ parent: List of software
 
 ### The `JobSubmit.sh` file
 
-`#!/bin/bash`
-`#SBATCH -N 1`
-`#SBATCH -n 1`
-`#SBATCH -c 10`
-`#SBATCH --mem=50g`
-`#SBATCH --gres=gpu:v100:1`
-`#SBATCH -p qTRDGPUH`
-`#SBATCH -t 4-00`
-`#SBATCH -J `<job name>
-`#SBATCH -e error%A-%a.err`
-`#SBATCH -o out%A-%a.out`
-`#SBATCH -A PSYC0002`
-`#SBATCH --oversubscribe`
-`#SBATCH --mail-type=ALL`
-`#SBATCH --mail-user=`<email address>
+```
+#!/bin/bash
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 10
+#SBATCH --mem=50g
+#SBATCH --gres=gpu:v100:1
+#SBATCH -p qTRDGPUH
+#SBATCH -t 4-00
+#SBATCH -J <job name>
+#SBATCH -e error%A-%a.err
+#SBATCH -o out%A-%a.out
+#SBATCH -A PSYC0002
+#SBATCH --oversubscribe
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=<email address>
 
-`sleep 5s`
+sleep 5s
 
-`export OMP_NUM_THREADS=1`
-`export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/`
-`echo $HOSTNAME >&2`
+export OMP_NUM_THREADS=1
+export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
+echo $HOSTNAME >&2
 
-`source `<path to conda installation>`/bin/activate `<name/path of conda environment>
+source <path to conda installation>/bin/activate <name/path of conda environment>
 
-`python script.py --arg1 $SLURM_ARRAY_TASK_ID &`
-`python script.py --arg1 $SLURM_ARRAY_TASK_ID &`
-`wait`
+python script.py --arg1 $SLURM_ARRAY_TASK_ID &
+python script.py --arg1 $SLURM_ARRAY_TASK_ID &
+wait
 
-`sleep 10s`
+sleep 10s
+```
 
 ### Submitting the job
 
-` sbatch --array=1-8%2 JobSubmit.sh`
+`sbatch --array=1-8%2 JobSubmit.sh`
 
 ## Start interactive mode/terminal/bash on GPU worker/compute nodes
 
 *can be run on the login node*
-
-`# Start interactive mode on a GPU worker node`
-`$ srun -p qTRDGPUH -A PSYC0002 -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash`
+```
+# Start interactive mode on a GPU worker node
+$ srun -p qTRDGPUH -A PSYC0002 -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash
+```

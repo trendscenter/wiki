@@ -5,7 +5,7 @@ nav_order: 3
 parent: Storage Guide
 ---
 scp - secure copy (remote file copy program) command copies files
-between hosts on a network (https://linux.die.net/man/1/scp).
+between hosts on a network [https://linux.die.net/man/1/scp](https://linux.die.net/man/1/scp).
 
 ### Examples
 

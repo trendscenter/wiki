@@ -35,20 +35,19 @@ how to use different software, and the list of all software available as
 
 ### Example SLURM scripts
 
-Check out the [SLURM overview](Workload_manager_overview) and
+Check out the [SLURM overview](SLURM_overview) and
 [example SLURM scripts](Example_SLURM_scripts)
 
 ### Interactive applications
 
-Check out [Running GUI
-applications](Running_GUI_applications#Method_2_.28via_interactive_mode.29)
+Check out [Running GUI applications](Running_GUI_applications#Method_2_.28via_interactive_mode.29)
 to learn how to run interactive command line and GUI applications on the
 cluster.
 
 ### Troubleshooting
 
-Check out the [List of frequently asked
-questions](List_of_frequently_asked_questions). If you are
+Check out the [frequently asked
+questions](FAQ). If you are
 running into issues, please document specifically what you tried and
 what error you encountered, and ask for help in one of these channels:
 

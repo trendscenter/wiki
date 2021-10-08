@@ -100,16 +100,50 @@ a higher priority job).
 
 ### `srun`: Create a resource allocation and launch the tasks for a job step
 
-This example launches bash/shell in a compute node in the qTRD
-partition. One task per node is used by default.
+Running the following command will launch bash/shell in a compute node.
 
-`$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty --x11 /bin/bash`
+```
+[campusID@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty --x11 /bin/bash
+srun: defined options
+srun: -------------------- --------------------
+srun: account             : PSYC0002
+srun: mem                 : 10G
+srun: ntasks              : 1
+srun: partition           : qTRD
+srun: pty                 : set
+srun: verbose             : 1
+srun: x11                 : all
+srun: -------------------- --------------------
+srun: end of defined options
+srun: Waiting for nodes to boot (delay looping 450 times @ 0.100000 secs x index)
+srun: Nodes trendscn001.rs.gsu.edu are ready for job
+srun: jobid 4011166: nodes(1):`trendscn001.rs.gsu.edu', cpu counts: 1(x1)
+srun: CpuBindType=(null type)
+srun: launching 4011166.0 on host trendscn001.rs.gsu.edu, 1 tasks: 0
+srun: route default plugin loaded
+srun: Node trendscn001.rs.gsu.edu, 1 tasks started
+[campusID@trendscn001 ~]$
+```
 
-This example launches Matlab GUI in a compute node in the qTRD
+**Explanation**:
+- `-p qTRD`: partition to run job on. See [Cluster & queue information](Cluster_queue_information) page for more information
+- `-A PSYC0002`:  user group. See [Request an account](Request_an_account) page for list of groups
+- `-v`: verbose mode
+- `-n1`: number of tasks to run. Set to 1 unless needed. See [Granular resource allocation with srun](Example_SLURM_scripts#granular-resource-allocation-with-srun) for example.
+- `--mem=10g`: amount of memory requested (10 gigabytes)
+- `--pty`: executes task in pseudo terminal mode
+- `--x11`: sets up X11 forwarding (for GUI applications)
+- `/bin/bash`: the program to run, in this case `bash`
+
+After running the command, observe the output to see if what you requested is actually allocated (under `defined options`). Notice the last line `srun: Node trendscn001.rs.gsu.edu, 1 tasks started`, which means the task started successfully on a compute node `trendscn001.rs.gsu.edu`, hence the prompt has changed to `campusID@trendscn001`. Otherwise if there is an error, observe the output for possible reasons.
+
+The following command launches Matlab GUI in a compute node in the qTRD
 partition, allocates 1 cpu and 10GB memory.
 
-`$ module load Framework/Matlab2019b`
-`$ srun -p qTRDEV -A PSYC0002 -v -n1 -c1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab`
+```
+$ module load Framework/Matlab2019b
+$ srun -p qTRDEV -A PSYC0002 -v -n1 -c1 --mem=10g --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
+```
 
 `srun` command has many options available to control what resource are
 allocated and how tasks are distributed across those resources:

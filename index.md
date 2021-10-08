@@ -16,9 +16,9 @@ documentation](https://docs.pace.gatech.edu/).
 Before you start, please take a look at this documentation and this page in particular: [Getting Started](docs/Getting_Started)
 
 It may look overwhelming but in fact, the rules are simple:
-- Run your jobs only through SLURM
+- Run your jobs ONLY through SLURM
 - Experiment and develop on development nodes (we have 2 CPU nodes designated for that and one GPU node)
-- Never ever run any computation on the login node 🙂
+- NEVER EVER run any computation on the login node 🙂
 
 The other details are in the documentation. Also, you may want to join our cluster slack channel [#hpc-tips](http://trendscenter.slack.com/#hpc-tips) to ask questions if in trouble.
 

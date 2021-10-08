@@ -15,6 +15,56 @@ parent: SLURM Overview
 
 ## Job submission overview
 
+You can use SLURM in different ways to submit jobs:
+
+- Interactive mode: [see here for an example](SLURM_overview#srun-create-a-resource-allocation-and-launch-the-tasks-for-a-job-step).
+- GUI applications: [see here for an example](Running_GUI_applications#run-the-application)
+- `sbatch` scripts: [see below for an example](Job_submission#sbatch-scripting-guide).
+
+## SBATCH scripting guide
+
+See the following example with annotations. 
+
+```
+#!/bin/bash
+#SBATCH -N 1            # number of requested nodes. Set to 1 unless needed.  
+#SBATCH -n 1            # number of tasks to run. Set to 1 unless needed. See granular resource allocation below for example.
+#SBATCH -c 1            # number of requested CPUs
+#SBATCH --mem=10g       # amount of memory requested (g=gigabytes)
+#SBATCH -p qTRD         # partition to run job on. See "cluster and queue information" page for more information.
+#SBATCH -t 1440         # time in minutes. After set time the job will be cancelled. See "cluster and queue information" page for limits.
+#SBATCH -J <job name>
+#SBATCH -e error%A.err  # errors will be written to this file. If saving this file in a separate folder, make sure the folder exists, or the job will fail
+#SBATCH -o out%A.out    # output will be written to this file. If saving this file in a separate folder, make sure the folder exists, or the job will fail
+#SBATCH -A PSYC0002     # user group. See "requesting an account" page for list of groups
+#SBATCH --mail-type=ALL # types of emails to send out. See SLURM documentation for more possible values
+#SBATCH --mail-user=<email address> # set this email address to receive updates about the job
+#SBATCH --oversubscribe # see SLURM documentation for explanation
+
+# it is a good practice to add small delay at the beginning and end of the job- helps to preserve stability of SLURM controller when large number of jobs fail simultaneously 
+sleep 10s
+
+# number of threads for certain C libraries. Leave it like this unless necessary
+export OMP_NUM_THREADS=1
+# location of module files. In case the allocated node fails to initiate properly, this is help load the modules and run the job
+export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
+# for debugging purpose- in case the job fails, you know where to look for possible cause
+echo $HOSTNAME >&2
+
+# run the actual job
+module load Framework/Matlab2019b
+echo matlab -batch 'simple_example'
+
+# delay at the end (good practice)
+sleep 30s
+```
+
+Save the above script in your `/data/user*/<your name>` directory as `JobSubmit.sh` and modify as needed. Then submit the job using the following command:
+
+`$ sbatch JobSubmit.sh`
+
+Then use the commands in the following controlling jobs section to keep tabs on the job.
+
 ## Controlling jobs
 
 The following commands can be run on the login node:
@@ -36,10 +86,10 @@ $ squeue -j `<jobID>
 $ scancel `<jobID>
 ```
 
-## SBATCH scripting guide
-
 ## Multiple jobs with job arrays
+
+[TBD]
 
 ## Sample SBATCH scripts
 
-Please see [Example_SLURM_scripts](Example_SLURM_scripts)
+Please see [Example SLURM scripts](Example_SLURM_scripts)

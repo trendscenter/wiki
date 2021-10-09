@@ -64,20 +64,20 @@ $ cd /data/users2/salman/mind/data/
 $ mkdir ica_example/
 ```
 
-![Gift_select](/assets/images/gift_select.png)
+![Gift_select]({{ site.baseurl }}/assets/images/gift_select.png)
 
 Select all subject data and all the ICA options.
 
-![Gift_subject](/assets/images/Gift_subject.png)
+![Gift_subject]({{ site.baseurl }}/assets/images/Gift_subject.png)
 
 Click the "Run Analysis" button in the GIFT window and start the
 analysis.
 
-![Gift_run](/assets/images/gift_run.png)
+![Gift_run]({{ site.baseurl }}/assets/images/gift_run.png)
 
 Once analysis is done, visualize the output.
 
-![gift_result](/assets/images/gift_result.png)
+![gift_result]({{ site.baseurl }}/assets/images/gift_result.png)
 
 ## Using GIFT Batch Scripts
 

@@ -13,4 +13,4 @@ interface: <https://filezilla-project.org/>
 Make sure you are connected to GSU VPN, then add a new site to FileZilla
 as follows.
 
-![Filezilla.png](/assets/images/filezilla.png)
+![Filezilla.png]({{ site.baseurl }}/assets/images/filezilla.png)

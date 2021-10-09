@@ -49,13 +49,13 @@ programs, e.g. AFNI the same way.
 
 Log in to the cluster using MobaXterm:
 
-![Mobax3](/assets/images/mobax3.png)
+![Mobax3]({{ site.baseurl }}/assets/images/mobax3.png)
 
 ### Run Xming
 
 Download Xming from <https://sourceforge.net/projects/xming/>. Once run,
 the Xming icon will be visible on the system tray:
-![Xming](/assets/images/xming.png)
+![Xming]({{ site.baseurl }}/assets/images/xming.png)
 
 ### Run the application
 
@@ -69,7 +69,7 @@ $ module load Framework/Matlab2019b
 $ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
 ```
 
-![matlab](/assets/images/mobax_matlab.png)
+![matlab]({{ site.baseurl }}/assets/images/mobax_matlab.png)
 
 #### Method 2 (via interactive mode)
 
@@ -82,9 +82,9 @@ $ module load Framework/Matlab2019b
 $ matlab &
 ```
 
-![matlab2](/assets/images/mobax_matlab2.png)
+![matlab2]({{ site.baseurl }}/assets/images/mobax_matlab2.png)
 
-![Matlab_xming](/assets/images/matlab_xming.png)
+![Matlab_xming]({{ site.baseurl }}/assets/images/matlab_xming.png)
 
 ## Using VNC viewer
 

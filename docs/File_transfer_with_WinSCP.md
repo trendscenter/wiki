@@ -12,4 +12,4 @@ WinSCP is a popular SFTP client and FTP client for Microsoft Windows:
 Make sure you are connected to GSU VPN, then add a new site to WinSCP as
 follows.
 
-![Site.png](/assets/images/site.png)
+![Site.png]({{ site.baseurl }}/assets/images/site.png)

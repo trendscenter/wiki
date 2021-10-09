@@ -83,19 +83,19 @@ $ ssh -XY <campusID>@trendslogin.gsu.edu
 
 Download MobaXterm from <https://mobaxterm.mobatek.net/>
 
-![Mobax2.png](/assets/images/mobax2.png)
+![Mobax2.png]({{ site.baseurl }}/assets/images/mobax2.png)
 
-![Mobax3.png](/assets/images/mobax3.png)
+![Mobax3.png]({{ site.baseurl }}/assets/images/mobax3.png)
 
 ### Putty
 
 Download Putty from
 <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
 
-![Putty1.png](/assets/images/putty1.png)
-![Putty2.png](/assets/images/putty2.png)
+![Putty1.png]({{ site.baseurl }}/assets/images/putty1.png)
+![Putty2.png]({{ site.baseurl }}/assets/images/putty2.png)
 
-![Putty3.png](/assets/images/putty3.png)
+![Putty3.png]({{ site.baseurl }}/assets/images/putty3.png)
 
 ### Mac
 

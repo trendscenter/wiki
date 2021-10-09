@@ -9,7 +9,7 @@ interactively on the GSU/TReNDS cluster. This is heavily influenced by
 the [Georgia Tech PACE cluster
 documentation](https://docs.pace.gatech.edu/).
 
-![clusterFlow](/assets/images/clusterFlow.jpg)
+![clusterFlow]({{ site.baseurl }}/assets/images/clusterFlow.jpg)
 
 ## New to the cluster?
 

@@ -44,6 +44,11 @@ aux_links:
   "GitHub":
     - "//github.com/trendscenter/wiki"
 
+# Google Analytics Tracking (optional)
+# e.g, UA-1234567-89
+ga_tracking: G-SLJHQH9MHX
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true by default)
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

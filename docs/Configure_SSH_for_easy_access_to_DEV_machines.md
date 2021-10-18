@@ -41,7 +41,7 @@ host trendsgndev01
    # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore
    # ProxyJump trendslogin # on Unix, not needed anymore
 
-host trendsgndev02
+host devtrendsgpu
    HostName trendsagn019.rs.gsu.edu
    user <campusID>
    # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore

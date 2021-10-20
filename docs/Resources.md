@@ -6,7 +6,7 @@ nav_order: 8
 -   Slack and support
     -   [TReNDS slack channel](http://trendscenter.slack.com/#hpc-tips)
     -   [GSU-HPC slack channel](https://gsu-hpc.slack.com/)
-    -   [GSU-HPC issue tracker](https://hydra.gsu.edu/) (contact Eric
+    -   [GSU-HPC issue tracker](https://hydra.rs.gsu.edu/) (contact Eric
         Verner <everner> to get added to the TReNDS subproject)
 -   [SLURM documentation](https://slurm.schedmd.com/documentation.html)
     -   [sinfo](https://slurm.schedmd.com/sinfo.html)

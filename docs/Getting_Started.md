@@ -53,6 +53,6 @@ what error you encountered, and ask for help in one of these channels:
 
 -   [TReNDS slack channel](http://trendscenter.slack.com/#hpc-tips)
 -   [GSU-HPC slack channel](https://gsu-hpc.slack.com/)
--   [GSU-HPC issue tracker](https://hydra.gsu.edu/) (contact Eric Verner
+-   [GSU-HPC issue tracker](https://hydra.rs.gsu.edu/) (contact Eric Verner
     <everner> to get added to the TReNDS subproject). Please remember to
     close tickets once they are resolved.

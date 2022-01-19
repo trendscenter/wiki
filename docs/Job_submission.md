@@ -88,7 +88,63 @@ $ scancel `<jobID>
 
 ## Multiple jobs with job arrays
 
-[TBD]
+You can submit a number of identical jobs (e.g. fMRI preprocessing) using the SLURM job array feature (https://slurm.schedmd.com/job_array.html).
+The number or maximum jobs that can be submitted is 5000. 
+Please see [this example](Example_SLURM_scripts#running-more-jobs-than-the-array-size-limit) if you need to submit more than that.
+
+### Submitting job arrays
+
+```
+# submit 100 jobs, run 10 at a time. Please use a sensible limit and leave resources for the others.
+$ sbatch --array=1-100%10 JobSubmit.sh
+
+# submit 100 jobs without limitation
+$ sbatch --array=1-100 JobSubmit.sh
+
+# run particular tasks 
+$ sbatch --array=2,4,8,16,32,65  JobSubmit.sh
+```
+
+### Modifying job arrays
+
+Running the following command will update the task limit (e.g. `%10` in the above section) of a running array.
+
+```
+$ scontrol update ArrayTaskThrottle=<count> JobId=<jobID>
+```
+
+### Input and output files
+
+You can add/edit the following in the job submission script so that `%A` and `%a` will be replaced by the job ID and the array task ID, respectively. 
+
+```
+#SBATCH --output=out%A_%a.out
+#SBATCH --error=error%A_%a.err
+```
+
+### The array ID index
+
+SLURM provides an environment variable `$SLURM_ARRAY_TASK_ID` which you can reference inside your script to control input and output. Following are some examples (adapted from [here](https://help.rc.ufl.edu/doc/SLURM_Job_Arrays#Using_the_array_ID_Index)):
+
+```
+# read a particular input file in a folder containing *.txt files 
+$ file=$(ls *.txt | sed -n ${SLURM_ARRAY_TASK_ID}p)
+$ myscript -i $file
+
+# read a particular line from an input file containing a list of IDs
+ID_LIST=($(<input.csv))
+ID=${ID_LIST[${SLURM_ARRAY_TASK_ID}]}
+
+# use array ID in a python script
+> import sys
+> task_id = sys.getenv('SLURM_ARRAY_TASK_ID') 
+
+# use array ID in a Matlab script
+> task_id = getenv('SLURM_ARRAY_TASK_ID') 
+
+# use array ID in an R script
+> task_id <- Sys.getenv("SLURM_ARRAY_TASK_ID")
+```
 
 ## Sample SBATCH scripts
 

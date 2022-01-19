@@ -25,3 +25,4 @@ has_children: true
 -   [tcsh](Tcsh)
 -   [tmux](Tmux)
 -   [Visual Studio Code](Visual_Studio_Code)
+-   [VNC](VNC)

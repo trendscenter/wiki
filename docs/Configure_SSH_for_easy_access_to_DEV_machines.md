@@ -22,33 +22,30 @@ parent: Getting Started
 
 The following should be set up on a local machine.
 
-Create an SSH config file like below and save in `~/.ssh/config` file:
+Create an SSH config file like below and save in `~/.ssh/config` file. 
+On Windows machines, `~` corresponds to `C:\Users\<your_name>\` directory, so you should create the file `C:\Users\<your_name>\.ssh\config`.
+Note that the file name does not have any extension like `.txt`.  
 
 ```
 host trendslogin
-   HostName trendslogin.gsu.edu
-   user <campusID>
+    HostName trendslogin.gsu.edu
+    user <campusID>
 
 host devtrends01
-   HostName trendscn017.rs.gsu.edu
-   user <campusID>
-   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore
-   # ProxyJump trendslogin # on Unix, not needed anymore
+    HostName trendscn017.rs.gsu.edu
+    user <campusID>
+    LocalForward <port> localhost:<port>
 
 host trendsgndev01
-   HostName trendsgndev101.rs.gsu.edu
-   user <campusID>
-   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore
-   # ProxyJump trendslogin # on Unix, not needed anymore
+    HostName trendsgndev101.rs.gsu.edu
+    user <campusID>
 
 host devtrendsgpu
-   HostName trendsagn019.rs.gsu.edu
-   user <campusID>
-   # ProxyCommand C:\\Windows\\System32\\OpenSSH\\ssh.exe -W -XY %h:%p trendslogin # on Windows, not needed anymore
-   # ProxyJump trendslogin # on Unix, not needed anymore
+    HostName trendsagn019.rs.gsu.edu
+    user <campusID>
 ```
 
-Create SSH keys:
+Now run the following command to create SSH keys:
 
 ```
 $ ssh-keygen -t rsa
@@ -73,6 +70,17 @@ $ ssh -XY trendslogin
 $ ssh -XY devtrends01
 $ ssh -XY trendsgndev01
 $ ssh -XY trendsgndev02
+```
+
+## Forwarding a port
+
+Update the ssh config like below to forward a port:
+
+```
+host devtrendsgpu
+    HostName trendsagn019.rs.gsu.edu
+    user <campusID>
+    LocalForward <port> localhost:<port>
 ```
 
 ## Remote coding in Visual Studio Code

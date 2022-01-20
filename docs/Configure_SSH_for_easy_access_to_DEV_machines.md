@@ -72,7 +72,7 @@ $ ssh -XY trendsgndev01
 $ ssh -XY trendsgndev02
 ```
 
-## Forwarding a port
+## Forwarding a port (tunneling)
 
 Update the ssh config like below to forward a port:
 

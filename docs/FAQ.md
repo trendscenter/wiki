@@ -189,7 +189,7 @@ immediately allocated. To view the priority, use `sprio -l` command. To
 learn more about the fair tree algorithm, [see
 this](https://slurm.schedmd.com/fair_tree.html).
 
-### Starting Matlab parallel pool is causing segmentation fault...
+### Starting Matlab parallel pool is causing Java out of memory error and/or segmentation fault...
 
 Try the following command before starting Matlab-
 

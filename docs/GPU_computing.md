@@ -15,15 +15,21 @@ parent: List of software
 
 ## GPU queue/partitions
 
-| Partitions                                    | Nodes                                           | Time limit | Priority | CPUs  | Memory     | GPUs                | Limitations         | Preemption |
-|-----------------------------------------------|-------------------------------------------------|------------|----------|-------|------------|---------------------|---------------------|------------|
-| qTRDGPUH                                      | trendsdgx001.rs.gsu.edu-trendsdgx004.rs.gsu.edu | 5d 8h      | high     | 40    | 512GB      | gpu:v100:8          | Max 4 GPUs per user | N/A        |
-| trendsgn001.rs.gsu.edu-trendsgn002.rs.gsu.edu | 5d 8h                                           | high       | 40       | 192GB | gpu:v100:4 | Max 4 GPUs per user | N/A                 |            |
-| qTRDGPUM                                      | trendsdgx001.rs.gsu.edu-trendsdgx004.rs.gsu.edu | 5d 8h      | medium   | 40    | 512GB      | gpu:v100:8          | Max 8 GPUs per user | suspend    |
-| trendsgn001.rs.gsu.edu-trendsgn002.rs.gsu.edu | 5d 8h                                           | medium     | 40       | 192GB | gpu:v100:4 | Max 8 GPUs per user | suspend             |            |
-| qTRDGPUL                                      | trendsdgx001.rs.gsu.edu-trendsdgx004.rs.gsu.edu | 5d 8h      | low      | 40    | 512GB      | gpu:v100:8          | N/A                 | suspend    |
-| trendsgn001.rs.gsu.edu-trendsgn002.rs.gsu.edu | 5d 8h                                           | low        | 40       | 192GB | gpu:v100:4 | N/A                 | suspend             |            |
-| qTRDGPU                                       | trendsagn001.rs.gsu.edu-trendsagn020.rs.gsu.edu | 5d 8h      | N/A      | 64    | 512GB      | gpu:gforce:1        | N/A                 | N/A        |
+| Partitions     | GPUs                | Nodes         | CPUs  | Memory     | Time limit | 
+|----------------|---------------------|---------------|------------|-------|------------|
+| qTRDGPU[H/M/L] | gpu:v100:8          | dgx001-dgx004 | 40    | 512GB      | 5d 8h      |
+|                | gpu:v100:4          | gn001-gn002   | 40    | 192GB      | 5d 8h      |
+|                | gpu:a100:8          | dgxa001       | 40    | 1TB        | 5d 8h      |
+| qTRDGPU        | gpu:gforce:1        | agn001-agn020 | 64    | 512GB      | 5d 8h      |
+
+## GPU partitions preemption rule 
+
+| Partitions     | Priority | Limitations         | Preemption |
+|----------------|----------|---------------------|------------|
+| qTRDGPUH       | high     | Max 4 GPUs per user | N/A        |
+| qTRDGPUM       | medium   | Max 8 GPUs per user | suspend    |
+| qTRDGPUL       | low      | N/A                 | suspend    |
+| qTRDGPU        | N/A      | N/A                 | N/A        |
 
 ## Special nodes
 
@@ -31,6 +37,11 @@ parent: List of software
 |---------------------------|------|--------|--------------|---------------------------|
 | trendsgndev101.rs.gsu.edu | 4    | 62GB   | TITAN X:2    | GPU development & testing |
 | trendsagn019.rs.gsu.edu   | 64   | 512GB  | gpu:gforce:1 | GPU development & testing |
+
+## Allocating GPUs in SLURM
+
+When allocating GPUs in SLURM, use the value in the GPUs column in the above table as the `--gres` parameter.
+See examples below.
 
 ## Job array with multiple tasks on each GPU
 

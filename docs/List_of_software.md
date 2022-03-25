@@ -26,3 +26,4 @@ has_children: true
 -   [tmux](Tmux)
 -   [Visual Studio Code](Visual_Studio_Code)
 -   [VNC](VNC)
+-   [aws-cli](aws-cli)

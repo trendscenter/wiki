@@ -24,3 +24,18 @@ $ module load Image_Analysis/FSL5.0.11
 # Run FSL
 $ fsl
 ```
+
+## Alternate instruction
+
+If the above is not working or buggy, try the following instead.
+
+```
+FSLDIR=/trdapps/linux-x86_64/bin/fsl
+. ${FSLDIR}/etc/fslconf/fsl.sh
+PATH=${FSLDIR}/bin:${PATH}
+export FSLDIR PATH
+
+# Run FSL
+$ fsl
+$ fsleyes
+```

@@ -89,7 +89,7 @@ addpath( genpath( '/trdapps/linux-x86_64/matlab/toolboxes/GroupICATv4.0b/icatb
 icatb_batch_file_run(inputFile)
 ```
 
-Sample batch input files are located in the GIFT toolbox folder: `./icatb/icatb_batch_files`.
+Sample batch input files are located in the GIFT toolbox folder, e.g.: `/trdapps/linux-x86_64/matlab/toolboxes/GroupICATv4.0c/icatb/icatb_batch_files/Input_spatial_ica.m`. Please make a copy of it and make necessary changes.
 
 Execute the script using the following commands (in a SLURM job script
 or interactive node):

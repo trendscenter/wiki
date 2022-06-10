@@ -89,6 +89,8 @@ addpath( genpath( '/trdapps/linux-x86_64/matlab/toolboxes/GroupICATv4.0b/icatb
 icatb_batch_file_run(inputFile)
 ```
 
+Sample batch input files are located in the GIFT toolbox folder: `./icatb/icatb_batch_files`.
+
 Execute the script using the following commands (in a SLURM job script
 or interactive node):
 

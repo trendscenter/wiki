@@ -2,12 +2,20 @@
 layout: home
 title: Home
 nav_order: 1
+last_modified_date: 2022-09-18 20:35
 ---
 Welcome to the TReNDS cluster documentation. It provides example job
 submission scripts and guide to running various applications
 interactively on the GSU/TReNDS cluster. This is heavily influenced by
 the [Georgia Tech PACE cluster
 documentation](https://docs.pace.gatech.edu/).
+
+{: .caution }
+The wiki is now a work in progress due to the recent migration to Arctic cluster.
+Please check back frequently for the latest information.
+
+{: .tip }
+Please look for the "last modified" date at the bottom of any page to be sure that the information is updated.
 
 ![clusterFlow]({{ site.baseurl }}/assets/images/clusterFlow.jpg)
 

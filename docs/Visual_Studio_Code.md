@@ -115,7 +115,7 @@ You can use tabs and multiple panels features of the VS Code integrated terminal
 
 You can launch VS Code server directly on a compute node and access it from a web browser.
 
-- Go to `https://hemera.rs.gsu.edu/`.
+- Go to [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
 - From the "TReNDS Interactive Apps" menu select "VSCode Server".
 - Select appropriate configurations and launch.
 

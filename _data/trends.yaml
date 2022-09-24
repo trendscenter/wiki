@@ -1,0 +1,4 @@
+login_node: arctrdlogin03.rs.gsu.edu
+login_alias: arclogin
+dev_node: arctrdgndev101.rs.gsu.edu
+dev_alias: arctrdgndev101

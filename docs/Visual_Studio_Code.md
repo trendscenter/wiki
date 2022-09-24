@@ -3,6 +3,7 @@ layout: default
 title: Visual Studio Code
 nav_order: 2
 parent: List of software
+last_modified_date: 09/24/2022 09:53
 ---
 <details open markdown="block">
   <summary>
@@ -34,27 +35,27 @@ container, on a remote machine, or in the Windows Subsystem for Linux
 -   Go to the "Remote explorer" tab in VS Code.
 -   From the dropdown, select "SSH targets".
 -   Click on the configure button next to "SSH targets".
--   Select an SSH configuration file, e.g. <user>/.ssh/config
+-   Select an SSH configuration file, e.g. `~/.ssh/config`
 -   Add the following configuration in the file that opens, then save
     it.
 ```
-host trends017
-   HostName trendscn017.rs.gsu.edu
+host {{site.data.trends.dev_alias}}
+   HostName {{site.data.trends.dev_node}}
    user <campusID>
 ```
--   `trends017` should now be available under SSH targets. You can right
+-   `{{site.data.trends.dev_alias}}` should now be available under SSH targets. You can right
     click and connect to it.
 
 #### Tips
 
 -   Once successfully connected, the bottom left corner of the VS Code
-    window should indicate `SSH: trends017`, or whichever alias name you
+    window should indicate `SSH: {{site.data.trends.login_alias}}`, or whichever alias name you
     chose.
 -   You should also be able to open a folder on the remote machine, open
     any file and edit them, open any image an view them. In addition, VS
     Code has extensions available for, for example, opening PDF or CSV
     files on the remote (and local) machine.
--   `trends017` is an alias, it can be anything.
+-   `{{site.data.trends.dev_alias}}` is an alias, it can be anything.
     `trendscn017.rs.gsu.edu` must be a valid host name. Use one of the
     development nodes from the [Cluster queue
     information](Cluster_queue_information) page. Do not use
@@ -80,14 +81,16 @@ host trends017
 -   Submit the SLURM job using `sbatch `<job submission script> command.
 -   While on the login node, use `squeue`, `sinfo` etc. commands to
     monitor jobs.
--   DO NOT RUN ANY OTHER PROGRAM ON THE LOGIN NODE.
+
+{: .caution}
+Do not run any program other than SLURM commands on the login node.
 
 #### Interactive sessions
 
 -   Open the VS Code integrated terminal (Ctrl+\`). It should be
     automatically connected to the remote machine (e.g.
     trendscn017.rs.gsu.edu).
--   Do `ssh trendslogin.gsu.edu`.
+-   Do `ssh {{site.data.trends.login_node}}`.
 -   `cd` to the folder when you want to submit/start a SLURM job.
 -   Start a SLURM interactive session, e.g.
     `srun -p qTRDEV -A PSYC0002 -v -n1 --pty -c4 --mem=10g /bin/bash`
@@ -97,15 +100,26 @@ host trends017
 -   Once done, use `exit` command to exit from the interactive session,
     then from the login node.
 
-#### Tips
+{: .caution}
+Always connect to a dev node or a compute node from VS Code. 
+Avoid directly connecting to the login node.
 
--   Optional: start a tmux session on the remote machine (trends017),
-    then start an interactive session. This way you can resume the
-    session later even if you lose connection.
--   You can use tabs and multiple panels features of the VS Code
-    integrated terminal to simultaneously run multiple sessions.
+{: .tip}
+Start a tmux session on the dev node ({{site.data.trends.dev_alias}}), then start a SLURM interactive session. 
+This way you can resume the session later even if you lose connection.
 
-#### \[Python\] Selecting Interpreter and configuring Debugger
+{: .tip}
+You can use tabs and multiple panels features of the VS Code integrated terminal to simultaneously run multiple terminal sessions.
+
+### VS Code Server on Hemera
+
+You can launch VS Code server directly on a compute node and access it from a web browser.
+
+- Go to `https://hemera.rs.gsu.edu/`.
+- From the "TReNDS Interactive Apps" menu select "VSCode Server".
+- Select appropriate configurations and launch.
+
+### \[Python\] Selecting Interpreter and configuring Debugger
 
 -   The full list of instructions can be found here:
     <https://code.visualstudio.com/docs/python/environments>

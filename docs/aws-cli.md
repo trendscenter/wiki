@@ -3,6 +3,7 @@ layout: default
 title: aws-cli
 nav_order: 2
 parent: List of software
+last_modified_date: 09/24/2022 11:33
 ---
 
 ## AWS-CLI

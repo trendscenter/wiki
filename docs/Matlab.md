@@ -3,6 +3,7 @@ layout: default
 title: Matlab
 nav_order: 2
 parent: List of software
+last_modified_date: 09/24/2022 12:02
 ---
 <details open markdown="block">
   <summary>
@@ -15,25 +16,11 @@ parent: List of software
 
 ### Running Matlab GUI
 
-First, run an [X-window
-server](Running_GUI_applications#Install_an_X-window_server),
-and [connect to the login node with
-SSH](Log_in_to_the_cluster). Then do one of the following:
+You can run Matlab GUI from Hemera.
 
-Method 1 (via SLURM X11):
-
-```
-$ module load Framework/Matlab2019b
-$ srun -p qTRDEV -A PSYC0002 -v -n1 -c1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
-```
-
-Method 2 (via interactive mode):
-
-```
-$ srun -p qTRDEV -A PSYC0002 -v -n1 -c1 --mem=10g --pty --x11 /bin/bash 
-$ module load Framework/Matlab2019b
-$ matlab &
-```
+- Go to [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
+- From "TReNDS Interactive Apps" select "Matlab".
+- Choose appropriate settings and launch.
 
 ### Executing a Matlab script in interactive mode
 

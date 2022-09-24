@@ -3,6 +3,7 @@ layout: default
 title: SPM
 nav_order: 2
 parent: List of software
+last_modified_date: 09/24/2022 11:23
 ---
 Statistical Parametric Mapping refers to the construction and assessment
 of spatially extended statistical processes used to test hypotheses

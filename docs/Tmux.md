@@ -3,7 +3,7 @@ layout: default
 title: tmux
 nav_order: 2
 parent: List of software
-last_modified_data: 09/24/2022 09:59
+last_modified_date: 09/24/2022 09:59
 ---
 
 tmux is a terminal multiplexer for Unix-like operating systems. It

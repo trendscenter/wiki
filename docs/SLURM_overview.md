@@ -38,7 +38,7 @@ The TReNDS cluster uses SLURM workload manager. From
 ### `sinfo`: What partitions exist on the system
 
 ```
-[msalman@trendslogin01 ~]$ sinfo
+[msalman@{{site.data.trends.login_prompt}} ~]$ sinfo
 PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
 qTRD         up 5-08:00:00      3    mix trendscn001.rs.gsu.edu,trendscn004.rs.gsu.edu,trendscn008.rs.gsu.edu
 qTRD         up 5-08:00:00      7  alloc trendscn010.rs.gsu.edu,trendscn011.rs.gsu.edu,trendscn012.rs.gsu.edu,trendscn013.rs.gsu.edu,trendscn014.rs.gsu.edu,trendscn015.rs.gsu.edu,trendscn016.rs.gsu.edu
@@ -80,7 +80,7 @@ it is still pending. Typical reasons for pending jobs are Resources
 a higher priority job).
 
 ```
-[msalman@trendslogin01 ~]$ squeue
+[msalman@{{site.data.trends.login_prompt}} ~]$ squeue
             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 376056_[401-3110%4     qTRD   airaji   airaji PD       0:00      1 (JobArrayTaskLimit)
            374007      qTRD  jchen84  jchen84  R 1-13:54:30      1 trendscn008.rs.gsu.edu
@@ -108,10 +108,10 @@ a higher priority job).
 Running the following command will launch bash/shell in a compute node.
 
 ```
-[campusID@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty --x11 /bin/bash
+[campusID@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty --x11 /bin/bash
 srun: defined options
 srun: -------------------- --------------------
-srun: account             : PSYC0002
+srun: account             : <slurm_account_code>
 srun: mem                 : 10G
 srun: ntasks              : 1
 srun: partition           : qTRD
@@ -132,7 +132,7 @@ srun: Node trendscn001.rs.gsu.edu, 1 tasks started
 
 **Explanation**:
 - `-p qTRD`: partition to run job on. See [Cluster & queue information](Cluster_queue_information) page for more information
-- `-A PSYC0002`:  user group. See [Request an account](Request_an_account) page for list of groups
+- `-A <slurm_account_code>`:  user group. See [Request an account](Request_an_account) page for list of groups
 - `-v`: verbose mode
 - `-n1`: number of tasks to run. Set to 1 unless needed. See [Granular resource allocation with srun](Example_SLURM_scripts#granular-resource-allocation-with-srun) for example.
 - `--mem=10g`: amount of memory requested (10 gigabytes)
@@ -146,8 +146,8 @@ The following command launches Matlab GUI in a compute node in the qTRD
 partition, allocates 1 cpu and 10GB memory.
 
 ```
-$ module load Framework/Matlab2019b
-$ srun -p qTRDEV -A PSYC0002 -v -n1 -c1 --mem=10g --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
+$ module load matlab/R2022a
+$ srun -p qTRDEV -A <slurm_account_code> -v -n1 -c1 --mem=10g --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
 ```
 
 `srun` command has many options available to control what resource are

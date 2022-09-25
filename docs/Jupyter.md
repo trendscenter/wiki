@@ -21,22 +21,20 @@ parent: List of software
 #SBATCH -J <job name>
 #SBATCH -e error%A.err
 #SBATCH -o out%A.out
-#SBATCH -A PSYC0002
+#SBATCH -A <slurm_account_code>
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email address>
 #SBATCH --oversubscribe
 
 sleep 10s
 
-export OMP_NUM_THREADS=1
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
 echo $HOSTNAME >&2 
 
 source <path to conda installation>/bin/activate <name/path of conda environment>
 
 jupyter lab --ip=0.0.0.0 --port=8888
 
-sleep 30s
+sleep 10s
 ```
 
 Note: If port `8888` is not available, change it to something else

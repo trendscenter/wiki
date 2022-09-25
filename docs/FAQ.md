@@ -18,7 +18,7 @@ nav_order: 7
 
 -   Load the Matlab module
 
-`$ module load Framework/Matlab2019b`
+`$ module load matlab/R2022a`
 
 -   Set the `MODULEPATH` variable
 
@@ -146,15 +146,8 @@ written to the disk, very slow response to any kind of command etc.
 
 ### Why am I getting "error: Unable to allocate resources: Invalid account or account/partition combination specified"
 
-You may have specified invalid project code. Please take a note of the
-following project codes:
-
-```
-Dr. Vince Calhoun's group   PSYC0002
-BrainForge group            PSYC0003
-Dr. Jessica Turner's group  PSYC0004
-Dr. Jingyu Liu's group      PSYC0005
-```
+You may have specified invalid project code. 
+Please take a note of your slurm account code from [https://elpis.rs.gsu.edu/](https://elpis.rs.gsu.edu/).
 
 ### My job completed without any error, but there is nothing in the output!
 

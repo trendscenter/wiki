@@ -48,7 +48,7 @@ Currently Loaded Modulefiles:
 ### Available modules (software)
 
 ```
-[msalman@trendslogin01 ~]$ module avail
+[msalman@{{site.data.trends.login_prompt}} ~]$ module avail
 
 ----------------------------------------------------------- /apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/ -----------------------------------------------------------
 ABYSS1.3.7                                 BioInformatics/Samtools1.3                 Compilers/singularity2.4                   Image_Analysis/DTIprep

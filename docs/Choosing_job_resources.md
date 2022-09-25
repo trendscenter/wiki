@@ -6,7 +6,7 @@ parent: SLURM Overview
 ---
 Suppose we start an interactive session like so:
 
-`$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g -t60 --pty --x11 /bin/bash`
+`$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty --x11 /bin/bash`
 
 Above in the `srun` command we have specified `--mem=10g`, which means
 we have allocated 10 GigaBytes (GB) of memory (and 1 CPU by default) for
@@ -49,8 +49,8 @@ allocated.
 
 ```
 # allocate 80 CPUs and 1TB of memory in the high memory queue in SLURM
-$ srun -p qTRDHM -A PSYC0002 -v -n1 -c80 --mem=1t --pty --x11 /bin/bash 
-$ module load Framework/Matlab2019b
+$ srun -p qTRDHM -A <slurm_account_code> -v -n1 -c80 --mem=1t --pty --x11 /bin/bash 
+$ module load matlab/R2022a
 $ matlab &
 ```
 

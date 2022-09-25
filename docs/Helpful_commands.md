@@ -30,16 +30,16 @@ $ ssh -Y <CampusID>@trendslogin.gsu.edu
 
 ```
 # Start interactive mode on a general-purpose compute node
-$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty /bin/bash    
+$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty /bin/bash    
 
 # Start interactive mode on a GPU worker node
-$ srun -p qTRDGPUH -A PSYC0002 -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash
+$ srun -p qTRDGPUH -A <slurm_account_code> -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash
 
 # Start interactive mode on a high-memory worker node
-$ srun -p qTRDHM -A PSYC0002 -v -n1 --mem=10g --pty /bin/bash
+$ srun -p qTRDHM -A <slurm_account_code> -v -n1 --mem=10g --pty /bin/bash
 
 # Start interactive mode on a general-purpose compute node with X11 GUI support
-$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty --x11 /bin/bash
+$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty --x11 /bin/bash
 ```
 
 ### Available modules (software)
@@ -53,7 +53,7 @@ $ module avail
 $ module avail 2>&1 | grep -i matlab
 
 # load a particular module
-$ module load Framework/Matlab2019b
+$ module load matlab/R2022a
 
 # List loaded modules
 $ module list
@@ -78,7 +78,7 @@ $ sinfo -O "nodehost:16,partition:.8,cpus:.8,memory:.8,cpusstate:.16,freemem:
 *can be run on any node, but do not actually run `matlab` on the login node, please.*
 
 ```
-$ module load Framework/Matlab2019b
+$ module load matlab/R2022a
 $ which matlab
 ```
 ### Run software GUI
@@ -86,15 +86,15 @@ $ which matlab
 Method 1 (via SLURM X11):
 
 ```
-$ module load Framework/Matlab2019b
-$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
+$ module load matlab/R2022a
+$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
 ```
 
 Method 2 (via interactive mode):
 
 ```
-$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g --pty --x11 /bin/bash 
-$ module load Framework/Matlab2019b
+$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty --x11 /bin/bash 
+$ module load matlab/R2022a
 $ matlab &
 ```
 
@@ -167,7 +167,7 @@ $ ssh -XY trendsgndev101.rs.gsu.edu
 *can be run on a DEV node or in interactive mode only*
 
 ```
-$ module load Framework/Matlab2019b
+$ module load matlab/R2022a
 $ matlab &
 ```
 

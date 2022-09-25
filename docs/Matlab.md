@@ -26,20 +26,24 @@ You can run Matlab GUI from Hemera.
 
 ```
 # start an interactive session
-[<campusID>@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -c1 -t60 --pty --x11 /bin/bash                       
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -c1 -t60 --pty --x11 /bin/bash                       
 srun: defined options
 srun: -------------------- --------------------
-srun: account             : PSYC0002
+srun: account             : <slurm_account_code>
 ...
 [<campusID>@trendscn013 ~]$ cd /data/users1/salman/public/gsu_jobs_live/current/src/
 [<campusID>@trendscn013 src]$ ls
 array_aggregate_result_example.m  array_example.m  array_viz_example.m  parpool_example.m  simple_example.m
+
+# load Matlab module
+$ module load matlab/R2022a
+
 ```
 
 Execute the script:
 
 ```
-[<campusID>@trendscn013 src]$ matlab -batch 'simple_example' -nodisplay
+[<campusID>@trendscn013 src]$ matlab -batch 'simple_example'
 evaluating CalinskiHarabasz for K=2
 cvi = 3.8406
 ...
@@ -60,10 +64,10 @@ DONE!
 Start an interactive session:
 
 ```
-[<campusID>@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -t60 --pty --x11 /bin/bash                       
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -t60 --pty --x11 /bin/bash                       
 srun: defined options
 srun: -------------------- --------------------
-srun: account             : PSYC0002
+srun: account             : <slurm_account_code>
 ...
 [<campusID>@trendscn013 ~]$ cd /data/users2/salman/public/gsu_jobs_live/current/src/
 [<campusID>@trendscn013 src]$ ls

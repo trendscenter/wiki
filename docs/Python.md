@@ -14,7 +14,9 @@ last_modified_date: 09/24/2022 11:58
 {:toc}
 </details>
 
-## Using Python module
+## Setting up the Python environment
+
+### Using The Python module
 
 ```
 # Load Python module
@@ -23,12 +25,18 @@ $ module load python/3.9.9
 $ which python3
 /sysapps/ubuntu-applications/python/Python-3.9.9/Build/bin/python3
 
+# create a virtual environment
+$ mkdir -p /data/users*/<your directory>/<name of env>
+$ python -m <name of env> /data/users*/<your directory>/<name of env>
+
+# activate the environment
+$ source /data/users*/<your directory>/<name of env>/venv/bin/activate
+
 # run Python
-$ python3 --version
-Python 3.9.9
+$ python --version
 ```
 
-## Using Anaconda/Miniconda module
+### Using Anaconda/Miniconda module
 
 ```
 # Load miniconda module
@@ -42,9 +50,15 @@ $ which python
 # run Python
 $ python3 --version
 Python 3.9.9
+
+# Create a Conda environment
+$ conda create -n <env name> python=3.9
+
+# Activate the Conda environment
+$ conda activate <env name>
 ```
 
-## Installing your own Conda
+### Installing your own Conda
 
 ```
 # Login to a DEV node
@@ -64,10 +78,8 @@ $ wget https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh
 $ chmod 755 Anaconda3-2021.05-Linux-x86_64.sh
 $ ./Anaconda3-2021.05-Linux-x86_64.sh
 # follow the instructions and complete install
-```
 
-## Create a Conda environment
-```
+# Create a Conda environment
 $ conda create -n <env name> python=3.9
 
 # Activate the Conda environment

@@ -59,15 +59,13 @@ See examples below.
 #SBATCH -J <job name>
 #SBATCH -e error%A-%a.err
 #SBATCH -o out%A-%a.out
-#SBATCH -A PSYC0002
+#SBATCH -A <slurm_account_code>
 #SBATCH --oversubscribe
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email address>
 
 sleep 5s
 
-export OMP_NUM_THREADS=1
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
 echo $HOSTNAME >&2
 
 source <path to conda installation>/bin/activate <name/path of conda environment>
@@ -88,5 +86,5 @@ sleep 10s
 *can be run on the login node*
 ```
 # Start interactive mode on a GPU worker node
-$ srun -p qTRDGPUH -A PSYC0002 -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash
+$ srun -p qTRDGPUH -A <slurm_account_code> -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash
 ```

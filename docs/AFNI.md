@@ -16,7 +16,7 @@ mapping human brain activity.
 
 **You also need to run an X-window server on your machine.**
 
-`$ srun -p qTRDEV -A PSYC0002 -v -n1 --mem=10g -t60 --pty --x11 /bin/bash`
+`$ srun -p qTRDEV -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty --x11 /bin/bash`
 
 ### Load the `AFNI` module
 

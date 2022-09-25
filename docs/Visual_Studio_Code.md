@@ -45,27 +45,21 @@ host {{site.data.trends.dev_alias}}
 ```
 -   `{{site.data.trends.dev_alias}}` should now be available under SSH targets. You can right
     click and connect to it.
+-   Once successfully connected, the bottom left corner of the VS Code window should indicate `SSH: {{site.data.trends.login_alias}}`, or whichever alias name you chose.
 
-#### Tips
+{: .tip}
+You should also be able to open a folder on the remote machine, open any file and edit them, open any image an view them. 
+In addition, VS Code has extensions available for, for example, opening PDF or CSV files on the remote (and local) machine.
 
--   Once successfully connected, the bottom left corner of the VS Code
-    window should indicate `SSH: {{site.data.trends.login_alias}}`, or whichever alias name you
-    chose.
--   You should also be able to open a folder on the remote machine, open
-    any file and edit them, open any image an view them. In addition, VS
-    Code has extensions available for, for example, opening PDF or CSV
-    files on the remote (and local) machine.
--   `{{site.data.trends.dev_alias}}` is an alias, it can be anything.
-    `trendscn017.rs.gsu.edu` must be a valid host name. Use one of the
-    development nodes from the [Cluster queue
-    information](Cluster_queue_information) page. Do not use
-    `trendslogin01.rs.gsu.edu` or `trendslogin.gsu.edu`
--   You may have to enter your password multiple times. To avoid this,
-    set up SSH key authentication by following [Configure SSH for easy
-    access to DEV
-    machines](Configure_SSH_for_easy_access_to_DEV_machines)
-    or [this
-    guide](https://docs.google.com/document/d/1C3IK38d5XiEIafktjJ6LxXVFMrj77unXm_9VAjGe3Ww/edit)
+{: .important}
+`{{site.data.trends.dev_alias}}` is an alias, it can be anything.
+`trendscn017.rs.gsu.edu` must be a valid host name. 
+Use one of the development nodes from the [Cluster queue information](Cluster_queue_information) page. 
+Do not use `{{site.data.trends.login_node}}`.
+
+{: .hint}
+You may have to enter your password multiple times. 
+To avoid this, set up SSH key authentication by following [Configure SSH for easy access to DEV machines](Configure_SSH_for_easy_access_to_DEV_machines) or [this guide](https://docs.google.com/document/d/1C3IK38d5XiEIafktjJ6LxXVFMrj77unXm_9VAjGe3Ww/edit)
 
 ### SLURM jobs
 
@@ -93,7 +87,7 @@ Do not run any program other than SLURM commands on the login node.
 -   Do `ssh {{site.data.trends.login_node}}`.
 -   `cd` to the folder when you want to submit/start a SLURM job.
 -   Start a SLURM interactive session, e.g.
-    `srun -p qTRDEV -A PSYC0002 -v -n1 --pty -c4 --mem=10g /bin/bash`
+    `srun -p qTRDEV -A <slurm_account_code> -v -n1 --pty -c4 --mem=10g /bin/bash`
 -   Use the VS Code editor pane (Ctrl+1) to set up or edit your scripts,
     and execute them in the interactive session running on the VS Code
     terminal.

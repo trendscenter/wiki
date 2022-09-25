@@ -3,6 +3,7 @@ layout: default
 title: Job Submission Overview
 nav_order: 1
 parent: SLURM Overview
+last_modified_date: 09/25/2022 11:20
 ---
 <details open markdown="block">
   <summary>
@@ -36,7 +37,7 @@ See the following example with annotations.
 #SBATCH -J <job name>
 #SBATCH -e error%A.err  # errors will be written to this file. If saving this file in a separate folder, make sure the folder exists, or the job will fail
 #SBATCH -o out%A.out    # output will be written to this file. If saving this file in a separate folder, make sure the folder exists, or the job will fail
-#SBATCH -A PSYC0002     # user group. See "requesting an account" page for list of groups
+#SBATCH -A <slurm_account_code>     # user group. See "requesting an account" page for list of groups
 #SBATCH --mail-type=ALL # types of emails to send out. See SLURM documentation for more possible values
 #SBATCH --mail-user=<email address> # set this email address to receive updates about the job
 #SBATCH --oversubscribe # see SLURM documentation for explanation
@@ -44,19 +45,15 @@ See the following example with annotations.
 # it is a good practice to add small delay at the beginning and end of the job- helps to preserve stability of SLURM controller when large number of jobs fail simultaneously 
 sleep 10s
 
-# number of threads for certain C libraries. Leave it like this unless necessary
-export OMP_NUM_THREADS=1
-# location of module files. In case the allocated node fails to initiate properly, this is help load the modules and run the job
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
 # for debugging purpose- in case the job fails, you know where to look for possible cause
 echo $HOSTNAME >&2
 
 # run the actual job
-module load Framework/Matlab2019b
-echo matlab -batch 'simple_example'
+module load matlab/R2022a
+matlab -batch 'simple_example'
 
 # delay at the end (good practice)
-sleep 30s
+sleep 10s
 ```
 
 Save the above script in your `/data/user*/<your name>` directory as `JobSubmit.sh` and modify as needed. Then submit the job using the following command:

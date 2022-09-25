@@ -30,15 +30,15 @@ GUI using one of the following:
 Method 1 (via SLURM X11):
 
 ```
-$ module load Framework/Matlab2019b
-$ srun -p qTRDEV -A PSYC0002 -v -n1 -c1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
+$ module load matlab/R2022a
+$ srun -p qTRDEV -A <slurm_account_code> -v -n1 -c1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
 ```
 
 Method 2 (via interactive mode):
 
 ```
-$ srun -p qTRDEV -A PSYC0002 -v -n1 -c1 --mem=10g --pty --x11 /bin/bash 
-$ module load Framework/Matlab2019b
+$ srun -p qTRDEV -A <slurm_account_code> -v -n1 -c1 --mem=10g --pty --x11 /bin/bash 
+$ module load matlab/R2022a
 $ matlab &
 ```
 
@@ -95,7 +95,7 @@ Execute the script using the following commands (in a SLURM job script
 or interactive node):
 
 ```
-$ module load Framework/Matlab2019b
+$ module load matlab/R2022a
 $ matlab -batch 'gift_batch'
 ```
 

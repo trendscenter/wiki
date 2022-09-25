@@ -14,7 +14,7 @@ $ ssh -XY <campusID>@trendslogin.gsu.edu
 
 # Start an interactive bash session with --x11 option
 # You also need to run an X-window server on your machine.
-$ srun -p qTRD -A PSYC0002 -v -n1 -c1 --mem=10g -t60 --pty --x11 /bin/bash
+$ srun -p qTRD -A <slurm_account_code> -v -n1 -c1 --mem=10g -t60 --pty --x11 /bin/bash
 
 # Load the Freesurfer module and setup environment
 $ module load Image_Analysis/Freesurfer

@@ -3,6 +3,7 @@ layout: default
 title: Log in to the cluster
 nav_order: 2
 parent: Getting Started
+last_modified_date: 09/25/2022 9:29
 ---
 <details open markdown="block">
   <summary>
@@ -13,31 +14,94 @@ parent: Getting Started
 {:toc}
 </details>
 
-### Head/login node vs compute/worker nodes
+## Prerequisites
 
-You must be connected to the [GSU VPN](Configure_VPN), or in
-the GSU network to log in to the cluster. Use the following command to
-connect to the head/login node:
+Please go through [https://arcwiki.rs.gsu.edu/en/home/ssh/signing-in](https://arcwiki.rs.gsu.edu/en/home/ssh/signing-in) to know more details about connecting to the cluster.
 
-```
-$ ssh -XY <campusID>@trendslogin.gsu.edu
-Warning: No xauth data; using fake authentication data for X11 forwarding.
-Last login: Sun Oct  6 15:25:25 2019 from 131.96.253.116
-[<campusID>@trendslogin01 ~]$
-```
+### VPN
 
-`@trendslogin01` indicates that you are connected to the head/login
-node. On the login node you can submit jobs, interact with the cluster,
-edit files etc. But you should not run lengthy computations (more than a
-few seconds) on the login node itself. For running computations, please
-allocate resources on a compute/worker node which are accessible from
-the head/login node:
+You must be connected to the [GSU VPN](Configure_VPN), or in the GSU network to log in to the cluster. 
+
+### Active allocation
+
+[Request an account](request_an_account).
+
+### SSH keypair
+
+Generate an SSH keypair in your local machine:
 
 ```
-[<campusID>@trendslogin01 ~]$ srun -p qTRD -A PSYC0002 -v -n1 --mem=10g -t60 --pty --x11 /bin/bash
+$ mkdir ~/.ssh
+$ cd ~/.ssh
+$ ssh-keygen -t ed25519 -f id_<campusid>
+```
+
+### Signed public key
+
+```
+# copy the content of your public key
+$ cat ~/.ssh/id_<campusid>.pub
+### copy the output ###
+```
+
+Go to [https://elpis.rs.gsu.edu/](https://elpis.rs.gsu.edu/), then go to the "Sign SSH Certificate" page.
+Here, paste the content of the public key and click "Sign Key".
+If there is an error generating the certificate, please verify that you copied the public key contents correctly.
+Download the generated certificate to your local machine and save in the `~/.ssh` folder.
+
+```
+$ mv ~/Downloads/id_<campusid>-cert.pub ~/.ssh
+```
+
+## Connect to the cluster using terminal
+
+### Create SSH configuration file
+
+Create a file `~/.ssh/config` with the following contents.
+
+```
+Host {{site.data.trends.login_alias}}
+    HostName {{site.data.trends.login_node}}
+    User <campusid>
+    ForwardAgent yes
+    CertificateFile ~/.ssh/id_<campusid>-cert.pub
+    IdentityFile ~/.ssh/id_<campusid>
+```
+
+### Configure SSH authentication agent
+
+On Linux/Mac, the SSH authentication agent should be running by default. 
+On Windows, you need administrator privilege to enable the service.
+Open a PowerShell window as administrator and run the following command:
+
+```
+$ Set-Service -Name ssh-agent -StartupType Automatic -Status Running
+```
+
+If you do not have administrator access to your machine, please contact the administrator with the above information.
+
+### Connect to the cluster login node
+
+Run the following command to get connected to the cluster.
+
+```
+$ ssh {{site.data.trends.login_alias}}
+[<campusID>@{{site.data.trends.login_prompt}} ~]$
+```
+
+{: .caution}
+> ## Head/login node vs compute/worker nodes
+> `@{{site.data.trends.login_prompt}}` indicates that you are connected to the head/login node. 
+> On the login node you can submit jobs, interact with the cluster, edit files etc. 
+> But you should not run lengthy computations (more than a few seconds) on the login node itself. 
+
+For running computations, please allocate resources on a compute/worker node which are accessible from the head/login node:
+
+```
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty --x11 /bin/bash
 srun: defined options
 srun: -------------------- --------------------
-srun: account             : PSYC0002
+srun: account             : <slurm_account_code>
 srun: mem                 : 10G
 srun: ntasks              : 1
 srun: partition           : qTRD
@@ -57,50 +121,11 @@ srun: Node trendscn013.rs.gsu.edu, 1 tasks started
 [<campusID>@trendscn013 ~]$
 ```
 
-The above command will allocate 1 CPU on one of the nodes under `qTRD`
-queue and 10GB of RAM on the said node (`trendscn013` in this case) for
-60 minutes and start a `bash` session. See [this
-page](Cluster_queue_information) for more information about
-the available queues.
+The above command will allocate 1 CPU on one of the nodes under `qTRD` queue and 10GB of RAM on the said node (`trendscn013` in this case) for 60 minutes and start a `bash` session. 
+See [this page](Cluster_queue_information) for more information about the available queues.
 
-For running GUI applications, depending on which SSH client or X-window
-server you are using, you may need to use `-Y` or `-X`, e.g.:
+## Connect to the cluster using VPN
 
-```
-$ ssh -X <campusID>@trendslogin.gsu.edu
-$ ssh -Y <campusID>@trendslogin.gsu.edu
-```
+You can also connect to the cluster and GUI applications from [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
 
-Or better yet, use both:
 
-```
-$ ssh -XY <campusID>@trendslogin.gsu.edu
-```
-
-### Windows Powershell
-
-### Mobaxterm
-
-Download MobaXterm from <https://mobaxterm.mobatek.net/>
-
-![Mobax2.png]({{ site.baseurl }}/assets/images/mobax2.png)
-
-![Mobax3.png]({{ site.baseurl }}/assets/images/mobax3.png)
-
-### Putty
-
-Download Putty from
-<https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>
-
-![Putty1.png]({{ site.baseurl }}/assets/images/putty1.png)
-![Putty2.png]({{ site.baseurl }}/assets/images/putty2.png)
-
-![Putty3.png]({{ site.baseurl }}/assets/images/putty3.png)
-
-### Mac
-
-[TBD]
-
-### Git bash
-
-[TBD]

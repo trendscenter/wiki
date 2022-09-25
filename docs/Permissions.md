@@ -21,8 +21,8 @@ last_modified_date: 09/24/2022 12:00
     ACL, use the `getfacl` command.
 
 ```
-[msalman@trendslogin01 ~]$ cd /data/mialab2/
-[msalman@trendslogin01 mialab2]$ getfacl .
+[msalman@{{site.data.trends.login_prompt}} ~]$ cd /data/mialab2/
+[msalman@{{site.data.trends.login_prompt}} mialab2]$ getfacl .
 # file: .
 # owner: vcalhoun
 # group: trd

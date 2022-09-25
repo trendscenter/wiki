@@ -29,21 +29,19 @@ parent: SLURM Overview
 #SBATCH -J <job name>
 #SBATCH -e error%A.err
 #SBATCH -o out%A.out
-#SBATCH -A PSYC0002
+#SBATCH -A <slurm_account_code>
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email address>
 #SBATCH --oversubscribe
 
 sleep 10s
 
-export OMP_NUM_THREADS=1
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
 echo $HOSTNAME >&2
 
-module load Framework/Matlab2019b
+module load matlab/R2022a
 matlab -batch 'simple_example'
 
-sleep 30s
+sleep 10s
 ```
 
 Same script with annotations:
@@ -59,7 +57,7 @@ Same script with annotations:
 #SBATCH -J <job name>
 #SBATCH -e error%A.err  # errors will be written to this file. If saving this file in a separate folder, make sure the folder exists, or the job will fail
 #SBATCH -o out%A.out    # output will be written to this file. If saving this file in a separate folder, make sure the folder exists, or the job will fail
-#SBATCH -A PSYC0002     # user group. See "requesting an account" page for list of groups
+#SBATCH -A <slurm_account_code>     # user group. See "requesting an account" page for list of groups
 #SBATCH --mail-type=ALL # types of emails to send out. See SLURM documentation for more possible values
 #SBATCH --mail-user=<email address> # set this email address to receive updates about the job
 #SBATCH --oversubscribe # see SLURM documentation for explanation
@@ -67,33 +65,26 @@ Same script with annotations:
 # it is a good practice to add small delay at the beginning and end of the job- helps to preserve stability of SLURM controller when large number of jobs fail simultaneously 
 sleep 10s
 
-# number of threads for certain C libraries. Leave it like this unless necessary
-export OMP_NUM_THREADS=1
-# location of module files. In case the allocated node fails to initiate properly, this is help load the modules and run the job
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
 # for debugging purpose- in case the job fails, you know where to look for possible cause
 echo $HOSTNAME >&2
 
 # run the actual job
-module load Framework/Matlab2019b
+module load matlab/R2022a
 matlab -batch 'simple_example'
 
 # delay at the end (good practice)
-sleep 30s
+sleep 10s
 ```
 
 -   The above will allocate 1 CPU, 10GB RAM on one of the nodes in the
     `qTRD` queue for 1 day (1440 minutes) or as long as the job runs,
     whichever is shorter.
--   `PSYC0002` indicates the job account, or which project the submitter
+-   `<slurm_account_code>` indicates the job account, or which project the submitter
     belongs to.
 -   The job output and errors will be written out to `out%A.out` and
     `error%A.err` files respectively, with `%A` being replaced by the
     job ID.
 -   Job status (start/complete/failed etc.) will be emailed out as well.
--   The `OMP_NUM_THREADS` environmental variable instructs some `C`
-    libraries to use single-threading and `MODULEPATH` may be necessary
-    for modules/software installed on the cluster to function properly.
 
 ### Submitting the job
 
@@ -115,21 +106,19 @@ sleep 30s
 #SBATCH -J <job name>
 #SBATCH -e error%A-%a.err
 #SBATCH -o out%A-%a.out
-#SBATCH -A PSYC0002
+#SBATCH -A <slurm_account_code>
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email address>
 #SBATCH –oversubscribe
 
 sleep 10s
 
-export OMP_NUM_THREADS=1
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
 echo $HOSTNAME >&2
 
-module load Framework/Matlab2019b
+module load matlab/R2022a
 matlab -batch 'array_example($SLURM_ARRAY_TASK_ID)'
 
-sleep 30s
+sleep 10s
 ```
 
 ### Submitting the job
@@ -190,15 +179,13 @@ Submit the job using `sbatch --array=1-5000%100 JobSubmit.sh`.
 #SBATCH -J <job name>
 #SBATCH -e error%A-%a.err
 #SBATCH -o out%A-%a.out
-#SBATCH -A PSYC0002
+#SBATCH -A <slurm_account_code>
 #SBATCH --oversubscribe
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email address>
 
-sleep 5s
+sleep 10s
 
-export OMP_NUM_THREADS=1
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/
 echo $HOSTNAME >&2
 
 source <path to conda installation>/bin/activate <name/path of conda environment>
@@ -233,16 +220,14 @@ the `srun` command to execute two different Matlab scripts on each node.
 #SBATCH -J <campusID>
 #SBATCH -e error%A.err
 #SBATCH -o out%A.out
-#SBATCH -A PSYC0002
+#SBATCH -A <slurm_account_code>
 #SBATCH --oversubscribe
 
 sleep 10s
 
-export OMP_NUM_THREADS=1
-export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/ 
 echo $HOSTNAME >&2 
 
-module load Framework/Matlab2019b
+module load matlab/R2022a
 srun -N1 -n1 numactl --localalloc matlab -batch 'script1' &
 srun -N1 -n1 numactl --localalloc matlab -batch 'script2' &
 

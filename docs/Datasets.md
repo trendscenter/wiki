@@ -77,42 +77,8 @@ NeuroImage: Clinical, p. 102375, Aug. 2020, doi:
 
 ### Summary
 
-\* Not preprocessed
-
 Collaborative spreadsheet:
 <https://drive.google.com/file/d/126Su7fBqaVAjefCe4s4Prk9qk_zdzsVy/view?usp=sharing>
-
-| Name                           | fMRI                                             | sMRI                                             | dMRI                                              | SNIP | Groups                           |
-|--------------------------------|--------------------------------------------------|--------------------------------------------------|---------------------------------------------------|------|----------------------------------|
-| BSNIP                          | 1354                                             | 1354                                             |                                                   | 628  | HC, SZ, BP, Relatives            |
-| FBIRN                          | 368                                              | 368                                              |                                                   | 278  | HC, SZ                           |
-| COBRE                          | 204                                              | 204                                              |                                                   | 226  | HC, SZ, BP                       |
-| Peter Kochunov (U of Maryland) | 457                                              | 444                                              |                                                   | 1076 | HC, SZ                           |
-| Chinese Schizophrenia dataset  | 1614                                             | 954                                              |                                                   |      | HC, SZ                           |
-| UCLA-CNP                       | 261                                              | 261                                              | 261                                               |      | HC, SZ                           |
-| Schizophrenia Johns Hopkins    | 180                                              | 180                                              |                                                   |      | HC, SZ                           |
-| HCP early psychosis            | 169                                              | 169                                              | 169                                               |      | HC, early psychosis patients     |
-| ABIDE1                         | 1112                                             | 1112                                             |                                                   |      | HC, ASD                          |
-| ABIDE2                         | 1113                                             | 1113                                             | 318                                               |      | HC, ASD (some longitudinal data) |
-| OSUCH                          | 103                                              | 156                                              |                                                   |      | HC, mood disorder                |
-| ECT (UCLA & UNM ECT data)      | 180                                              | 180                                              |                                                   |      | HC, MDD (before & after ECT)     |
-| Chinese Major depression data  | 600                                              | 590                                              |                                                   |      | HC, MDD                          |
-| ADNI                           | 373                                              | 1625                                             | 383                                               |      | HC, AD, MCI, EMCI, LMCI          |
-| STANFORD-ADRC                  | 204                                              | 204                                              |                                                   |      | HC, AD, MCI, LBD, PD             |
-| MarkVCID                       | 97                                               | 20                                               | 5                                                 |      | HC, LA, AD, SIVD, Mixed dementia |
-| OASIS Cross-Sectional          |                                                  | 436                                              |                                                   |      | HC, AD                           |
-| OASIS Longitudinal             |                                                  | 373                                              |                                                   |      | HC, AD                           |
-| OASIS3                         | 1691                                             | 2217                                             | 1205                                              |      | HC, AD, MCI                      |
-| ADHD200                        | 949                                              | 949                                              |                                                   |      | HC, ADHD-C, ADHD-H/I, ADHD-I     |
-| Suijing ADHD dataset           | 189                                              | 116                                              |                                                   |      | HC, ADHD                         |
-| ADHD unknown                   | 197                                              | 197                                              |                                                   |      | HC, ADHD                         |
-| Hutchison's substance use      | 989                                              | 989                                              |                                                   |      | Alcohol, Nicotine disorder       |
-| Anees Neuroimage data          |                                                  | 6008                                             |                                                   |      | HC and other diseases            |
-| GSP                            | 1182                                             | 1182                                             |                                                   |      | HC                               |
-| HCP                            | 1115                                             | 1058                                             |                                                   |      | HC                               |
-| ABCD                           | 11764 (before Release 2.0)                       | 11764                                            | 3976                                              |      | HC                               |
-| UK-BIO Bank                    | 39342                                            | 41182                                            |                                                   |      | HC and self-reported diagnosis   |
-| Total                          | 75405                                            | 6317                                             | 2563                                              |      |                                  |
 
 ## NDAR
 

@@ -3,6 +3,7 @@ layout: default
 title: Helpful commands
 nav_order: 6
 parent: Getting Started
+last_modified_date: 10/2/2022 13:01
 ---
 <details open markdown="block">
   <summary>
@@ -20,37 +21,35 @@ parent: Getting Started
 ### SSH to the login node
 
 ```
-$ ssh -X <CampusID>@trendslogin.gsu.edu
-$ ssh -Y <CampusID>@trendslogin.gsu.edu
+$ ssh -X <CampusID>@{{site.data.trends.login_alias}}
 ```
 
 ### Start interactive mode/terminal/bash on worker/compute nodes
 
-*can be run on the login node*
+Can be run on the login node
+{: .label .label-purple }
 
 ```
 # Start interactive mode on a general-purpose compute node
 $ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty /bin/bash    
 
 # Start interactive mode on a GPU worker node
-$ srun -p qTRDGPUH -A <slurm_account_code> -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash
+$ srun -p qTRDGPUH -A <slurm_account_code> -v -n1 --pty --mem=10g --gres=gpu:V100:1 /bin/bash
 
 # Start interactive mode on a high-memory worker node
 $ srun -p qTRDHM -A <slurm_account_code> -v -n1 --mem=10g --pty /bin/bash
-
-# Start interactive mode on a general-purpose compute node with X11 GUI support
-$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty --x11 /bin/bash
 ```
 
 ### Available modules (software)
 
-*can be run on any node*
+Can be run on any node
+{: .label .label-purple }
 
 ```
 $ module avail
 
 # Search for a particular module
-$ module avail 2>&1 | grep -i matlab
+$ module avail matlab
 
 # load a particular module
 $ module load matlab/R2022a
@@ -64,9 +63,10 @@ $ module purge
 
 ### Info about the resources (queues, nodes and status) available
 
-**Online:** <http://hpcstats.rs.gsu.edu/ganglia/?c=Trends>
+#### Online
+<https://arcxdmod.rs.gsu.edu/>
 
-### From terminal on the login node:
+#### From terminal on the login node:
 
 ```
 $ sinfo
@@ -75,32 +75,22 @@ $ sinfo -O "nodehost:16,partition:.8,cpus:.8,memory:.8,cpusstate:.16,freemem:
 ```
 ### Find path to Matlab
 
-*can be run on any node, but do not actually run `matlab` on the login node, please.*
+Can be run on any node, but do not actually run matlab on the login node, please.
+{: .label .label-purple }
 
 ```
 $ module load matlab/R2022a
 $ which matlab
 ```
+
 ### Run software GUI
 
-Method 1 (via SLURM X11):
-
-```
-$ module load matlab/R2022a
-$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
-```
-
-Method 2 (via interactive mode):
-
-```
-$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty --x11 /bin/bash 
-$ module load matlab/R2022a
-$ matlab &
-```
+From [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/)
 
 ### Edit files
 
-*can be run on any node*
+Can be run on any node
+{: .label .label-purple }
 
 ```
 $ nano <filename>
@@ -111,15 +101,16 @@ $ vi <filename>
 
 ```
 # from local to cluster
-$ scp <local path to file> <campusID>@trendslogin.gsu.edu:<server path>
+$ scp -r <local path to file> <campusID>@{{site.data.trends.login_alias}}:<server path>
 
 # from cluster to local
-$ scp <campusID>@trendslogin.gsu.edu:<server path> <local path to file>
+$ scp -r <campusID>@{{site.data.trends.login_alias}}:<server path> <local path to file>
 ```
 
 ### Submit a job to the scheduler
 
-*can be run on the login node*
+Can be run on the login node
+{: .label .label-purple }
 
 ```
 # Submit a job script 
@@ -154,21 +145,11 @@ $ scancel <jobID>
 
 ### Login to a DEV node
 
-*can be run on the login node, for lightweight experiments only*
+Can be run on the login node/local machine, for lightweight experiments only
+{: .label .label-purple }
 
 ```
-$ ssh -XY trendscn017.rs.gsu.edu
-$ ssh -XY trendsagn019.rs.gsu.edu
-$ ssh -XY trendsgndev101.rs.gsu.edu
-```
-
-### Start GUI application on DEV node
-
-*can be run on a DEV node or in interactive mode only*
-
-```
-$ module load matlab/R2022a
-$ matlab &
+$ ssh {{site.data.trends.dev_alias}}
 ```
 
 ### Set CPU affinity

@@ -22,7 +22,7 @@ Number    Manufacturer    Cores   Memory  GPUs            Name
 3         Intel           96      1.5 TB                  arctrdhm{001-003}
 20        AMD             64      512 GB  1xNvidia 2080   arctrdagn{001-020}
 4         Nvidia DGX-1    40      512 GB  8xNvidia V100   arctrddgx{001-004}
-2         Dell            40      192 GB  4xNvidia V100   trendsgn{001-002}
+2         Dell            40      192 GB  4xNvidia V100   arctrdgn{001-002}
 ```
 
 ## CPU queue/partitions
@@ -38,12 +38,12 @@ Number    Manufacturer    Cores   Memory  GPUs            Name
 
 | Partitions                                    | Nodes                                           | Time limit | Priority | CPUs  | Memory     | GPUs                | Limitations         | Preemption |
 |-----------------------------------------------|-------------------------------------------------|------------|----------|-------|------------|---------------------|---------------------|------------|
-| qTRDGPUH                                      | arctrddgx001-arctrddgx004 | 5d 8h      | high     | 40    | 512GB      | gpu:v100:8          | Max 4 GPUs per user | N/A        |
-| | trendsgn001-trendsgn002 | 5d 8h                                           | high       | 40       | 192GB | gpu:v100:4 | Max 4 GPUs per user | N/A                 |
-| qTRDGPUM                                      | arctrddgx001-arctrddgx004 | 5d 8h      | medium   | 40    | 512GB      | gpu:v100:8          | Max 8 GPUs per user | suspend    |
-| | trendsgn001-trendsgn002 | 5d 8h                                           | medium     | 40       | 192GB | gpu:v100:4 | Max 8 GPUs per user | suspend             |
-| qTRDGPUL                                      | arctrddgx001-arctrddgx004 | 5d 8h      | low      | 40    | 512GB      | gpu:v100:8          | N/A                 | suspend    |
-| | trendsgn001-trendsgn002 | 5d 8h                                           | low        | 40       | 192GB | gpu:v100:4 | N/A                 | suspend             |
+| qTRDGPUH                                      | arctrddgx001-arctrddgx004 | 5d 8h      | high     | 40    | 512GB      | gpu:V100:8          | Max 4 GPUs per user | N/A        |
+| | arctrdgn001-arctrdgn002 | 5d 8h                                           | high       | 40       | 192GB | gpu:V100:4 | Max 4 GPUs per user | N/A                 |
+| qTRDGPUM                                      | arctrddgx001-arctrddgx004 | 5d 8h      | medium   | 40    | 512GB      | gpu:V100:8          | Max 8 GPUs per user | suspend    |
+| | arctrdgn001-arctrdgn002 | 5d 8h                                           | medium     | 40       | 192GB | gpu:V100:4 | Max 8 GPUs per user | suspend             |
+| qTRDGPUL                                      | arctrddgx001-arctrddgx004 | 5d 8h      | low      | 40    | 512GB      | gpu:V100:8          | N/A                 | suspend    |
+| | arctrdgn001-arctrdgn002 | 5d 8h                                           | low        | 40       | 192GB | gpu:V100:4 | N/A                 | suspend             |
 | qTRDGPU                                       | arctrdagn001-arctrdagn020 | 5d 8h      | N/A      | 64    | 512GB      | gpu:gforce:1        | N/A                 | N/A        |
 
 ## Special nodes

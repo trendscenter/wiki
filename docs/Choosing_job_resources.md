@@ -3,10 +3,11 @@ layout: default
 title: Choosing job resources
 nav_order: 2
 parent: SLURM Overview
+last_modified_date: 10/2/2022 16:03
 ---
 Suppose we start an interactive session like so:
 
-`$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty --x11 /bin/bash`
+`$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty /bin/bash`
 
 Above in the `srun` command we have specified `--mem=10g`, which means
 we have allocated 10 GigaBytes (GB) of memory (and 1 CPU by default) for
@@ -19,24 +20,14 @@ Things to consider:
     CPU in one of the general compute nodes (which have 32 CPUs and 768
     GB of memory each).
 
-<!-- -->
-
 -   If the required memory is about 100-600GB, consider allocating
     multiple corresponding CPUs in addition to memory. Otherwise, up to
     31 tasks could be allocated to the same node and it may run out of
-    memory.
+    memory. The following will allocate 10 CPUs.
 
-`>> maxNumCompThreads(10);`
+`$ srun -p qTRD -A <slurm_account_code> -v -n1 -c10 --mem=100g -t60 --pty /bin/bash`
 
--   On the other hand, if using parallel pool, first increase the amount
-    of resource available using the following command in the Linux
-    command line or `sbatch` script (to avoid segmentation faults):
-
-`ulimit -u 63536`
-
-Then start Matlab, then start
-parallel pool in the command window or script with the number of CPUs
-allocated.
+-   On the other hand, if using parallel pool, run the following in command window or script and specify the number number of parallel processes equal to the number of CPUs allocated.
 
 ```
 # tell Matlab to run 10 parallel processes in the command window or your script
@@ -49,7 +40,7 @@ allocated.
 
 ```
 # allocate 80 CPUs and 1TB of memory in the high memory queue in SLURM
-$ srun -p qTRDHM -A <slurm_account_code> -v -n1 -c80 --mem=1t --pty --x11 /bin/bash 
+$ srun -p qTRDHM -A <slurm_account_code> -v -n1 -c80 --mem=1t --pty /bin/bash 
 $ module load matlab/R2022a
 $ matlab &
 ```

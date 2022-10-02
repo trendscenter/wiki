@@ -3,6 +3,7 @@ layout: default
 title: Configure SSH for easy access to DEV machines
 nav_order: 4
 parent: Getting Started
+last_modified_date: 10/2/2022 12:58
 ---
 <details open markdown="block">
   <summary>
@@ -26,50 +27,44 @@ Create an SSH config file like below and save in `~/.ssh/config` file.
 On Windows machines, `~` corresponds to `C:\Users\<your_name>\` directory, so you should create the file `C:\Users\<your_name>\.ssh\config`.
 Note that the file name does not have any extension like `.txt`.  
 
+{: .tip}
+Replace `<campusid>` with your GSU username in all the commands/configs below.
+
 ```
-host trendslogin
-    HostName trendslogin.gsu.edu
-    user <campusID>
+# for dev node access
+host {{site.data.trends.dev_alias}}
+	hostname {{site.data.trends.dev_node}}
+	user <campusid>
 
-host devtrends01
-    HostName trendscn017.rs.gsu.edu
-    user <campusID>
-    LocalForward <port> localhost:<port>
-
-host trendsgndev01
-    HostName trendsgndev101.rs.gsu.edu
-    user <campusID>
-
-host devtrendsgpu
-    HostName trendsagn019.rs.gsu.edu
-    user <campusID>
+# for login node/SLURM access
+Host {{site.data.trends.login_alias}}
+    HostName {{site.data.trends.login_alias}}
+    User <campusid>
+    ForwardAgent yes
+    CertificateFile ~/.ssh/id_<campusid>-cert.pub
+    IdentityFile ~/.ssh/id_<campusid>
 ```
 
 Now run the following command to create SSH keys:
 
 ```
-$ ssh-keygen -t rsa
+$ ssh-keygen -t ed25519 -f id_<campusid>
 ```
 
 Copy the key to the server:
 
 ```
-$ ssh-copy-id trendslogin
+$ ssh-copy-id -i id_<campusid> {{site.data.trends.login_alias}}
 ```
 
-If `ssh-copy-id` is not available in your local machine, open the file
-`~/.ssh/authorized_keys` <i>on the cluster</i> manually, and append the
-content of your public key `~/.ssh/id_rsa.pub` <i>on your local
-machine</i> to it.
+{: .tip}
+If `ssh-copy-id` is not available in your local machine, open the file `~/.ssh/authorized_keys` on the cluster manually, and append the content of your public key `~/.ssh/id_rsa.pub` on your local machine to it.
 
-Test the configuration, you should now be able to login without having
-to type password:
+Test the configuration, you should now be able to login without having to type password:
 
 ```
-$ ssh -XY trendslogin
-$ ssh -XY devtrends01
-$ ssh -XY trendsgndev01
-$ ssh -XY trendsgndev02
+$ ssh -XY {{site.data.trends.dev_alias}}
+$ ssh -XY {{site.data.trends.login_alias}}
 ```
 
 ## Forwarding a port (tunneling)
@@ -77,20 +72,14 @@ $ ssh -XY trendsgndev02
 Update the ssh config like below to forward a port:
 
 ```
-host devtrendsgpu
-    HostName trendsagn019.rs.gsu.edu
+host {{site.data.trends.dev_alias}}
+    HostName {{site.data.trends.dev_node}}
     user <campusID>
     LocalForward <port> localhost:<port>
 ```
 
 ## Remote coding in Visual Studio Code
 
-Install [VS Code](https://code.visualstudio.com/) and then the [Remote
-Development
-plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
-Make sure the above configuration is working. Then go to the "Remote
-Explorer" tab to the left panel of VS Code and connect to `devtrends01`.
+Install [VS Code](https://code.visualstudio.com/) and then the [Remote Development plugin](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack).
+Make sure the above configuration is working. Then go to the "Remote Explorer" tab to the left panel of VS Code and connect to `{{site.data.trends.dev_alias}}`.
 
-Please go through the above annotated video to see how to open folders
-and files, edit/debug code, run those from console and/or submit jobs on
-the cluster, inspect output files and figures in VS Code.

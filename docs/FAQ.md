@@ -2,6 +2,7 @@
 layout: default
 title: FAQ
 nav_order: 7
+last_modified_date: 10/2/2022 16:39
 ---
 <details open markdown="block">
   <summary>
@@ -20,9 +21,12 @@ nav_order: 7
 
 `$ module load matlab/R2022a`
 
--   Set the `MODULEPATH` variable
+-   Set the `MODULEPATH` variable manually
 
-`$  export MODULEPATH=/apps/Compilers/modules-3.2.10/Debug-Build/Modules/3.2.10/modulefiles/`
+```
+$ source /usr/share/lmod/lmod/init/bash
+$ module use /application/ubuntumodules/localmodules
+```
 
 ### Error using parpool ... Parallel pool failed to start with the following error ...
 
@@ -155,6 +159,9 @@ Did you write the job submission script in a Windows system, then
 transferred it to the cluster? You may need to convert the line-endings
 in that file using `dos2unix `<filename> command.
 
+Also make sure the job script and the error file locations are accessible on the node where the job was scheduled. 
+You can find the erroneous node by putting `echo $HOSTNAME >&2` in the job submission script.
+
 ### Why does my job not start?
 
 Use `squeue -u `<campusID> to check the state and reason. To find what
@@ -182,22 +189,3 @@ immediately allocated. To view the priority, use `sprio -l` command. To
 learn more about the fair tree algorithm, [see
 this](https://slurm.schedmd.com/fair_tree.html).
 
-### Starting Matlab parallel pool is causing Java out of memory error and/or segmentation fault...
-
-Try the following command before starting Matlab-
-
-`ulimit -u 63536`
-
-You can also add the command to your .bashrc and sbatch scripts. The
-command makes the maximum number of processes available to a single
-user.
-
-### I am getting "X Error of failed request: BadValue" error in XQuartz
-
-Try running the following command in the terminal to fix issues with
-some GUI applications: (Thanks to Leyla Eghbalzad for figuring this out)
-
-`defaults write org.macosforge.xquartz.X11 enable_iglx -bool true`
-
-Or, you may have to try downgrading to Xquartz version 2.7.8 [per this
-thread](https://bugs.freedesktop.org/show_bug.cgi?id=96433).

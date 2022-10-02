@@ -3,6 +3,7 @@ layout: default
 title: Linux tips
 nav_order: 8
 parent: Getting Started
+last_modified_date: 10/2/2022 14:45
 ---
 <details open markdown="block">
   <summary>
@@ -65,6 +66,8 @@ $ du -sh
 
 # get size of each child directory
 $ du -h --max-depth=1
+
+$ dust 
 ```
 
 ### Display help about a command

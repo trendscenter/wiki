@@ -17,8 +17,8 @@ parent: List of software
 
 | Partitions     | GPUs                | Nodes         | CPUs  | Memory     | Time limit | 
 |----------------|---------------------|---------------|------------|-------|------------|
-| qTRDGPU[H/M/L] | gpu:v100:8          | dgx001-dgx004 | 40    | 512GB      | 5d 8h      |
-|                | gpu:v100:4          | gn001-gn002   | 40    | 192GB      | 5d 8h      |
+| qTRDGPU[H/M/L] | gpu:V100:8          | dgx001-dgx004 | 40    | 512GB      | 5d 8h      |
+|                | gpu:V100:4          | gn001-gn002   | 40    | 192GB      | 5d 8h      |
 |                | gpu:a100:8          | dgxa001       | 40    | 1TB        | 5d 8h      |
 | qTRDGPU        | gpu:gforce:1        | agn001-agn020 | 64    | 512GB      | 5d 8h      |
 
@@ -53,7 +53,7 @@ See examples below.
 #SBATCH -n 1
 #SBATCH -c 10
 #SBATCH --mem=50g
-#SBATCH --gres=gpu:v100:1
+#SBATCH --gres=gpu:V100:1
 #SBATCH -p qTRDGPUH
 #SBATCH -t 4-00
 #SBATCH -J <job name>
@@ -86,5 +86,5 @@ sleep 10s
 *can be run on the login node*
 ```
 # Start interactive mode on a GPU worker node
-$ srun -p qTRDGPUH -A <slurm_account_code> -v -n1 --pty --mem=10g --gres=gpu:v100:1 /bin/bash
+$ srun -p qTRDGPUH -A <slurm_account_code> -v -n1 --pty --mem=10g --gres=gpu:V100:1 /bin/bash
 ```

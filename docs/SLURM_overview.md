@@ -3,7 +3,7 @@ layout: default
 title: SLURM Overview
 nav_order: 4
 has_children: true
-last_modified_date: 09/24/2022 11:29
+last_modified_date: 10/2/2022 15:36
 ---
 <details open markdown="block">
   <summary>
@@ -142,13 +142,7 @@ srun: Node trendscn001.rs.gsu.edu, 1 tasks started
 
 After running the command, observe the output to see if what you requested is actually allocated (under `defined options`). Notice the last line `srun: Node trendscn001.rs.gsu.edu, 1 tasks started`, which means the task started successfully on a compute node `trendscn001.rs.gsu.edu`, hence the prompt has changed to `campusID@trendscn001`. Otherwise if there is an error, observe the output for possible reasons.
 
-The following command launches Matlab GUI in a compute node in the qTRD
-partition, allocates 1 cpu and 10GB memory.
-
-```
-$ module load matlab/R2022a
-$ srun -p qTRDEV -A <slurm_account_code> -v -n1 -c1 --mem=10g --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
-```
+Check out [Running GUI applications](Running_GUI_applications) to see how to run GUI applications on the cluster.
 
 `srun` command has many options available to control what resource are
 allocated and how tasks are distributed across those resources:

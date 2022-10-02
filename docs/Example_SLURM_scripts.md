@@ -173,7 +173,7 @@ Submit the job using `sbatch --array=1-5000%100 JobSubmit.sh`.
 #SBATCH -n 1
 #SBATCH -c 10
 #SBATCH --mem=50g
-#SBATCH --gres=gpu:v100:1
+#SBATCH --gres=gpu:V100:1
 #SBATCH -p qTRDGPUH
 #SBATCH -t 4-00
 #SBATCH -J <job name>

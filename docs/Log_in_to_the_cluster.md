@@ -71,12 +71,20 @@ Host {{site.data.trends.login_alias}}
 ### Configure SSH authentication agent
 
 On Linux/Mac, the SSH authentication agent should be running by default. 
+Run the following command to add the generated SSH key to the agent.
+
+```
+ssh-add ~/.ssh/id_<campusid>
+```
+
 On Windows, you need administrator privilege to enable the service.
 Open a PowerShell window as administrator and run the following command:
 
 ```
 $ Set-Service -Name ssh-agent -StartupType Automatic -Status Running
 ```
+
+Then you should be able to use the `ssh-add` command above.
 
 If you do not have administrator access to your machine, please contact the administrator with the above information.
 
@@ -124,7 +132,7 @@ srun: Node trendscn013.rs.gsu.edu, 1 tasks started
 The above command will allocate 1 CPU on one of the nodes under `qTRD` queue and 10GB of RAM on the said node (`trendscn013` in this case) for 60 minutes and start a `bash` session. 
 See [this page](Cluster_queue_information) for more information about the available queues.
 
-## Connect to the cluster using VPN
+## Connect to the cluster using VNC
 
 You can also connect to the cluster and GUI applications from [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
 

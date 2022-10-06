@@ -24,7 +24,7 @@ You must be connected to the [GSU VPN](Configure_VPN), or in the GSU network to 
 
 ### Active allocation
 
-[Request an account](request_an_account).
+[Request an account](Request_an_account).
 
 ### SSH keypair
 

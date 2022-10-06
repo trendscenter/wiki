@@ -122,9 +122,31 @@ $ ipython
 [$] whos
 ```
 
-## GPU and TensorFlow
+## GPU
 
-[TBD]
+To use GPUs in your Python scripts, first create an environment using any of the methods described above.
+Then go to [https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/locally/) and configure your installation, including CUDA toolkit.
+Following is an example of the process.
+
+```
+$ ssh {{site.data.trends.login_node}}
+$ module load miniconda3/4.12.0
+$ conda init
+
+# Log back in to have base env loaded.
+$ ssh {{site.data.trends.login_node}}
+
+# start an interactive session
+$ srun -p qTRDGPUH -A trends53c17 -v -n1 --pty -c3 --mem=60g --gres=gpu:V100:1 /bin/bash
+
+# set up new environment
+$ module load miniconda3/4.12.0
+$ conda create -n testenv1 python=3.9
+$ conda activate testenv1
+
+# install GPU essentials for PyTorch
+$ conda install pytorch torchvision torchaudio cudatoolkit=11.6 -c pytorch -c conda-forge
+```
 
 ## More information
 

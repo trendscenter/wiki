@@ -3,6 +3,7 @@ layout: default
 title: GIFT
 nav_order: 2
 parent: List of software
+last_modified_date: 10/5/2022 21:49
 ---
 <details open markdown="block">
   <summary>
@@ -13,34 +14,14 @@ parent: List of software
 {:toc}
 </details>
 
-GIFT is an application supported by the NIH under grant 1RO1EB000840 to
-Dr. Vince Calhoun and Dr. Tulay Adali. It is a MATLAB toolbox which
-implements multiple algorithms for independent component analysis and
-blind source separation of group (and single subject) functional
-magnetic resonance imaging data.
+GIFT is an application supported by the NIH under grant 1RO1EB000840 to Dr. Vince Calhoun and Dr. Tulay Adali. 
+It is a MATLAB toolbox which implements multiple algorithms for independent component analysis and blind source separation of group (and single subject) functional magnetic resonance imaging data.
 
 ## Using GIFT GUI
 
 ### Run Matlab GUI
 
-First, [prepare to run GUI
-application](Running_GUI_applications). Then run the Matlab
-GUI using one of the following:
-
-Method 1 (via SLURM X11):
-
-```
-$ module load matlab/R2022a
-$ srun -p qTRDEV -A <slurm_account_code> -v -n1 -c1 --mem=10g --export=TERM,HOME --pty --x11 /apps/Framework/MATLAB/R2019b/bin/matlab
-```
-
-Method 2 (via interactive mode):
-
-```
-$ srun -p qTRDEV -A <slurm_account_code> -v -n1 -c1 --mem=10g --pty --x11 /bin/bash 
-$ module load matlab/R2022a
-$ matlab &
-```
+To use Matlab GUI, select Matlab from the TReNDS interactive apps on [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
 
 ### Add GIFT path
 
@@ -50,9 +31,7 @@ $ matlab &
 
 `>> gift`
 
-<figure>
-<img src="Gift.png" title="Gift.png" width="800" alt="Gift.png" /><figcaption aria-hidden="true">Gift.png</figcaption>
-</figure>
+![Gift]({{ site.baseurl }}/assets/images/gift.png)
 
 ### Example analysis: Group ICA on auditory oddball data
 

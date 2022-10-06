@@ -3,6 +3,7 @@ layout: default
 title: GPU Computing
 nav_order: 2
 parent: List of software
+last_modified_date: 10/5/2022 21:49
 ---
 <details open markdown="block">
   <summary>
@@ -33,10 +34,10 @@ parent: List of software
 
 ## Special nodes
 
-| Nodes                     | CPUs | Memory | GPUs         | Purpose                   |
-|---------------------------|------|--------|--------------|---------------------------|
-| trendsgndev101.rs.gsu.edu | 4    | 62GB   | TITAN X:2    | GPU development & testing |
-| trendsagn019.rs.gsu.edu   | 64   | 512GB  | gpu:gforce:1 | GPU development & testing |
+| Nodes                         | CPUs | Memory | GPUs         | Purpose                   |
+|-------------------------------|------|--------|--------------|---------------------------|
+| {{site.data.trends.dev_node}} | 4    | 62GB   | TITAN X:2    | GPU development & testing |
+| trendsagn019.rs.gsu.edu       | 64   | 512GB  | gpu:gforce:1 | GPU development & testing |
 
 ## Allocating GPUs in SLURM
 
@@ -64,7 +65,7 @@ See examples below.
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=<email address>
 
-sleep 5s
+sleep 10s
 
 echo $HOSTNAME >&2
 

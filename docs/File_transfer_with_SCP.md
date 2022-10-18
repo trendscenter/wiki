@@ -8,6 +8,8 @@ scp - secure copy (remote file copy program) command copies files between hosts 
 
 ### Examples
 
+Following examples assume you have [SSH settings configured](Configure_SSH_for_easy_access_to_DEV_machines).
+
 ```
 # transfer a file from remote to local
 $ scp <campusID>@{{site.data.trends.login_alias}}:<full path to file on remote> .
@@ -21,3 +23,7 @@ $ scp -r <campusID>@{{site.data.trends.login_alias}}:<full path to directory 
 # transfer a directory from local to remote
 $ scp -r <directory_name> <campusID>@{{site.data.trends.login_alias}}:<full path to directory on remote>
 ```
+
+{: .hint}
+If {{site.data.trends.login_alias}} is not working, try a dev node e.g. {{site.data.trends.dev_alias}}.
+

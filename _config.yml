@@ -80,7 +80,7 @@ callouts:
     color: yellow
   hint:
     title: Hint
-    color: grey-lt
+    color: purple
   important:
     title: Important
     color: green
@@ -98,4 +98,4 @@ callouts:
     color: pink
   attention:
     title: Attention
-    color: purple
+    color: grey-lt

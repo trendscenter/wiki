@@ -9,6 +9,24 @@ FreeSurfer is a software package for the analysis and visualization of
 structural and functional neuroimaging data from cross-sectional or
 longitudinal studies.
 
+### Running Freesurfer GUI
+
+To use Freesurfer GUI, select TReNDS Interactive desktop from under TReNDS interactive apps on [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/). 
+Once the session is launched, open a terminal and run the following commands for loading the module and setup. 
+
+```
+$ module load freesurfer/7.3.2
+$ source $FREESURFER_HOME/SetUpFreeSurfer.sh
+```
+
+Then you should be able to use any GUI application.
+
+```
+$ freeview
+```
+
+### Running Freesurfer in terminal
+
 ```
 # Login to the cluster
 $ ssh -XY <campusID>@{{site.data.trends.login_node}}
@@ -21,6 +39,3 @@ $ module load freesurfer/7.3.2
 $ source $FREESURFER_HOME/SetUpFreeSurfer.sh
 ```
 
-To use any GUI, select TReNDS Interactive desktop from under TReNDS interactive apps on [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/). 
-Once the session is launched, open a terminal and run the above commands for loading the module and setup. 
-Then you should be able to use any GUI application.

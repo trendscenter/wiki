@@ -51,6 +51,12 @@ Now run the following command to create SSH keys:
 $ ssh-keygen -t ed25519 -f id_<campusid>
 ```
 
+On Mac, add the key to your `ssh-agent`:
+
+```
+ssh-add -K ~/.ssh/id_<campusid>
+```
+
 Copy the key to the server:
 
 ```

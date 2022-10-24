@@ -21,6 +21,8 @@ last_modified_date: 10/2/2022 16:39
 
 `$ module load matlab/R2022a`
 
+### Lmod has detected the following error:  The following module(s) are unknown
+
 -   Set the `MODULEPATH` variable manually
 
 ```

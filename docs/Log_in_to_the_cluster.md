@@ -106,7 +106,7 @@ $ ssh {{site.data.trends.login_alias}}
 For running computations, please allocate resources on a compute/worker node which are accessible from the head/login node:
 
 ```
-[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty --x11 /bin/bash
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty /bin/bash
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : <slurm_account_code>

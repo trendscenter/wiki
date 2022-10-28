@@ -12,18 +12,22 @@ Following examples assume you have [SSH settings configured](Configure_SSH_for_e
 
 ```
 # transfer a file from remote to local
-$ scp <campusID>@{{site.data.trends.login_alias}}:<full path to file on remote> .
+$ scp <campusID>@{{site.data.trends.dev_alias}}:<full path to file on remote> .
 
 # transfer a file from local to remote
-$ scp <file_name> <campusID>@{{site.data.trends.login_alias}}:<full path to directory on remote>
+$ scp <file_name> <campusID>@{{site.data.trends.dev_alias}}:<full path to directory on remote>
 
 # transfer a directory from remote to local
-$ scp -r <campusID>@{{site.data.trends.login_alias}}:<full path to directory on remote> .
+$ scp -r <campusID>@{{site.data.trends.dev_alias}}:<full path to directory on remote> .
 
 # transfer a directory from local to remote
-$ scp -r <directory_name> <campusID>@{{site.data.trends.login_alias}}:<full path to directory on remote>
+$ scp -r <directory_name> <campusID>@{{site.data.trends.dev_alias}}:<full path to directory on remote>
 ```
 
-{: .hint}
-If {{site.data.trends.login_alias}} is not working, try a dev node e.g. {{site.data.trends.dev_alias}}.
+### WinSCP
+
+You can also use [WinSCP](https://winscp.net/eng/index.php) or [FileZilla](https://filezilla-project.org/download.php?show_all=1) to transfer files visually.
+
+![Filezilla-1]({{ site.baseurl }}/assets/images/filezilla.png)
+
 

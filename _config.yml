@@ -31,7 +31,8 @@ github_username:  esalman
 
 # Build settings
 # theme: minima
-remote_theme: pdmosses/just-the-docs@callouts
+# remote_theme: pdmosses/just-the-docs@callouts
+remote_theme: pdmosses/just-the-docs
 # plugins:
 #   - jekyll-feed
 
@@ -74,28 +75,28 @@ ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (t
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
 last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
 
-callouts:
-  warning:
-    title: Warning
-    color: yellow
-  hint:
-    title: Hint
-    color: purple
-  important:
-    title: Important
-    color: green
-  note:
-    title: Note
-    color: grey-dk
-  tip:
-    title: Tip
-    color: blue
-  caution:
-    title: Caution
-    color: red
-  error:
-    title: Error
-    color: pink
-  attention:
-    title: Attention
-    color: grey-lt
+# callouts:
+#   warning:
+#     title: Warning
+#     color: yellow
+#   hint:
+#     title: Hint
+#     color: purple
+#   important:
+#     title: Important
+#     color: green
+#   note:
+#     title: Note
+#     color: grey-dk
+#   tip:
+#     title: Tip
+#     color: blue
+#   caution:
+#     title: Caution
+#     color: red
+#   error:
+#     title: Error
+#     color: pink
+#   attention:
+#     title: Attention
+#     color: grey-lt

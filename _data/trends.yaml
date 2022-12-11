@@ -1,5 +1,5 @@
-login_node: arctrdlogin03.rs.gsu.edu
+login_node: arclogin.rs.gsu.edu
 login_alias: arclogin
-login_prompt: arctrdlogin03
+login_prompt: arctrdlogin001
 dev_node: arctrdgndev101.rs.gsu.edu
 dev_alias: arctrdgndev101

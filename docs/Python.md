@@ -122,6 +122,28 @@ $ ipython
 [$] whos
 ```
 
+### Support graphics output in remote sessions
+
+A terminal that is compatible with mrpeek seems to be sufficient, but
+we only tested this on Mac OS's `iterm2` and Ubuntu's `mlterm`
+* ssh to a dev machine from iterm2 or mlterm
+* activate your environment
+* install the following dependencies
+```
+pip install gr
+pip install ipython
+pip install matplotlib
+```
+* run ipython as follows 
+```env GKS_WSTYPE=iterm MPLBACKEND=module://gr.matplotlib.backend_gr ipython```
+* To test that is worked run this code inside `ipython`:
+```
+import numpy as np
+import pylab as plt
+plt.imshow(np.random.randn(5,5), interpolation=None)
+plt.show()
+```
+
 ## GPU
 
 To use GPUs in your Python scripts, first create an environment using any of the methods described above.

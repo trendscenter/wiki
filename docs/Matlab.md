@@ -26,7 +26,7 @@ You can run Matlab GUI from Hemera.
 
 ```
 # start an interactive session
-[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -c1 -t60 --pty --x11 /bin/bash                       
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -c1 -t60 --pty /bin/bash                       
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : <slurm_account_code>
@@ -64,7 +64,7 @@ DONE!
 Start an interactive session:
 
 ```
-[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -t60 --pty --x11 /bin/bash                       
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -t60 --pty /bin/bash                       
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : <slurm_account_code>

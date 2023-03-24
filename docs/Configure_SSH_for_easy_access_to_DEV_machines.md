@@ -56,6 +56,10 @@ On Mac, add the key to your `ssh-agent`:
 ```
 ssh-add -K ~/.ssh/id_<campusid>
 ```
+It may complain that the option is deprecated, in which case try this instead:
+```
+ssh-add --apple-use-keychain ~/.ssh/id_<campusid>
+```
 
 Copy the key to the server:
 

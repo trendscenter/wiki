@@ -2,7 +2,7 @@
 layout: default
 title: FAQ
 nav_order: 7
-last_modified_date: 10/2/2022 16:39
+last_modified_date: 10/25/2022 11:00
 ---
 <details open markdown="block">
   <summary>
@@ -20,6 +20,8 @@ last_modified_date: 10/2/2022 16:39
 -   Load the Matlab module
 
 `$ module load matlab/R2022a`
+
+### Lmod has detected the following error:  The following module(s) are unknown
 
 -   Set the `MODULEPATH` variable manually
 
@@ -94,10 +96,36 @@ information (configuration and usage) about the CPUs by running `htop`
 command. On a GPU node, you can get information about the GPUs by
 running `nvidia-smi` command.
 
+### How do I check which nodes are down?
+
+```
+$ sinfo -R
+```
+
 ### How do I allocate/avoid allocating a particular node?
 
-Using a command-separated list of hostnames in the `--nodelist` or
-`-exclude` argument of `srun/sbatch`.
+Using the following argument in `srun`:
+
+```
+# allocate on a particular node
+$ srun ... --nodelist <hostname> ...
+$ srun ... -w <hostname> ...
+
+# avoid a particular node
+$ srun --exclude <hostname> ...
+$ srun -x <hostname> ...
+```
+Or use the following `#SBATCH` directives:
+
+```
+# allocate on a particular node
+#SBATCH --nodelist <hostname>
+#SBATCH -w <hostname>
+
+# avoid a particular node
+#SBATCH --exclude <hostname>
+#SBATCH -x <hostname>
+```
 
 ### How can I limit the number of simultaneously running tasks?
 

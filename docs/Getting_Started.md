@@ -42,4 +42,4 @@ If you are running into issues, please document specifically what you tried and 
 
 -   [TReNDS slack channel](http://trendscenter.slack.com/#hpc-tips)
 -   [GSU-HPC slack channel](https://gsu-hpc.slack.com/)
--   [GSU-HPC issue tracker](https://hydra.rs.gsu.edu/projects/the-translational-research-in-neuroimaging-and-data-science-center-trends)
+-   [GSU-HPC issue tracker](https://hydra.gsu.edu)

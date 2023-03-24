@@ -108,7 +108,7 @@ a higher priority job).
 Running the following command will launch bash/shell in a compute node.
 
 ```
-[campusID@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty --x11 /bin/bash
+[campusID@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty /bin/bash
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : <slurm_account_code>
@@ -137,13 +137,10 @@ srun: Node trendscn001.rs.gsu.edu, 1 tasks started
 - `-n1`: number of tasks to run. Set to 1 unless needed. See [Granular resource allocation with srun](Example_SLURM_scripts#granular-resource-allocation-with-srun) for example.
 - `--mem=10g`: amount of memory requested (10 gigabytes)
 - `--pty`: executes task in pseudo terminal mode
-- `--x11`: sets up X11 forwarding (for GUI applications)
 - `/bin/bash`: the program to run, in this case `bash`
 
 After running the command, observe the output to see if what you requested is actually allocated (under `defined options`). Notice the last line `srun: Node trendscn001.rs.gsu.edu, 1 tasks started`, which means the task started successfully on a compute node `trendscn001.rs.gsu.edu`, hence the prompt has changed to `campusID@trendscn001`. Otherwise if there is an error, observe the output for possible reasons.
 
 Check out [Running GUI applications](Running_GUI_applications) to see how to run GUI applications on the cluster.
 
-`srun` command has many options available to control what resource are
-allocated and how tasks are distributed across those resources:
-<https://slurm.schedmd.com/srun.html>
+`srun` command has many options available to control what resource are allocated and how tasks are distributed across those resources: https://slurm.schedmd.com/srun.html

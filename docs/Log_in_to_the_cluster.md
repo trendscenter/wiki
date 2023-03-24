@@ -53,6 +53,31 @@ Download the generated certificate to your local machine and save in the `~/.ssh
 $ mv ~/Downloads/id_<campusid>-cert.pub ~/.ssh
 ```
 
+### Certificate Has An Expiration Date
+
+If it's been about 3 months since you signed your certificate and authentication suddenly returns `username@arclogin.rs.gsu.edu: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).`. Your certificate may have expired. See description of this case in [the elpis documentation](https://arcwiki.rs.gsu.edu/en/home/ssh/authentication-issues). You can check via `ssh-keygen -L -f ~/.ssh/id_username-cert.pub`. This should return something like
+```
+❯ ssh-keygen -L -f .\.ssh\id_username-cert.pub
+.\.ssh\id_cchildress-cert.pub:
+        Type: ssh-ed25519-cert-v01@openssh.com user certificate
+        Public key: ED25519-CERT SHA256:BmEP/qyJnwkJJDlFX3PcKav8zj1hMkam98h+JQLhtA0
+        Signing CA: RSA SHA256:RkvuiBi72zpO9p5RfhKCgyVgTj+D+4nkQX62wY4UVR0 (using rsa-sha2-512)
+        Key ID: "vault-clientrole-token-elpis-acids-06610ffeac899f09092439455f73dc29abfcce3d613246a6f7c87e2502e1b40d"
+        Serial: 16511806482349416608
+        Valid: from 2022-11-23T10:11:55 to 2023-02-21T10:12:25
+        Principals:
+                username
+        Critical Options: (none)
+```
+Window's users have to hit <kbd>TAB</kbd> to resolve ~ to their home directory.
+You want to check the valid dates to ensure the certificate is still valid.
+
+### What do to if your certificate has expired?
+1. Go to https://elpis.rs.gsu.edu and paste your public key into the Sign SSH Form. [Full instructions](https://arcwiki.rs.gsu.edu/en/home/elpis/signing-keys)
+2. Save your new certificate as ~/.ssh/id_username-cert.pub replacing your old certificate.
+3. Re-add your ssh key and certificate to the ssh-agent `ssh-add ~/.ssh/id_username`
+
+
 ## Connect to the cluster using terminal
 
 ### Create SSH configuration file
@@ -106,7 +131,7 @@ $ ssh {{site.data.trends.login_alias}}
 For running computations, please allocate resources on a compute/worker node which are accessible from the head/login node:
 
 ```
-[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty --x11 /bin/bash
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty /bin/bash
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : <slurm_account_code>

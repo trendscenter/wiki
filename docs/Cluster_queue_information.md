@@ -51,10 +51,10 @@ Number    Manufacturer    Cores   Memory  GPUs            Name
 | Nodes                     | CPUs | Memory | GPUs         | Purpose                                                                                                                                |
 |---------------------------|------|--------|--------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | {{site.data.trends.login_prompt}}.rs.gsu.edu  | 0    | 1MB    | N/A          | Head node for submitting jobs on the cluster                                                                                           |
-| trendscn017.rs.gsu.edu    | 32   | 768GB  | N/A          | Tasks that support research, such as docker and other services/daemons, VS Code remote development, scheduled task, data transfer etc. |
-| trendscn018.rs.gsu.edu    | 32   | 768GB  | N/A          | Database server                                                                                                                        |
+| arctrdcn017.rs.gsu.edu    | 32   | 768GB  | N/A          | Tasks that support research, such as docker and other services/daemons, VS Code remote development, scheduled task, data transfer etc. |
+| arctrdcn018.rs.gsu.edu   | 32   | 768GB  | N/A          | Database server                                                                                                                        |
 | {{site.data.trends.dev_node}} | 4    | 62GB   | TITAN X:2    | GPU development & testing                                                                                                              |
-| trendsagn019.rs.gsu.edu   | 64   | 512GB  | gpu:gforce:1 | GPU development & testing                                                                                                              |
+| arctrdagn019.rs.gsu.edu   | 64   | 512GB  | gpu:gforce:1 | GPU development & testing                                                                                                              |
 
 ## Using SLURM commands
 

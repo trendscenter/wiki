@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuring SSH to Cluster in  Windows Subsystem for Linux
+title: Configure WSL
 nav_order: 2
 parent: Getting Started
 last_modified_date: 09/25/2022 9:29
@@ -129,7 +129,7 @@ Click “OK”
 Put the file wsl_vpn_shortcut.ps1 in a convenient directory. 
 
 
-### login to cluster
+### Login to cluster
 
 To login cluster from wls from vpn you need:
 

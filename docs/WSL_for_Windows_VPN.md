@@ -85,7 +85,7 @@ If you are connected to the GSU VPN, then use the following steps to ssh to the 
 Up to this point, if you're working from the GSU network, it appears that SSH to the cluster in WSL works. If you want to SSH to the cluster from WSL while connected to the GSU VPN, there are some issues that prevent it. This wsl-vpnkit script can be used to run on the side to resolve DNS issues in WSL. This software should allow SSH while on the VPN to work. Follow the steps below. 
 
 
-### Power shell
+### Power shell settings
 
 Find Windows power shell in you start menu and choose “open file in location”.
 
@@ -97,7 +97,7 @@ Check the box next to “Run as administrator” and Click “OK”.
 
 Click “OK”.
 
-### wsl_vpn.ps1 
+### Creating a shortcut to launch settings
 
 Create a text file wsl_vpn.ps1 with the following text :
 
@@ -110,8 +110,6 @@ Write-Host "Script wsl_vpn.ps1 finished."
 Create a new shortcut.  In the “Type the location of the item” browse the directory of  wsl_vpn.ps1.
 
 Create a name of the shortcut wsl_vpn_shortcut.ps1 (or whatever you want).
-
-### wsl_vpn_shortcut.ps1 properties
 
 Open “properties” of wsl_vpn_shortcut.ps1
 Add the text

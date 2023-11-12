@@ -132,7 +132,7 @@ we only tested this on Mac OS's `iterm2` and Ubuntu's `mlterm`
 ```
 pip install gr
 pip install ipython
-pip install matplotlib
+pip install matplotlib==3.2.2 # newer versions break gr (11/11/2023)
 ```
 * run ipython as follows 
 ```env GKS_WSTYPE=iterm MPLBACKEND=module://gr.matplotlib.backend_gr ipython```

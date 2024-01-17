@@ -16,16 +16,15 @@ last_modified_date: 09/25/2022 11:18
 
 ## Cluster configuration
 
-```bash
-Number    Manufacturer    Cores   Memory  GPUs            Name
-20        Intel           32      768 GB                  arctrdcn{001-020}
-3         Intel           96      1.5 TB                  arctrdhm{001-003}
-20        AMD             64      512 GB  1xNvidia 2080   arctrdagn{001-020}
-16        AMD             128     512 GB  2xNvidia A40    arctrdagn{031-046}
-1         Nvidia DGX-1    256     1   TB  8xNvidia A100   arctrddgxa001
-2         Nvidia DGX-1    192     1   TB  8xNvidia A100   arctrddgxa{002-003}
-2         Dell            40      192 GB  4xNvidia V100   arctrdgn{001-002}
-```
+| Number | Manufacturer | Cores | RAM    | GPUs          | GPU Memory | Name                |
+| ------ | ------------ | ----- | ------ | ------------- | ---------- | ------------------- |
+| 20     | Intel        | 32    | 768 GB |               |            | arctrdcn{001-020}   |
+| 3      | Intel        | 96    | 1.5 TB |               |            | arctrdhm{001-003}   |
+| 20     | AMD          | 64    | 512 GB | 1xNvidia 2080 | 11GB       | arctrdagn{001-020}  |
+| 16     | AMD          | 128   | 512 GB | 2xNvidia A40  | 45GB       | arctrdagn{031-046}  |
+| 1      | Nvidia DGX-1 | 256   | 1 TB   | 8xNvidia A100 | 40GB       | arctrddgxa001       |
+| 2      | Nvidia DGX-1 | 192   | 1 TB   | 8xNvidia A100 | 80GB       | arctrddgxa{002-003} |
+| 2      | Dell         | 40    | 192 GB | 4xNvidia V100 | 32GB       | arctrdgn{001-002}   |
 
 ## CPU queue/partitions
 

@@ -33,8 +33,10 @@ Generate an SSH keypair in your local machine:
 ```
 $ mkdir ~/.ssh
 $ cd ~/.ssh
-$ ssh-keygen -t ed25519 -f id_<campusid>
+$ ssh-keygen -f id_<campusid>
 ```
+
+make sure to use a [strong password](https://www.cisa.gov/secure-our-world/require-strong-passwords) when creating your keys!
 
 ### Signed public key
 

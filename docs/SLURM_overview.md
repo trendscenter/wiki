@@ -37,33 +37,36 @@ The TReNDS cluster uses SLURM workload manager. From
 
 ### `sinfo`: What partitions exist on the system
 
-```
-[msalman@{{site.data.trends.login_prompt}} ~]$ sinfo
-PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-qTRD         up 5-08:00:00      3    mix trendscn001.rs.gsu.edu,trendscn004.rs.gsu.edu,trendscn008.rs.gsu.edu
-qTRD         up 5-08:00:00      7  alloc trendscn010.rs.gsu.edu,trendscn011.rs.gsu.edu,trendscn012.rs.gsu.edu,trendscn013.rs.gsu.edu,trendscn014.rs.gsu.edu,trendscn015.rs.gsu.edu,trendscn016.rs.gsu.edu
-qTRD         up 5-08:00:00      6   idle trendscn002.rs.gsu.edu,trendscn003.rs.gsu.edu,trendscn005.rs.gsu.edu,trendscn006.rs.gsu.edu,trendscn007.rs.gsu.edu,trendscn009.rs.gsu.edu
-qTRDEV       up 5-02:00:00      2   idle trendscn019.rs.gsu.edu,trendscn020.rs.gsu.edu
-qTRDHM       up 5-08:00:00      3   idle trendsmn001.rs.gsu.edu,trendsmn002.rs.gsu.edu,trendsmn003.rs.gsu.edu
-qTRDGPUH     up 5-08:00:00      1  alloc trendsgn001.rs.gsu.edu
-qTRDGPUH     up 5-08:00:00      1   idle trendsgn002.rs.gsu.edu
-qTRDGPUL     up 1-00:00:00      1  alloc trendsgn001.rs.gsu.edu
-qTRDGPUL     up 1-00:00:00      1   idle trendsgn002.rs.gsu.edu
+```bash
+bbaker43@arctrdlogin001:/data/users3/bbaker$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+qTRD         up 5-08:00:00      5    mix arctrdcn[001,004-005,008,010]
+qTRD         up 5-08:00:00      1  alloc arctrdcn007
+qTRD         up 5-08:00:00      6   idle arctrdcn[006,009,012,014-016]
+qTRDEV       up 5-02:00:00      0    n/a
+qTRDHM       up 5-08:00:00      2    mix arctrdhm[001-002]
+qTRDHM       up 5-08:00:00      1   idle arctrdhm003
+qTRDGPUH     up 5-08:00:00      3    mix arctrddgxa002,arctrdgn[001-002]
+qTRDGPUH     up 5-08:00:00      2   idle arctrddgxa[001,003]
+qTRDGPUM     up 5-08:00:00      3    mix arctrddgxa002,arctrdgn[001-002]
+qTRDGPUM     up 5-08:00:00      2   idle arctrddgxa[001,003]
+qTRDGPUL     up 5-08:00:00      3    mix arctrddgxa002,arctrdgn[001-002]
+qTRDGPUL     up 5-08:00:00      2   idle arctrddgxa[001,003]
+qTRDGPU      up 5-08:00:00     18    mix arctrdagn[001,003,031-046]
+qTRDGPU      up 5-08:00:00     12   idle arctrdagn[002,004-010,014-017]
+qTRDBF       up 5-08:00:00      2  alloc arctrdcn[019-020]
+qTRDGPUBF    up 5-08:00:00      1   idle arctrdagn020
 ```
 
 The example shows the following:
 
--   There are 5 partitions: qTRD, qTRDEV, qTRDHM, qTRDGPUH and qTRDGPUL.
--   All partitions are in UP state.
--   In the general-purpose compute queue qTRD, trendscn001.rs.gsu.edu is
-    in mixed state, meaning some of its CPUs are allocated while others
+-   There are 7 primary partitions: `qTRD`, `qTRDEV`, `qTRDHM`, `qTRDGPU`, `qTRDGPUH`, `qTRDGPUM` and `qTRDGPUL`. In addition, there are two brainforge-specific partitions: `qTRDBF` and `qTRDGPUBF`.
+-   All partitions are in `up` state.
+-   In the general-purpose compute queue qTRD, arctrdcn[001,004-005,008,010].rs.gsu.edu are
+    in a mixed state, meaning some of their CPUs are allocated while others
     are idle.
--   trendscn0\[10-16\].rs.gsu.edu are all fully allocated, while
-    trendscn00\[2,3,5,6,7,9\].rs.gsu.edu are idle.
--   In the high-memory compute queue qTHDHM, nodes
-    trendsmn0\[01-03\].rs.gsu.edu are all in idle state.
--   In the GPU compute queues, trendsgn001.rs.gsu.edu is fully allocated
-    whereas trendsgn002.rs.gsu.edu is idle.
+-   arctrdcn007.rs.gsu.edu is fully allocated, while
+    arctrdcn\[006,009,012,014-016\].rs.gsu.edu are idle.
 
 `sinfo` command has many options to view more detail information:
 <https://slurm.schedmd.com/sinfo.html>
@@ -79,25 +82,31 @@ it is still pending. Typical reasons for pending jobs are Resources
 (waiting for resources to become available) and Priority (queued behind
 a higher priority job).
 
-```
-[msalman@{{site.data.trends.login_prompt}} ~]$ squeue
-            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-376056_[401-3110%4     qTRD   airaji   airaji PD       0:00      1 (JobArrayTaskLimit)
-           374007      qTRD  jchen84  jchen84  R 1-13:54:30      1 trendscn008.rs.gsu.edu
-           374001      qTRD  jchen84  jchen84  R 1-13:55:00      1 trendscn008.rs.gsu.edu
-           341999      qTRD     bash    kduan  R 4-12:46:16      1 trendscn012.rs.gsu.edu
-           340583      qTRD     bash  jfries1  R 5-00:22:49      1 trendscn012.rs.gsu.edu
-           357922    qTRDHM     bash     lwu9  R 2-11:03:01      1 trendsmn001.rs.gsu.edu
-           376467      qTRD     bash  jfries1  R      35:11      1 trendscn013.rs.gsu.edu
-      370623_2896    qTRDHM   airaji   airaji  R 1-11:52:52      1 trendsmn002.rs.gsu.edu
-      370623_2890    qTRDHM   airaji   airaji  R 1-11:53:25      1 trendsmn002.rs.gsu.edu
-      370623_2845    qTRDHM   airaji   airaji  R 1-11:57:26      1 trendsmn002.rs.gsu.edu
-       376056_302      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu
-       376056_303      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu
-       376056_304      qTRD   airaji   airaji  R   14:59:23      1 trendscn009.rs.gsu.edu
-        370623_75    qTRDHM   airaji   airaji  R 1-16:38:16      1 trendsmn002.rs.gsu.edu
-        370623_78    qTRDHM   airaji   airaji  R 1-16:38:16      1 trendsmn002.rs.gsu.edu
-           356439    qTRDHM     bash     lwu9  R 2-13:29:43      1 trendsmn001.rs.gsu.edu
+```bash
+ bbaker43@arctrdlogin001:/data/users3/bbaker$ squeue
+ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+4295492      qTRD  test_cn  ppopov1 PD       0:00      1 (Resources)
+4295347      qTRD     bash nlewis26  R   17:33:30      1 arctrdcn001
+4296544      qTRD     bash hpetropo  R       6:35      1 arctrdcn001
+4296526      qTRD     bash    mduda  R      33:00      1 arctrdcn001
+4296498      qTRD     bash  jfries1  R    1:27:35      1 arctrdcn001
+4296543    qTRDBF bf_UTD_A svc-brai PD       0:00      1 (Resources)
+4296545    qTRDBF bf_UTD_A svc-brai PD       0:00      1 (Resources)
+4296549    qTRDBF bf_UTD_A svc-brai PD       0:00      1 (Resources)
+4296548    qTRDBF bf_UTD_A svc-brai PD       0:00      1 (Resources)
+4296547    qTRDBF bf_UTD_A svc-brai PD       0:00      1 (Resources)
+4296541    qTRDBF bf_UTD_A svc-brai  R      15:35      1 arctrdcn020
+4296535    qTRDBF bf_A0011 svc-brai  R      22:55      1 arctrdcn020
+4296536    qTRDBF bf_A0011 svc-brai  R      22:55      1 arctrdcn020
+4296534    qTRDBF bf_A0011 svc-brai  R      23:13      1 arctrdcn020
+4296531    qTRDBF bf_A0011 svc-brai  R      23:58      1 arctrdcn019
+4296532    qTRDBF bf_A0011 svc-brai  R      23:58      1 arctrdcn019
+4296533    qTRDBF bf_A0011 svc-brai  R      23:58      1 arctrdcn019
+4296530    qTRDBF bf_A0011 svc-brai  R      24:18      1 arctrdcn019
+4291821   qTRDGPU  cfrhwtr washbee1  R 2-14:48:59      1 arctrdagn032
+4291822   qTRDGPU  cflhptr washbee1  R 2-14:48:59      1 arctrdagn033
+4291823   qTRDGPU  cfrhptr washbee1  R 2-14:48:59      1 arctrdagn033
+4291820   qTRDGPU  cflhwtr washbee1  R 2-14:49:18      1 arctrdagn031
 ```
 
 `squeue` command has many options to view more detail information:
@@ -107,39 +116,47 @@ a higher priority job).
 
 Running the following command will launch bash/shell in a compute node.
 
-```
-[campusID@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g --pty /bin/bash
+```bash
+bbaker43@arctrdlogin001:~$ srun -p qTRD -A <slurm_account_code> -v -c 4 --nodes=1 --ntasks-per-node=1 --mem=4G --time=1:00:00 --pty -J myInteractiveJob /bin/bash
 srun: defined options
 srun: -------------------- --------------------
 srun: account             : <slurm_account_code>
-srun: mem                 : 10G
-srun: ntasks              : 1
+srun: cpus-per-task       : 4
+srun: job-name            : myInteractiveJob
+srun: mem                 : 4G
+srun: nodes               : 1
+srun: ntasks-per-node     : 1
 srun: partition           : qTRD
 srun: pty                 : set
+srun: time                : 01:00:00
 srun: verbose             : 1
-srun: x11                 : all
 srun: -------------------- --------------------
 srun: end of defined options
-srun: Waiting for nodes to boot (delay looping 450 times @ 0.100000 secs x index)
-srun: Nodes trendscn001.rs.gsu.edu are ready for job
-srun: jobid 4011166: nodes(1):`trendscn001.rs.gsu.edu', cpu counts: 1(x1)
-srun: CpuBindType=(null type)
-srun: launching 4011166.0 on host trendscn001.rs.gsu.edu, 1 tasks: 0
-srun: route default plugin loaded
-srun: Node trendscn001.rs.gsu.edu, 1 tasks started
-[campusID@trendscn001 ~]$
+srun: job 4296558 queued and waiting for resources
+srun: job 4296558 has been allocated resources
+srun: Waiting for nodes to boot (delay looping 6150 times @ 0.100000 secs x index)
+srun: Nodes arctrdcn001 are ready for job
+srun: jobid 4296558: nodes(1):`arctrdcn001', cpu counts: 4(x1)
+srun: Implicitly setting --exact, because -c/--cpus-per-task given.
+srun: launch/slurm: launch_p_step_launch: CpuBindType=(null type)
+srun: launching StepId=4296558.0 on host arctrdcn001, 1 tasks: 0
+srun: route/default: init: route default plugin loaded
+srun: launch/slurm: _task_start: Node arctrdcn001, 1 tasks started
+(base) bbaker43@arctrdcn001:~$
 ```
 
 **Explanation**:
 - `-p qTRD`: partition to run job on. See [Cluster & queue information](Cluster_queue_information) page for more information
 - `-A <slurm_account_code>`:  user group. See [Request an account](Request_an_account) page for list of groups
-- `-v`: verbose mode
-- `-n1`: number of tasks to run. Set to 1 unless needed. See [Granular resource allocation with srun](Example_SLURM_scripts#granular-resource-allocation-with-srun) for example.
-- `--mem=10g`: amount of memory requested (10 gigabytes)
+- `-v`: launch in verbose mode
+- `-c 4`: the number of CPUs to use
+- `--nodes 1 --ntasks-per-node=1`: number of nodes to use and tasks per node. Set both to 1 unless needed. See [Granular resource allocation with srun](Example_SLURM_scripts#granular-resource-allocation-with-srun) for example.
+- `--mem=4g`: amount of memory requested (4 gigabytes)
 - `--pty`: executes task in pseudo terminal mode
+- `-J myInteractiveJob`: name of the job (optional)
 - `/bin/bash`: the program to run, in this case `bash`
 
-After running the command, observe the output to see if what you requested is actually allocated (under `defined options`). Notice the last line `srun: Node trendscn001.rs.gsu.edu, 1 tasks started`, which means the task started successfully on a compute node `trendscn001.rs.gsu.edu`, hence the prompt has changed to `campusID@trendscn001`. Otherwise if there is an error, observe the output for possible reasons.
+After running the command, observe the output to see if what you requested is actually allocated (under `defined options`). Notice the last line `srun: Node arctrdcn001, 1 tasks started`, which means the task started successfully on a compute node `arctrdcn001.rs.gsu.edu`, hence the prompt has changed to `campusID@arctrdcn001`. Otherwise if there is an error, observe the output for possible reasons.
 
 Check out [Running GUI applications](Running_GUI_applications) to see how to run GUI applications on the cluster.
 

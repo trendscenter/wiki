@@ -36,6 +36,12 @@ $ cd ~/.ssh
 $ ssh-keygen -t ed25519 -f id_<campusid>
 ```
 
+make sure to use a [strong password](https://www.cisa.gov/secure-our-world/require-strong-passwords) when creating your keys!
+
+{: .attention}
+> ## `-t ed25519` flag not working
+> if the flag `-t ed25519` results in an error when you use it, DO NOT GENERATE A KEY USING SHA-256 (the default). Instead, try to update your version of `ssh`, or if it continues not to work, create a ticket with IT on Hydra. 
+
 ### Signed public key
 
 ```
@@ -85,10 +91,20 @@ You want to check the valid dates to ensure the certificate is still valid.
 Create a file `~/.ssh/config` with the following contents.
 
 ```
+Host *
+    AddKeysToAgent yes
+    IgnoreUnknown UseKeychain
+    UseKeychain yes
+    ForwardAgent yes
+    ServerAliveInterval 180
+    ServerAliveCountMax 3
+    TCPKeepAlive yes
+    User <campusid>
+    CertificateFile ~/.ssh/id_<campusid>-cert.pub
+    IdentityFile ~/.ssh/id_<campusid>
+
 Host {{site.data.trends.login_alias}}
     HostName {{site.data.trends.login_node}}
-    User <campusid>
-    ForwardAgent yes
     CertificateFile ~/.ssh/id_<campusid>-cert.pub
     IdentityFile ~/.ssh/id_<campusid>
 ```
@@ -156,6 +172,10 @@ srun: Node trendscn013.rs.gsu.edu, 1 tasks started
 
 The above command will allocate 1 CPU on one of the nodes under `qTRD` queue and 10GB of RAM on the said node (`trendscn013` in this case) for 60 minutes and start a `bash` session. 
 See [this page](Cluster_queue_information) for more information about the available queues.
+
+{: .attention}
+> ## arclogin.rs.gsu.edu does not work
+> if you have an issue with logging into arclogin.rs.gsu.edu, make sure you have all of the recommended flags in the `Host *` section of your config. Please do not use another ID for the login node, as this will bypass security and reliability behaviors implemented by IT. 
 
 ## Connect to the cluster using VNC
 

@@ -33,10 +33,14 @@ Generate an SSH keypair in your local machine:
 ```
 $ mkdir ~/.ssh
 $ cd ~/.ssh
-$ ssh-keygen -f id_<campusid>
+$ ssh-keygen -t ed25519 -f id_<campusid>
 ```
 
 make sure to use a [strong password](https://www.cisa.gov/secure-our-world/require-strong-passwords) when creating your keys!
+
+{: .attention}
+> ## `-t ed25519` flag not working
+> if the flag `-t ed25519` results in an error when you use it, DO NOT GENERATE A KEY USING SHA-256 (the default). Instead, try to update your version of `ssh`, or if it continues not to work, create a ticket with IT on Hydra. 
 
 ### Signed public key
 

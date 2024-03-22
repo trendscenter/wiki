@@ -20,8 +20,8 @@ last_modified_date: 10/5/2022 21:49
 |----------------|---------------------|---------------|------------|-------|------------|
 | qTRDGPU[H/M/L] | gpu:V100:8          | dgx001-dgx004 | 40    | 512GB      | 5d 8h      |
 |                | gpu:V100:4          | gn001-gn002   | 40    | 192GB      | 5d 8h      |
-|                | gpu:a100:8          | dgxa001       | 40    | 1TB        | 5d 8h      |
-| qTRDGPU        | gpu:gforce:1        | agn001-agn020 | 64    | 512GB      | 5d 8h      |
+|                | gpu:A100:8          | dgxa001       | 40    | 1TB        | 5d 8h      |
+| qTRDGPU        | gpu:RTX:1        | agn001-agn020 | 64    | 512GB      | 5d 8h      |
 
 ## GPU partitions preemption rule 
 
@@ -37,7 +37,7 @@ last_modified_date: 10/5/2022 21:49
 | Nodes                         | CPUs | Memory | GPUs         | Purpose                   |
 |-------------------------------|------|--------|--------------|---------------------------|
 | {{site.data.trends.dev_node}} | 4    | 62GB   | TITAN X:2    | GPU development & testing |
-| trendsagn019.rs.gsu.edu       | 64   | 512GB  | gpu:gforce:1 | GPU development & testing |
+| trendsagn019.rs.gsu.edu       | 64   | 512GB  | gpu:RTX:1 | GPU development & testing |
 
 ## Allocating GPUs in SLURM
 

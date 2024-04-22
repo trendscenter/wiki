@@ -46,6 +46,7 @@ last_modified_date: 09/25/2022 11:18
 |            | arctrdgn001-arctrdgn002     | 5d 8h      | low      | 40   | 192GB  | gpu:V100:4 | N/A                  | suspend    |
 | qTRDGPU    | arctrdagn001-arctrdagn019   | 5d 8h      | N/A      | 64   | 512GB  | gpu:RTX:1  | N/A                  | N/A        |
 |            | arctrdagn031-arctrdagn046   | 5d 8h      | N/A      | 128  | 512GB  | gpu:RTX:2  | N/A                  | N/A        |
+
 ## Special nodes
 
 | Nodes                                        | CPUs | Memory | GPUs      | Purpose                                                                                                                                |

@@ -40,7 +40,7 @@ make sure to use a [strong password](https://www.cisa.gov/secure-our-world/requi
 
 {: .attention}
 > ## `-t ed25519` flag not working
-> if the flag `-t ed25519` results in an error when you use it, DO NOT GENERATE A KEY USING SHA-256 (the default). Instead, try to update your version of `ssh`, or if it continues not to work, create a ticket with IT on Hydra. 
+> If the flag `-t ed25519` results in an error when you use it, DO NOT GENERATE A KEY USING SHA-256 (the default). Instead, try to update your version of `ssh`, or if it continues not to work, create a ticket with IT on Hydra. 
 
 ### Signed public key
 
@@ -78,7 +78,7 @@ If it's been about 3 months since you signed your certificate and authentication
 Window's users have to hit <kbd>TAB</kbd> to resolve ~ to their home directory.
 You want to check the valid dates to ensure the certificate is still valid.
 
-### What do to if your certificate has expired?
+### What to do if your certificate has expired?
 1. Go to https://elpis.rs.gsu.edu and paste your public key into the Sign SSH Form. [Full instructions](https://arcwiki.rs.gsu.edu/en/home/elpis/signing-keys)
 2. Save your new certificate as ~/.ssh/id_username-cert.pub replacing your old certificate.
 3. Re-add your ssh key and certificate to the ssh-agent `ssh-add ~/.ssh/id_username`
@@ -175,7 +175,7 @@ See [this page](Cluster_queue_information) for more information about the availa
 
 {: .attention}
 > ## arclogin.rs.gsu.edu does not work
-> if you have an issue with logging into arclogin.rs.gsu.edu, make sure you have all of the recommended flags in the `Host *` section of your config. Please do not use another ID for the login node, as this will bypass security and reliability behaviors implemented by IT. 
+> If you have an issue with logging into arclogin.rs.gsu.edu, make sure you have all of the recommended flags in the `Host *` section of your config. Please do not use another ID for the login node, as this will bypass security and reliability behaviors implemented by IT. 
 
 ## Connect to the cluster using VNC
 

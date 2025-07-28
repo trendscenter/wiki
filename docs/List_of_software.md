@@ -17,6 +17,7 @@ has_children: true
 -   [MPI](MPI)
 -   [mriqc](Mriqc)
 -   [nvtop](Nvtop)
+-   [Ollama](Ollama)
 -   [Python](Python)
 -   [R](R)
 -   [screen](Screen)

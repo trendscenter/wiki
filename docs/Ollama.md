@@ -19,12 +19,14 @@ last_modified_date: 07/27/2025 23:50
 ## Run Ollama as a chatbot on your local machine
 
 **Step 1. On your local machine, create a virtual environment and install Open WebUI.**
-    *   Create a virtual environment for [Open WebUI](https://docs.openwebui.com/): `python -m venv openwebui`. The virtual environment will be made in the current directory. You can also create a conda environment.
-    *   Activate the virtual environment: `source openwebui/bin/activate`.
-    *   Install Open WebUI: `pip install open-webui`.
+
+*   Create a virtual environment for [Open WebUI](https://docs.openwebui.com/): `python -m venv openwebui`. The virtual environment will be made in the current directory. You can also create a conda environment.
+*   Activate the virtual environment: `source openwebui/bin/activate`.
+*   Install Open WebUI: `pip install open-webui`.
 
 **Step 2. On TReNDS cluster, submit a SLURM job and start Ollama.**
-    *   Start Ollama by submitting the following SLURM job script. Check the status of the job using the command `squeue -u <username>`, where `<username>` is your username. Check the node that Ollama is running on in the output of the command. The node name is under `NODELIST(REASON)` in the format `arctrdagnXXX`, where `XXX` is a number. Let's use `OLLAMA_NODE` to call the node that Ollama is running on.
+
+*   Start Ollama by submitting the following SLURM job script. Check the status of the job using the command `squeue -u <username>`, where `<username>` is your username. Check the node where Ollama is running in the output of the command. The node name is under `NODELIST(REASON)` in the format `arctrdagnXXX`, where `XXX` is a number. Let's use `OLLAMA_NODE` to refer to the node where Ollama is running.
 
 ```bash
 #!/bin/bash
@@ -58,20 +60,22 @@ ollama serve
 ```
 
 **Step 3. On your local machine, connect to the cluster and start chatting.**
-    *   Run this command in the terminal: `ssh -L 8081:localhost:11434 -J <username>@arctrdagn019 <username>@<OLLAMA_NODE> -fN`.
-    *   Run this command subsequently: `OLLAMA_BASE_URL="http://localhost:8081" open-webui serve`.
-    *   Open your browser and `http://localhost:8080`. Also read the output from the above command in case it shows a different local address.
-    *   Create a user and start chatting.
+
+*   Run this command in the terminal: `ssh -L 8081:localhost:11434 -J <username>@arctrdagn019 <username>@<OLLAMA_NODE> -fN`.
+*   Run this command subsequently: `OLLAMA_BASE_URL="http://localhost:8081" open-webui serve`.
+*   Open your browser and `http://localhost:8080`. Also read the output from the above command in case it shows a different local address.
+*   Create a user and start chatting.
 
 ## Run Ollama models in Python on TReNDS cluster
 
-Run the step 2 above to submit a SLURM job script and start Ollama. See the following example to use an Ollama model in a Python script. Remember to change the variable `OLLAMA_NODE` to the node that Ollama is running on.
+*   Run the step 2 in the section above to submit a SLURM job script and start Ollama. 
+*   See the following example to use an Ollama model in a Python script. Remember to change the variable `OLLAMA_NODE` to the node where Ollama is running.
 
 ```python
 import json
 import requests
 
-OLLAMA_NODE = "arctrdagnXXX" # TODO: Change it to the node that Ollama is running on
+OLLAMA_NODE = "arctrdagnXXX" # TODO: Change it to the node where Ollama is running
 BASE_URL = f"http://{OLLAMA_NODE}:11434/api/chat"
 
 model = "gemma3-optimized:27b" # TODO: Change it to the model you want to use

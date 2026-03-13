@@ -14,7 +14,7 @@ last_modified_date: 07/27/2025 23:50
 {:toc}
 </details>
 
-[Ollama](https://ollama.com/) is an open-source framework for running language models on the local machine.
+[Ollama](https://ollama.com/) is an open-source framework for running language models on the local machine. They are not large, so we do not call them LLMs but it is customary now to call them LLMs anyway: gpt-oss, gemma, qwen, etc.
 
 ## Run Ollama as a chatbot on your local machine
 

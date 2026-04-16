@@ -22,9 +22,11 @@ last_modified_date: 09/25/2022 11:18
 | 3      | Intel        | 96    | 1.5 TB |               |            | arctrdhm{001-003}   |
 | 20     | AMD          | 64    | 512 GB | 1xNvidia 2080 | 11GB       | arctrdagn{001-020}  |
 | 16     | AMD          | 128   | 512 GB | 2xNvidia A40  | 45GB       | arctrdagn{031-046}  |
+| 1      | Intel        | 32    | 512 GB | 4xNvidia L40  | 48GB       | arctrdagn047        |
 | 1      | Nvidia DGX-1 | 256   | 1 TB   | 8xNvidia A100 | 40GB       | arctrddgxa001       |
 | 2      | Nvidia DGX-1 | 192   | 1 TB   | 8xNvidia A100 | 80GB       | arctrddgxa{002-003} |
-| 2      | Dell         | 40    | 192 GB | 4xNvidia V100 | 32GB       | arctrdgn{001-002}   |
+| 1      | Dell         | 40    | 192 GB | 4xNvidia V100 | 32GB       | arctrdgn001         |
+| 1      | Intel        | 48    | 512 GB | 4xNvidia H100 | 80GB       | arctrddgxh001       |
 
 ## CPU queue/partitions
 
@@ -38,12 +40,18 @@ last_modified_date: 09/25/2022 11:18
 
 | Partitions | Nodes                       | Time limit | Priority | CPUs | Memory | GPUs       | Limitations          | Preemption |
 | ---------- | --------------------------- | ---------- | -------- | ---- | ------ | ---------- | -------------------- | ---------- |
-| qTRDGPUH   | arctrddgxa001-arctrddgxa003 | 5d 8h      | high     | 40   | 512GB  | gpu:V100:8 | Max 8 GPUs per user  | N/A        |
+| qTRDGPUH   | arctrddgxa001-arctrddgxa003 | 5d 8h      | high     | 256/192 | 512GB  | gpu:V100:8 | Max 8 GPUs per user  | N/A        |
 |            | arctrdgn001-arctrdgn002     | 5d 8h      | high     | 40   | 192GB  | gpu:V100:4 | Max 8 GPUs per user  | N/A        |
+|            | arctrddgxh001               | 5d 8h      | high     | 48   | 512GB  | gpu:H100:4 | Max 8 GPUs per user  | N/A        |
+|            | arctrdagn047               | 5d 8h      | high     | 32   | 512GB  | gpu:L40:4 | Max 8 GPUs per user  | N/A        |
 | qTRDGPUM   | arctrddgxa001-arctrddgxa003 | 5d 8h      | medium   | 40   | 512GB  | gpu:V100:8 | Max 16 GPUs per user | suspend    |
 |            | arctrdgn001-arctrdgn002     | 5d 8h      | medium   | 40   | 192GB  | gpu:V100:4 | Max 16 GPUs per user | suspend    |
+|            | arctrddgxh001               | 5d 8h      | medium    | 48   | 512GB  | gpu:H100:4 | Max 16 GPUs per user  | suspend       |
+|            | arctrdagn047               | 5d 8h      | medium     | 32   | 512GB  | gpu:L40:4 | Max 8 GPUs per user  | suspend        |
 | qTRDGPUL   | arctrddgx001-arctrddgxa003  | 5d 8h      | low      | 40   | 512GB  | gpu:V100:8 | N/A                  | suspend    |
 |            | arctrdgn001-arctrdgn002     | 5d 8h      | low      | 40   | 192GB  | gpu:V100:4 | N/A                  | suspend    |
+|            | arctrddgxh001               | 5d 8h      | low    | 48   | 512GB  | gpu:H100:4 | Max 16 GPUs per user  | suspend       |
+|            | arctrdagn047               | 5d 8h      | low     | 32   | 512GB  | gpu:L40:4 | Max 16 GPUs per user  | suspend        |
 | qTRDGPU    | arctrdagn001-arctrdagn019   | 5d 8h      | N/A      | 64   | 512GB  | gpu:RTX:1  | N/A                  | N/A        |
 |            | arctrdagn031-arctrdagn046   | 5d 8h      | N/A      | 128  | 512GB  | gpu:RTX:2  | N/A                  | N/A        |
 
@@ -69,5 +77,5 @@ $ sinfo
 $ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"
 
 # CPU, memory and GPU
-$ sinfo -O "nodehost:16,partition:.8,cpus:.8,memory:.8,cpusstate:.16,freemem:.8,gres:.16,gresused:.16,statelong:.8,time:.16"
+$ sinfo -O "nodehost:24,partition:.11,cpus:.8,memory:.8,cpusstate:.16,allocmem:.8,gres:.20,gresused:.20,statelong:.8,time:.16"
 ```

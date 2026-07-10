@@ -40,15 +40,15 @@ last_modified_date: 09/25/2022 11:18
 
 | Partitions | Nodes                       | Time limit | Priority | CPUs | Memory | GPUs       | Limitations          | Preemption |
 | ---------- | --------------------------- | ---------- | -------- | ---- | ------ | ---------- | -------------------- | ---------- |
-| qTRDGPUH   | arctrddgxa001-arctrddgxa003 | 5d 8h      | high     | 256/192 | 512GB  | gpu:V100:8 | Max 8 GPUs per user  | N/A        |
+| qTRDGPUH   | arctrddgxa001-arctrddgxa004 | 5d 8h      | high     | 192 | 1TB  | gpu:A100:8 | Max 8 GPUs per user  | N/A        |
 |            | arctrdgn001-arctrdgn002     | 5d 8h      | high     | 40   | 192GB  | gpu:V100:4 | Max 8 GPUs per user  | N/A        |
 |            | arctrddgxh001               | 5d 8h      | high     | 48   | 512GB  | gpu:H100:4 | Max 8 GPUs per user  | N/A        |
 |            | arctrdagn047               | 5d 8h      | high     | 32   | 512GB  | gpu:L40:4 | Max 8 GPUs per user  | N/A        |
-| qTRDGPUM   | arctrddgxa001-arctrddgxa003 | 5d 8h      | medium   | 40   | 512GB  | gpu:V100:8 | Max 16 GPUs per user | suspend    |
+| qTRDGPUM   | arctrddgxa001-arctrddgxa004 | 5d 8h      | medium   | 192   | 1TB  | gpu:A100:8 | Max 16 GPUs per user | suspend    |
 |            | arctrdgn001-arctrdgn002     | 5d 8h      | medium   | 40   | 192GB  | gpu:V100:4 | Max 16 GPUs per user | suspend    |
 |            | arctrddgxh001               | 5d 8h      | medium    | 48   | 512GB  | gpu:H100:4 | Max 16 GPUs per user  | suspend       |
 |            | arctrdagn047               | 5d 8h      | medium     | 32   | 512GB  | gpu:L40:4 | Max 8 GPUs per user  | suspend        |
-| qTRDGPUL   | arctrddgx001-arctrddgxa003  | 5d 8h      | low      | 40   | 512GB  | gpu:V100:8 | N/A                  | suspend    |
+| qTRDGPUL   | arctrddgx001-arctrddgxa004  | 5d 8h      | low      | 192   | 1TB  | gpu:A100:8 | N/A                  | suspend    |
 |            | arctrdgn001-arctrdgn002     | 5d 8h      | low      | 40   | 192GB  | gpu:V100:4 | N/A                  | suspend    |
 |            | arctrddgxh001               | 5d 8h      | low    | 48   | 512GB  | gpu:H100:4 | Max 16 GPUs per user  | suspend       |
 |            | arctrdagn047               | 5d 8h      | low     | 32   | 512GB  | gpu:L40:4 | Max 16 GPUs per user  | suspend        |

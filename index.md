@@ -10,7 +10,7 @@ interactively on the GSU/TReNDS cluster. This is heavily influenced by
 the [Georgia Tech PACE cluster
 documentation](https://docs.pace.gatech.edu/).
 
-**Before getting started, please check the [cluster usage policies](Cluster_do's_&_don'ts)**
+**Before getting started, please check the [cluster usage policies](https://trendscenter.github.io/wiki/docs/Cluster_do's_&_don'ts.html)**
 For a recording of a workshop covering the steps in this wiki, as well as usage policies, please check [here](https://gsumeetings.webex.com/gsumeetings/ldr.php?RCID=4e8134fa43d416208d6c3712c57d1e5c) (GSU credentials required).
 
 {: .caution }

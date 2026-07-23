@@ -22,13 +22,15 @@ simultaneously running jobs to `m`. There are currently 544 cores in the
 qTRD partition, so do limit the number of tasks to at most half of it
 and leave resources free for the others.
 
-### Don't run any CPU/memory intensive task on the login node
+### Don't run any non-SLURM task on the login node
 
 The login node is used by *all* the users in TReNDS for submitting jobs,
 starting interactive sessions and hopping on to the DEV nodes. As a
 result, any CPU/memory intensive task (such as running a computation in
 Matlab for hours) disrupts all of these processes and slows *everyone*
-down.
+down. *This includes VSCode - VSCode runs a server on the node that eats up
+CPU and RAM resources and can create issues when left unchecked. If using
+VSCode, connect to a dev node directly*. 
 
 ### Don't run any lengthy CPU/memory intensive task on the DEV nodes
 

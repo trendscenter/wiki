@@ -13,9 +13,8 @@ documentation](https://docs.pace.gatech.edu/).
 **Before getting started, please check the [cluster usage policies](https://trendscenter.github.io/wiki/docs/Cluster_do's_&_don'ts.html)**
 For a recording of a workshop covering the steps in this wiki, as well as usage policies, please check [here](https://gsumeetings.webex.com/gsumeetings/ldr.php?RCID=4e8134fa43d416208d6c3712c57d1e5c) (GSU credentials required).
 
-{: .caution }
-The wiki is now a work in progress due to the recent migration to Arctic cluster.
-Please check back frequently for the latest information.
+**Having issues?** First, check out our [FAQ](docs/FAQ.md). If you can't find your solution there, try searching the wiki next. If you can't find a solution to your
+problem in the wiki, then check the #hpc-tips channel in the TReNDs slack. 
 
 {: .tip }
 Please look for the "last modified" date at the bottom of any page to be sure that the information is updated.

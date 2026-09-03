@@ -13,6 +13,25 @@ last_modified_date: 10/25/2022 11:00
 {:toc}
 </details>
 
+## Issues with Hemera
+
+## Jobs crash instantly
+
+If you are trying to create a session in Hemera, and the session ends immediately,
+this is due to the node the job is landing on causing the Hemera session to crash.
+Currently, IT has not built any automated tools to detect and reroute these isses; 
+however, there is a workaround which requires identifying the node the job landed on, 
+and excluding that node from your submission. **When you identify malfunctioning
+nodes, be sure to report them by creating a ticket in hydra.gsu.edu, and let your 
+colleagues know in the #hpc-tips channel on the slack**.  See the below video for a hands-on
+guide to solving this problem.
+
+<video width="640" height="360" controls>
+  <source src="https://trendscenter.github.io/wiki/assets/videos/hemera_crashes_detection.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
 ## Common cluster errors and remedies
 
 ### matlab: command not found
@@ -44,7 +63,10 @@ $ module use /application/ubuntumodules/localmodules
 
 -   The storage system you are trying to use is full. Try to identify
     the particular storage system and delete some unneeded files from
-    there.
+    there. **The most common culprit is your /home/ directory is full.** 
+    Try to remove files from your home directory if you can, and remember
+    to check for hidden folders (starting with ".") and to keep any data
+    and large files out of your home directory. 
 
 ### No such file or directory
 

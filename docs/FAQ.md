@@ -27,11 +27,7 @@ colleagues know in the #hpc-tips channel on the slack**.  See the below video fo
 guide to solving this problem.
 
 
-<video controls>
-  <source src="https://youtu.be/-eAFQ9MzjRQ" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-eAFQ9MzjRQ?si=7ATMrqz5PADPqWDw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Common cluster errors and remedies
 

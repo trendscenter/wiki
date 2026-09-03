@@ -28,7 +28,7 @@ guide to solving this problem.
 
 
 <video controls>
-  <source src="https://mygsu-my.sharepoint.com/:v:/r/personal/bbaker43_gsu_edu/Documents/Cluster/Recording%202025-11-19%20095050.mp4?d=wd1f9e5428be342228fc18bbc6912bb81&csf=1&web=1&e=Gn4NS9&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" type="video/mp4">
+  <source src="https://https://mygsu-my.sharepoint.com/_layouts/15/download.aspx?SourceUrl=/personal/bbaker43_gsu_edu/Documents/Cluster/Recording 2025-11-19 095050.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

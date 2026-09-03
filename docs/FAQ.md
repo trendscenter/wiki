@@ -26,7 +26,11 @@ nodes, be sure to report them by creating a ticket in hydra.gsu.edu, and let you
 colleagues know in the #hpc-tips channel on the slack**.  See the below video for a hands-on
 guide to solving this problem.
 
-<iframe src="https://mygsu-my.sharepoint.com/personal/bbaker43_gsu_edu/_layouts/15/embed.aspx?UniqueId=d1f9e542-8be3-4222-8fc1-8bbc6912bb81&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Recording 2025-11-19 095050.mp4"></iframe>
+
+<video controls>
+  <source src="https://mygsu-my.sharepoint.com/:v:/r/personal/bbaker43_gsu_edu/Documents/Cluster/Recording%202025-11-19%20095050.mp4?d=wd1f9e5428be342228fc18bbc6912bb81&csf=1&web=1&e=Gn4NS9&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
 ## Common cluster errors and remedies

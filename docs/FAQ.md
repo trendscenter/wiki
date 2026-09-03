@@ -23,10 +23,14 @@ Currently, IT has not built any automated tools to detect and reroute these isse
 however, there is a workaround which requires identifying the node the job landed on, 
 and excluding that node from your submission. **When you identify malfunctioning
 nodes, be sure to report them by creating a ticket in hydra.gsu.edu, and let your 
-colleagues know in the #hpc-tips channel on the slack**.  Please see the below video for a hands-on
+colleagues know in the #hpc-tips channel on the slack**.  See the below video for a hands-on
 guide to solving this problem.
 
-<video style="width: 100%; height: 100%; top: 0px;" playsinline="" preload="auto" class="engine-video-root" crossorigin="anonymous" tabindex="0" src="blob:https://mygsu-my.sharepoint.com/72d12508-1958-4862-b0ae-c4bf9dd2f1f2" aria-label="Media player. Press enter, spacebar, or otherwise activate player controls to play or pause the video."></video>
+
+<video controls>
+  <source src="https://youtu.be/-eAFQ9MzjRQ" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
 ## Common cluster errors and remedies

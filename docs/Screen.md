@@ -3,7 +3,7 @@ layout: default
 title: Screen
 nav_order: 2
 parent: List of software
-last_modified_date: 09/24/2022 11:23
+last_modified_date: 2022-09-24 11:23
 ---
 GNU Screen is a terminal multiplexer, a software application that can be
 used to multiplex several virtual consoles, allowing a user to access

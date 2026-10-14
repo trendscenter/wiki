@@ -3,7 +3,7 @@ layout: default
 title: VNC
 nav_order: 2
 parent: List of software
-last_modified_date: 09/24/2022 09:57
+last_modified_date: 2022-09-24 09:57
 ---
 
 <details open markdown="block">
@@ -22,8 +22,3 @@ You can connect to a VNC session on a compute node using your web browser.
 - Go to [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
 - From the "TReNDS Interactive Apps" menu select "TReNDS Interactive Desktop".
 - Select appropriate configurations and launch.
-
-
-
-
-

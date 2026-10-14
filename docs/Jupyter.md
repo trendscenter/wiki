@@ -3,7 +3,7 @@ layout: default
 title: Jupyter
 nav_order: 2
 parent: List of software
-last_modified_date: 10/5/2022 21:49
+last_modified_date: 2022-10-05 21:49
 ---
 
 # Jupyter Lab via Hemera
@@ -12,13 +12,13 @@ To use Jupyter, select Jupyter Lab from under TReNDS interactive apps on [https:
 
 ## Configuring Jupyter session
 
-![Globus-1]({{ site.baseurl }}/assets/images/jupyter_settings.png)
+![Jupyter session configuration]({{ site.baseurl }}/assets/images/jupyter_settings.png)
 
 ## Connecting to Jupyter session
 
-![Globus-1]({{ site.baseurl }}/assets/images/jupyter_waiting.png)
+![Jupyter session waiting to start]({{ site.baseurl }}/assets/images/jupyter_waiting.png)
 
-![Globus-1]({{ site.baseurl }}/assets/images/jupyter_connected.png)
+![Jupyter session started]({{ site.baseurl }}/assets/images/jupyter_started.png)
 
 ## Accessing data
 
@@ -33,26 +33,26 @@ When configuring the session, add the working directory in the `Extra Jupyter Pa
 ### Step 1: Create SLURM bash script (`jupyter_job.sh`) for a jupyter job.
 ```
 #!/bin/bash
-#SBATCH -N 1
-#SBATCH -n 1
-#SBATCH -c 1
-#SBATCH --mem=10g
-#SBATCH -p qTRD
-#SBATCH -t 1440
-#SBATCH -J jupyter
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH -c 1
+#SBATCH --mem=10g
+#SBATCH -p qTRD
+#SBATCH -t 1440
+#SBATCH -J jupyter
 #SBATCH --output=jupyter-%j.out
-#SBATCH -A <slurm_account_code>
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=<email address>
-#SBATCH --oversubscribe
+#SBATCH -A <slurm_account_code>
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=<email address>
+#SBATCH --oversubscribe
 
 eval "$(<path_to_conda> shell.bash hook)"
-conda activate <your_enviroment>
+conda activate <your_environment>
 cat /etc/hosts
 jupyter-lab --ip=0.0.0.0 --port=${1:-<port>}
 ```
 - `<path_to_conda>` is from `which conda`
-- `<your_enviroment>` is your environment with installed jupyterlab: `pip install jupyterlab`
+- `<your_environment>` is your environment with installed jupyterlab: `pip install jupyterlab`
 - `<port>` is a port that you need to select.
 
 

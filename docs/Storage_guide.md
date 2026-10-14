@@ -3,7 +3,7 @@ layout: default
 title: Storage Guide
 nav_order: 3
 has_children: true
-last_modified_date: 09/24/2022 11:20
+last_modified_date: 2022-09-24 11:20
 ---
 <details open markdown="block">
   <summary>
@@ -18,7 +18,7 @@ last_modified_date: 09/24/2022 11:20
 
 -   Home directory is where you log in to.
 -   Home directory quota is limited, it is not advisable to put analysis data here. Please use `/data/users*/< your directory >` instead.
--   You can `ls ~` from anywhere to quickly switch to the home directory. 
+-   You can `ls ~` from anywhere to quickly switch to the home directory.
 `pwd` will show full path to the current location.
 
 ## TReNDS storage
@@ -28,7 +28,7 @@ last_modified_date: 09/24/2022 11:20
 TReNDS center members own and can keep their data in `/data/users/2`<campusID> directory.
 
 {: .important}
-The user storage is limited and shared between all members of the lab. 
+The user storage is limited and shared between all members of the lab.
 So please make sure to clean up your user directory in `/data/users*/< username >` periodically and remove any data that are either duplicate (available at another location on the cluster) or no longer needed.
 
 {: .tip}
@@ -57,7 +57,7 @@ Add `/trdapps/linux-x86_64/bin/` to your path to take advantage of these tools:
 
 ### `/scratch`
 
-This is for short-term data, great for working environment such as moving files during a job, storing data to be used in a job, or storing generated files from a job. 
+This is for short-term data, great for working environment such as moving files during a job, storing data to be used in a job, or storing generated files from a job.
 Transfer output and resulting data off `/scratch` after job is executed.
 
 ### `/raid`
@@ -66,7 +66,7 @@ It is a local SSD on the DGX machines for fast data transfer.
 
 ### `/dev/shm`
 
-You can directly load data on to memory by using [`/dev/shm`](https://www.cyberciti.biz/tips/what-is-devshm-and-its-practical-usage.html) for very fast processing. 
+You can directly load data on to memory by using [`/dev/shm`](https://www.cyberciti.biz/tips/what-is-devshm-and-its-practical-usage.html) for very fast processing.
 It is recommended to reserve a full node when using `/dev/shm` and take special precautions to prevent out-of-memory errors.
 
 {: .caution}

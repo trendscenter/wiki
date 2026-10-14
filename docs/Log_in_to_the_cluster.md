@@ -3,7 +3,7 @@ layout: default
 title: Log in to the cluster
 nav_order: 2
 parent: Getting Started
-last_modified_date: 09/25/2022 9:29
+last_modified_date: 2022-09-25 09:29
 ---
 <details open markdown="block">
   <summary>
@@ -20,7 +20,7 @@ Please go through [https://arcwiki.rs.gsu.edu/en/home/ssh/signing-in](https://ar
 
 ### VPN
 
-You must be connected to the [GSU VPN](Configure_VPN), or in the GSU network to log in to the cluster. 
+You must be connected to the [GSU VPN](Configure_VPN), or in the GSU network to log in to the cluster.
 
 ### Active allocation
 
@@ -40,7 +40,7 @@ make sure to use a [strong password](https://www.cisa.gov/secure-our-world/requi
 
 {: .attention}
 > ## `-t ed25519` flag not working
-> If the flag `-t ed25519` results in an error when you use it, DO NOT GENERATE A KEY USING SHA-256 (the default). Instead, try to update your version of `ssh`, or if it continues not to work, create a ticket with IT on Hydra. 
+> If the flag `-t ed25519` results in an error when you use it, DO NOT GENERATE A KEY USING SHA-256 (the default). Instead, try to update your version of `ssh`, or if it continues not to work, create a ticket with IT on Hydra.
 
 ### Signed public key
 
@@ -111,7 +111,7 @@ Host {{site.data.trends.login_alias}}
 
 ### Configure SSH authentication agent
 
-On Linux/Mac, the SSH authentication agent should be running by default. 
+On Linux/Mac, the SSH authentication agent should be running by default.
 Run the following command to add the generated SSH key to the agent.
 
 ```
@@ -134,51 +134,49 @@ If you do not have administrator access to your machine, please contact the admi
 Run the following command to get connected to the cluster.
 
 ```
-$ ssh {{site.data.trends.login_alias}}
-[<campusID>@{{site.data.trends.login_prompt}} ~]$
+$ ssh {{site.data.trends.login_alias}}
+[<campusID>@{{site.data.trends.login_prompt}} ~]$
 ```
 
 {: .caution}
 > ## Head/login node vs compute/worker nodes
-> `@{{site.data.trends.login_prompt}}` indicates that you are connected to the head/login node. 
-> On the login node you can submit jobs, interact with the cluster, edit files etc. 
-> But you should not run lengthy computations (more than a few seconds) on the login node itself. 
+> `@{{site.data.trends.login_prompt}}` indicates that you are connected to the head/login node.
+> On the login node you can submit jobs, interact with the cluster, edit files etc.
+> But you should not run lengthy computations (more than a few seconds) on the login node itself.
 
 For running computations, please allocate resources on a compute/worker node which are accessible from the head/login node:
 
 ```
-[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty /bin/bash
-srun: defined options
-srun: -------------------- --------------------
-srun: account             : <slurm_account_code>
-srun: mem                 : 10G
-srun: ntasks              : 1
-srun: partition           : qTRD
-srun: pty                 : set
-srun: time                : 01:00:00
-srun: verbose             : 1
-srun: x11                 : all
-srun: -------------------- --------------------
-srun: end of defined options
-srun: Waiting for nodes to boot (delay looping 450 times @ 0.100000 secs x index)
-srun: Nodes trendscn013.rs.gsu.edu are ready for job
- srun: jobid 376466: nodes(1):trendscn013.rs.gsu.edu', cpu counts: 1(x1) 
-srun: CpuBindType=(null type)
-srun: launching 376466.0 on host trendscn013.rs.gsu.edu, 1 tasks: 0
-srun: route default plugin loaded
-srun: Node trendscn013.rs.gsu.edu, 1 tasks started
-[<campusID>@trendscn013 ~]$
+[<campusID>@{{site.data.trends.login_prompt}} ~]$ srun -p qTRD -A <slurm_account_code> -v -n1 --mem=10g -t60 --pty /bin/bash
+srun: defined options
+srun: -------------------- --------------------
+srun: account             : <slurm_account_code>
+srun: mem                 : 10G
+srun: ntasks              : 1
+srun: partition           : qTRD
+srun: pty                 : set
+srun: time                : 01:00:00
+srun: verbose             : 1
+srun: x11                 : all
+srun: -------------------- --------------------
+srun: end of defined options
+srun: Waiting for nodes to boot (delay looping 450 times @ 0.100000 secs x index)
+srun: Nodes trendscn013.rs.gsu.edu are ready for job
+ srun: jobid 376466: nodes(1):trendscn013.rs.gsu.edu', cpu counts: 1(x1)
+srun: CpuBindType=(null type)
+srun: launching 376466.0 on host trendscn013.rs.gsu.edu, 1 tasks: 0
+srun: route default plugin loaded
+srun: Node trendscn013.rs.gsu.edu, 1 tasks started
+[<campusID>@trendscn013 ~]$
 ```
 
-The above command will allocate 1 CPU on one of the nodes under `qTRD` queue and 10GB of RAM on the said node (`trendscn013` in this case) for 60 minutes and start a `bash` session. 
+The above command will allocate 1 CPU on one of the nodes under `qTRD` queue and 10GB of RAM on the said node (`trendscn013` in this case) for 60 minutes and start a `bash` session.
 See [this page](Cluster_queue_information) for more information about the available queues.
 
 {: .attention}
 > ## arclogin.rs.gsu.edu does not work
-> If you have an issue with logging into arclogin.rs.gsu.edu, make sure you have all of the recommended flags in the `Host *` section of your config. Please do not use another ID for the login node, as this will bypass security and reliability behaviors implemented by IT. 
+> If you have an issue with logging into arclogin.rs.gsu.edu, make sure you have all of the recommended flags in the `Host *` section of your config. Please do not use another ID for the login node, as this will bypass security and reliability behaviors implemented by IT.
 
 ## Connect to the cluster using VNC
 
 You can also connect to the cluster and GUI applications from [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
-
-

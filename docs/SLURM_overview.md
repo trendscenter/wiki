@@ -3,7 +3,7 @@ layout: default
 title: SLURM Overview
 nav_order: 4
 has_children: true
-last_modified_date: 10/2/2022 15:36
+last_modified_date: 2022-10-02 15:36
 ---
 <details open markdown="block">
   <summary>
@@ -146,12 +146,12 @@ srun: launch/slurm: _task_start: Node arctrdcn001, 1 tasks started
 ```
 
 **Explanation**:
-- `-p qTRD`: partition to run job on. See [Cluster & queue information](Cluster_queue_information) page for more information
-- `-A <slurm_account_code>`:  user group. See [Request an account](Request_an_account) page for list of groups
+- `-p qTRD`: partition to run job on. See [Cluster & queue information](Cluster_queue_information) page for more information
+- `-A <slurm_account_code>`:  user group. See [Request an account](Request_an_account) page for list of groups
 - `-v`: launch in verbose mode
 - `-c 4`: the number of CPUs to use
-- `--nodes 1 --ntasks-per-node=1`: number of nodes to use and tasks per node. Set both to 1 unless needed. See [Granular resource allocation with srun](Example_SLURM_scripts#granular-resource-allocation-with-srun) for example.
-- `--mem=4g`: amount of memory requested (4 gigabytes)
+- `--nodes 1 --ntasks-per-node=1`: number of nodes to use and tasks per node. Set both to 1 unless needed. See [Granular resource allocation with srun](Example_SLURM_scripts#granular-resource-allocation-with-srun) for example.
+- `--mem=4g`: amount of memory requested (4 gigabytes)
 - `--pty`: executes task in pseudo terminal mode
 - `-J myInteractiveJob`: name of the job (optional)
 - `/bin/bash`: the program to run, in this case `bash`

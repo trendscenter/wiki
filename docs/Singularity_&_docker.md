@@ -3,6 +3,7 @@ layout: default
 title: Singularity & docker
 nav_order: 2
 parent: List of software
+last_modified_date: 2022-06-21 10:49
 ---
 <details open markdown="block">
   <summary>
@@ -120,7 +121,7 @@ the host system. For more information, see the official [NVIDIA Docker
 GitHub page](https://github.com/NVIDIA/nvidia-docker).
 
 ### Dockerfile recipes examples
-If one wants to build from Dockerfile recipes on the cluster, one will need to be added to the docker group permissions via a hydra ticket. Dockerfile recipes can be created in numerous different ways. However, something one should consider when buildering their docker recipe is whether or not it will successfully build a year from now, which will largely be dependent on whether or not the Dockerfile developer uses dependency version numbers in their build scripts wherever expediant to do so. 
+If one wants to build from Dockerfile recipes on the cluster, one will need to be added to the docker group permissions via a hydra ticket. Dockerfile recipes can be created in numerous different ways. However, something one should consider when writing their docker recipe is whether or not it will successfully build a year from now, which will largely depend on whether or not the Dockerfile developer pins dependency version numbers in their build scripts wherever possible.
 
 In other words, try to never use this:
 
@@ -130,18 +131,18 @@ Instead, at minimum use the following
 
     pip install torch==version
 
-However, one will quickly recognize that this is tedious. Luckily, there is environment.yml files if one is using a conda environment. 
+However, one will quickly recognize that this is tedious. Luckily, there is environment.yml files if one is using a conda environment.
 
 One may export an environment file with
 
     conda env export > environment.yml
 
-One may in general create a conda environment from a yml file as follows: 
+One may in general create a conda environment from a yml file as follows:
 
     conda env create -f environment.yml
 
 One can take advantage of this functionality inside of a Dockerfile. The following website shows how to do this  https://pythonspeed.com/articles/activate-conda-dockerfile/
-Howevever, the above link will not give you gpu support. An example Dockerfile that is gpu ready is available from neuroneural's extension of topofit. 
+However, the above link will not give you gpu support. An example Dockerfile that is gpu ready is available from neuroneural's extension of topofit.
 
 https://github.com/neuroneural/topofit/tree/main/docker
 
@@ -150,11 +151,11 @@ Inside of this directory is a Dockerfile, environment.yml file and Readme.md fil
 For the basics of docker recipes, the following readme is fairly good.
 https://biocorecrg.github.io/CoursesCRG_Containers_Nextflow_May_2021/docker-recipes.html
 
-Additional, in house examples of docker and singularity may be availabe at 
+Additional, in house examples of docker and singularity may be available at
 
 https://github.com/neuroneural/trdops
 
-and 
+and
 
 https://github.com/trendscenter/coinstac-enigma-sans/blob/master/Dockerfile
 
@@ -274,9 +275,9 @@ See this [page](https://sylabs.io/guides/3.5/user-guide/gpu.html) for
 more details on GPU support.
 
 ### Singularity recipes
-Currently, trends doesn't support local builds for Singularity file recipes. You will get Fatal permission errors if you try. 
+Currently, trends doesn't support local builds for Singularity file recipes. You will get Fatal permission errors if you try.
 
-    $ singularity build toposing.sif Singularity 
+    $ singularity build topofit.sif Singularity
     FATAL:   You must be the root user, however you can use --remote or --fakeroot to build from a Singularity recipe file
-    
+
 remote builds show promise, however there may be some limitations, so I leave it to someone else to complete this section since I built recipes with docker, then built docker images with singularity into singularity images.

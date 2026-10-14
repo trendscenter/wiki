@@ -3,7 +3,7 @@ layout: default
 title: MPI
 nav_order: 2
 parent: List of software
-last_modified_date: 09/24/2022 12:31
+last_modified_date: 2022-09-24 12:31
 ---
 Message Passing Interface (MPI) is a standardized and portable
 message-passing standard designed by a group of researchers from

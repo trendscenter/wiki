@@ -2,7 +2,7 @@
 layout: default
 title: Resources
 nav_order: 8
-last_modified_date: 09/24/2022 11:47
+last_modified_date: 2022-09-24 11:47
 ---
 -   Slack and support
     -   [TReNDS slack channel](http://trendscenter.slack.com/#hpc-tips)

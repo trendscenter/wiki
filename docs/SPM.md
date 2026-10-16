@@ -3,7 +3,7 @@ layout: default
 title: SPM
 nav_order: 2
 parent: List of software
-last_modified_date: 09/24/2022 11:23
+last_modified_date: 2022-09-24 11:23
 ---
 Statistical Parametric Mapping refers to the construction and assessment
 of spatially extended statistical processes used to test hypotheses
@@ -13,4 +13,4 @@ free and open source software that is called SPM
 
 ### Add SPM path to Matlab
 
-`>> addpath( '/trdapps/linux-x86_64/matlab/toolboxes/spm12/' )`
+`>> addpath( '/trdapps/linux-x86_64/matlab/toolboxes/spm12/' )`

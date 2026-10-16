@@ -3,7 +3,7 @@ layout: default
 title: Visual Studio Code
 nav_order: 2
 parent: List of software
-last_modified_date: 09/24/2022 09:53
+last_modified_date: 2022-09-24 09:53
 ---
 <details open markdown="block">
   <summary>
@@ -39,26 +39,26 @@ container, on a remote machine, or in the Windows Subsystem for Linux
 -   Add the following configuration in the file that opens, then save
     it.
 ```
-host {{site.data.trends.dev_alias}}
-   HostName {{site.data.trends.dev_node}}
-   user <campusID>
+host {{site.data.trends.dev_alias}}
+   HostName {{site.data.trends.dev_node}}
+   user <campusID>
 ```
 -   `{{site.data.trends.dev_alias}}` should now be available under SSH targets. You can right
     click and connect to it.
 -   Once successfully connected, the bottom left corner of the VS Code window should indicate `SSH: {{site.data.trends.login_alias}}`, or whichever alias name you chose.
 
 {: .tip}
-You should also be able to open a folder on the remote machine, open any file and edit them, open any image an view them. 
+You should also be able to open a folder on the remote machine, open any file and edit them, open any image an view them.
 In addition, VS Code has extensions available for, for example, opening PDF or CSV files on the remote (and local) machine.
 
 {: .important}
 `{{site.data.trends.dev_alias}}` is an alias, it can be anything.
-`trendscn017.rs.gsu.edu` must be a valid host name. 
-Use one of the development nodes from the [Cluster queue information](Cluster_queue_information) page. 
+`trendscn017.rs.gsu.edu` must be a valid host name.
+Use one of the development nodes from the [Cluster queue information](Cluster_queue_information) page.
 Do not use `{{site.data.trends.login_node}}`.
 
 {: .hint}
-You may have to enter your password multiple times. 
+You may have to enter your password multiple times.
 To avoid this, set up SSH key authentication by following [Configure SSH for easy access to DEV machines](Configure_SSH_for_easy_access_to_DEV_machines) or [this guide](https://docs.google.com/document/d/1C3IK38d5XiEIafktjJ6LxXVFMrj77unXm_9VAjGe3Ww/edit)
 
 ### SLURM jobs
@@ -95,11 +95,11 @@ Do not run any program other than SLURM commands on the login node.
     then from the login node.
 
 {: .caution}
-Always connect to a dev node or a compute node from VS Code. 
+Always connect to a dev node or a compute node from VS Code.
 Avoid directly connecting to the login node.
 
 {: .tip}
-Start a tmux session on the dev node ({{site.data.trends.dev_alias}}), then start a SLURM interactive session. 
+Start a tmux session on the dev node ({{site.data.trends.dev_alias}}), then start a SLURM interactive session.
 This way you can resume the session later even if you lose connection.
 
 {: .tip}

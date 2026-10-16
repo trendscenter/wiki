@@ -3,6 +3,7 @@ layout: default
 title: ANTS
 nav_order: 2
 parent: List of software
+last_modified_date: 2021-10-07 13:40
 ---
 Advanced Normalization Tools (ANTs) extracts information from complex
 datasets that include imaging.
@@ -11,8 +12,8 @@ ANTs is officially installed on the cluster. You can take advantage of
 it by adding:
 
 ```
-$ export ANTSPATH=/trdapps/linux-x86_64/bin/ants/bin
-$ export PATH=${ANTSPATH}:$PATH
+$ export ANTSPATH=/trdapps/linux-x86_64/bin/ants/bin
+$ export PATH=${ANTSPATH}:$PATH
 ```
 
 Source:

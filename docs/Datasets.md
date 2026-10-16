@@ -3,6 +3,7 @@ layout: default
 title: Datasets
 nav_order: 2
 parent: Storage Guide
+last_modified_date: 2022-10-02 16:58
 ---
 <details open markdown="block">
   <summary>
@@ -94,12 +95,12 @@ Follow the steps below to download data from
     <https://github.com/NDAR/nda-tools>
 -   The preferred method for downloading scan data files is as follows:
     -   Download a package without associated data, e.g.
-        `downloadcmd `<packageID>` -dp`
+        `downloadcmd <packageID> -dp`
     -   Then extract the s3 locations from the downloaded image03.txt
         file, e.g. remain.txt
 
 ```
-$ head remain.txt
+$ head remain.txt
 s3://**************/submission_13124/NDARINVRP3R4YCP_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz
 s3://**************/submission_13124/NDARINVTAX3MN8C_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz
 s3://**************/submission_13124/NDARINVJ2ENP1ZK_baselineYear1Arm1_ABCD-rsfMRI_**************.tgz

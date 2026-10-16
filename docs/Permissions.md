@@ -3,7 +3,7 @@ layout: default
 title: Permissions
 nav_order: 1
 parent: Storage Guide
-last_modified_date: 09/24/2022 12:00
+last_modified_date: 2022-09-24 12:00
 ---
 <details open markdown="block">
   <summary>
@@ -21,12 +21,12 @@ last_modified_date: 09/24/2022 12:00
     ACL, use the `getfacl` command.
 
 ```
-[msalman@{{site.data.trends.login_prompt}} ~]$ cd /data/mialab2/
-[msalman@{{site.data.trends.login_prompt}} mialab2]$ getfacl .
-# file: .
-# owner: vcalhoun
-# group: trd
-# flags: -s-
+[msalman@{{site.data.trends.login_prompt}} ~]$ cd /data/mialab2/
+[msalman@{{site.data.trends.login_prompt}} mialab2]$ getfacl .
+# file: .
+# owner: vcalhoun
+# group: trd
+# flags: -s-
 user::rwx
 user:jbockholt:rwx
 user:msalman:rwx
@@ -46,10 +46,10 @@ directory/file, you can change permissions (using `chmod`) and acl
 The command to set ACL is:
 
 ```
-setfacl -P -m u:<username>:rwx <directory>
+setfacl -P -m u:<username>:rwx <directory>
 
-# recursively:
-setfacl -RP -m u:<username>:rwx <directory>
+# recursively:
+setfacl -RP -m u:<username>:rwx <directory>
 ```
 
 ## Permissions on NFS volumes
@@ -58,17 +58,17 @@ setfacl -RP -m u:<username>:rwx <directory>
 
 The command to set permissions to a specific user is:
 
-`nfs4_setfacl -P -a A::<username>@rs.gsu.edu:RWX <directory>`
+`nfs4_setfacl -P -a A::<username>@rs.gsu.edu:RWX <directory>`
 
 The following will set permissions recursively
 
-`nfs4_setfacl -RP -a A::<username>@rs.gsu.edu:RWX <directory>`
+`nfs4_setfacl -RP -a A::<username>@rs.gsu.edu:RWX <directory>`
 
 To check who has permission:
 
-`nfs4_getfacl <directory>`
+`nfs4_getfacl <directory>`
 
 It will not show usernames, but an ID number. To know who is the user
 with the particular ID, use the following:
 
-`id <id_number or username>`
+`id <id_number or username>`

@@ -3,7 +3,7 @@ layout: default
 title: Running GUI applications
 nav_order: 5
 parent: Getting Started
-last_modified_date: 09/24/2022 11:32
+last_modified_date: 2022-09-24 11:32
 ---
 <details open markdown="block">
   <summary>
@@ -16,11 +16,10 @@ last_modified_date: 09/24/2022 11:32
 
 ## Browser-based GUI sessions on Hemera
 
-You can various types of GUI on a compute node using your web browser.
+You can run various types of GUI on a compute node using your web browser.
 
 - Go to [https://hemera.rs.gsu.edu/](https://hemera.rs.gsu.edu/).
-- From the "TReNDS Interactive Apps" menu select which application you want to launch. 
-using "TReNDS Interactive Desktop" will launch a fully-fledged desktop session, for example.
+- From the "TReNDS Interactive Apps" menu select which application you want to launch. Using "TReNDS Interactive Desktop" will launch a fully-fledged desktop session, for example.
 - Select appropriate configurations and launch.
 
 ## Note on X11

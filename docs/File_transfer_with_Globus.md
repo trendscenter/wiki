@@ -3,8 +3,9 @@ layout: default
 title: File transfer with Globus
 nav_order: 1
 parent: Storage Guide
+last_modified_date: 2022-10-18 12:47
 ---
-​Globus is a non-profit service for secure, reliable research data management (https://www.globus.org/).
+Globus is a non-profit service for secure, reliable research data management (https://www.globus.org/).
 
 Please follow [this guide](https://arcwiki.rs.gsu.edu/en/globus/transfer-data-to-iRODS) for transferring data using Globus.
 
@@ -23,14 +24,14 @@ Please follow [this guide](https://arcwiki.rs.gsu.edu/en/globus/transfer-data-to
 
 * Select "TRENDS_PUBLIC".
 * If you do not have one already, create your folder by selecting "New Folder" in the options menu on the right.
-* Go into your folder by double-clicking on it. 
+* Go into your folder by double-clicking on it.
 * Now you can upload files here by selecting "Upload" in the options menu on the right.
 
-{: .hint} 
+{: .hint}
 You cannot upload folders in Globus, but you can upload zipped folders and extract them on the cluster.
 You can also use [scp](File_transfer_with_SCP) tool to upload folders as an alternative.
 
-* Once the upload is complete, you can access the uploaded data on the cluster. 
+* Once the upload is complete, you can access the uploaded data on the cluster.
 Log in to the cluster and navigate to `/data/trends_public/<your folder>`.
 
 {: .caution}

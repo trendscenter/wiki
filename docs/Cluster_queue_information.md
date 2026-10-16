@@ -3,7 +3,7 @@ layout: default
 title: Cluster & queue information
 nav_order: 7
 parent: Getting Started
-last_modified_date: 09/25/2022 11:18
+last_modified_date: 2022-09-25 11:18
 ---
 <details open markdown="block">
   <summary>
@@ -70,12 +70,12 @@ last_modified_date: 09/25/2022 11:18
 ## Using SLURM commands
 
 ```bash
-# brief info and availability 
-$ sinfo
+# brief info and availability
+$ sinfo
 
-# CPU and memory
-$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"
+# CPU and memory
+$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"
 
-# CPU, memory and GPU
-$ sinfo -O "nodehost:24,partition:.11,cpus:.8,memory:.8,cpusstate:.16,allocmem:.8,gres:.20,gresused:.20,statelong:.8,time:.16"
+# CPU, memory and GPU
+$ sinfo -O "nodehost:24,partition:.11,cpus:.8,memory:.8,cpusstate:.16,allocmem:.8,gres:.20,gresused:.20,statelong:.8,time:.16"
 ```

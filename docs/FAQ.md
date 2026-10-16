@@ -2,7 +2,7 @@
 layout: default
 title: FAQ
 nav_order: 7
-last_modified_date: 10/25/2022 11:00
+last_modified_date: 2022-10-25 11:00
 ---
 <details open markdown="block">
   <summary>
@@ -19,10 +19,10 @@ last_modified_date: 10/25/2022 11:00
 
 If you are trying to create a session in Hemera, and the session ends immediately,
 this is due to the node the job is landing on causing the Hemera session to crash.
-Currently, IT has not built any automated tools to detect and reroute these isses; 
-however, there is a workaround which requires identifying the node the job landed on, 
+Currently, IT has not built any automated tools to detect and reroute these issues;
+however, there is a workaround which requires identifying the node the job landed on,
 and excluding that node from your submission. **When you identify malfunctioning
-nodes, be sure to report them by creating a ticket in hydra.gsu.edu, and let your 
+nodes, be sure to report them by creating a ticket in hydra.gsu.edu, and let your
 colleagues know in the #hpc-tips channel on the slack**.  See the below video for a hands-on
 guide to solving this problem.
 
@@ -35,14 +35,14 @@ guide to solving this problem.
 
 -   Load the Matlab module
 
-`$ module load matlab/R2022a`
+`$ module load matlab/R2022a`
 
 ### Lmod has detected the following error:  The following module(s) are unknown
 
 -   Set the `MODULEPATH` variable manually
 
 ```
-$ source /usr/share/lmod/lmod/init/bash
+$ source /usr/share/lmod/lmod/init/bash
 $ module use /application/ubuntumodules/localmodules
 ```
 
@@ -50,20 +50,20 @@ $ module use /application/ubuntumodules/localmodules
 
 -   Delete contents of `~/.matlab/local_cluster_jobs`
 
-`$ rm -r ~/.matlab/local_cluster_jobs`
+`$ rm -r ~/.matlab/local_cluster_jobs`
 
 -   Delete contents of `~/.matlab`
 
-`$ rm -r ~/.matlab`
+`$ rm -r ~/.matlab`
 
 ### No space left on device
 
 -   The storage system you are trying to use is full. Try to identify
     the particular storage system and delete some unneeded files from
-    there. **The most common culprit is your /home/ directory is full.** 
+    there. **The most common culprit is your /home/ directory is full.**
     Try to remove files from your home directory if you can, and remember
     to check for hidden folders (starting with ".") and to keep any data
-    and large files out of your home directory. 
+    and large files out of your home directory.
 
 ### No such file or directory
 
@@ -82,27 +82,26 @@ $ module use /application/ubuntumodules/localmodules
     scheduled using either one of the following commands:
 
 ```
-$ squeue -j <jobID>
-$ sacct -j <jobID> --format=jobid,elapsed,ncpus,ntasks,state,NodeList
+$ squeue -j <jobID>
+$ sacct -j <jobID> --format=jobid,elapsed,ncpus,ntasks,state,NodeList
 ```
 
 ### setfacl: permission not supported
 
--   It might be an NFS4 volume, use `nfs4_setfacl` instead: [Permissions
-    on NFS volumes](Storage_guide#Permissions_on_NFS_volumes)
+-   It might be an NFS4 volume, use `nfs4_setfacl` instead: [Permissions on NFS volumes](Permissions#permissions-on-nfs-volumes)
 
 ## Other questions
 
 ### How can I get information about CPU/memory of the cluster
 
 ```
-$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"
-HOSTNAMES                PARTITI       STATE CPUS   MEMORY CPUS(A/I/O/T)  FREE_MEM
-trendscn001.rs.gsu.edu   qTRD          mixed   32   768697 2/30/0/32      716707
-trendscn004.rs.gsu.edu   qTRD          mixed   32   768697 15/17/0/32     409574
-trendscn007.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     653037
-trendscn008.rs.gsu.edu   qTRD          mixed   32   768697 1/31/0/32      562276
-trendscn011.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     461971
+$ sinfo -o "%24n %7P %.11T %.4c %.8m %14C %10e"
+HOSTNAMES                PARTITI       STATE CPUS   MEMORY CPUS(A/I/O/T)  FREE_MEM
+trendscn001.rs.gsu.edu   qTRD          mixed   32   768697 2/30/0/32      716707
+trendscn004.rs.gsu.edu   qTRD          mixed   32   768697 15/17/0/32     409574
+trendscn007.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     653037
+trendscn008.rs.gsu.edu   qTRD          mixed   32   768697 1/31/0/32      562276
+trendscn011.rs.gsu.edu   qTRD          mixed   32   768697 16/16/0/32     461971
 ```
 
 Above example shows the nodes, which partition each of them belongs to,
@@ -162,13 +161,13 @@ different queues.
 
 The following command does it:
 
-`$ scontrol update jobid=<job_id> TimeLimit=<new_timelimit>`
+`$ scontrol update jobid=<job_id> TimeLimit=<new_timelimit>`
 
 ### How can I update task limit of a running job array?
 
 The following command does it:
 
-`$ scontrol update ArrayTaskThrottle=<count> JobId=<jobID>`
+`$ scontrol update ArrayTaskThrottle=<count> JobId=<jobID>`
 
 ### Who are the users with administrative privilege?
 
@@ -197,21 +196,21 @@ written to the disk, very slow response to any kind of command etc.
 
 ### Why am I getting "error: Unable to allocate resources: Invalid account or account/partition combination specified"
 
-You may have specified invalid project code. 
+You may have specified invalid project code.
 Please take a note of your slurm account code from [https://elpis.rs.gsu.edu/](https://elpis.rs.gsu.edu/).
 
 ### My job completed without any error, but there is nothing in the output!
 
 Did you write the job submission script in a Windows system, then
 transferred it to the cluster? You may need to convert the line-endings
-in that file using `dos2unix `<filename> command.
+in that file using `dos2unix <filename>` command.
 
-Also make sure the job script and the error file locations are accessible on the node where the job was scheduled. 
+Also make sure the job script and the error file locations are accessible on the node where the job was scheduled.
 You can find the erroneous node by putting `echo $HOSTNAME >&2` in the job submission script.
 
 ### Why does my job not start?
 
-Use `squeue -u `<campusID> to check the state and reason. To find what
+Use `squeue -u <campusID>` to check the state and reason. To find what
 the state means, [see
 this](https://slurm.schedmd.com/squeue.html#SECTION_JOB-STATE-CODES). To
 find what the reason means, [see
@@ -235,4 +234,3 @@ Once resource is available, the pending job with highest priority is
 immediately allocated. To view the priority, use `sprio -l` command. To
 learn more about the fair tree algorithm, [see
 this](https://slurm.schedmd.com/fair_tree.html).
-

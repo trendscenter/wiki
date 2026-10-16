@@ -3,7 +3,7 @@ layout: default
 title: Ollama
 nav_order: 2
 parent: List of software
-last_modified_date: 07/27/2025 23:50
+last_modified_date: 2025-07-27 23:50
 ---
 <details open markdown="block">
   <summary>
@@ -68,7 +68,7 @@ ollama serve
 
 ## Run Ollama models in Python on TReNDS cluster
 
-*   Run the step 2 in the section above to submit a SLURM job script and start Ollama. 
+*   Run the step 2 in the section above to submit a SLURM job script and start Ollama.
 *   See the following example to use an Ollama model in a Python script. Remember to change the variable `OLLAMA_NODE` to the node where Ollama is running.
 
 ```python
